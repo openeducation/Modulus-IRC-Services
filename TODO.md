@@ -152,12 +152,3 @@
 * Remove
 * List
 * Broadcast
-
-### QuoteServ
-
-* Add
-* Remove
-* Search
-* Get
-* Join
-* Part
