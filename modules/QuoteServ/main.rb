@@ -49,7 +49,7 @@ database.
 Many networks have terms of service or privacy policies which
 may restrict your rights to add private chats or chats in
 secret or private channels to the database. Ask network staff
-if you are unsure.")
+if you are unsure.", true)
 
       Modulus.addCmd(self, "QuoteServ", "GET", "cmd_qs_get",
                      "Get a quotation from the database by quotation ID.",
@@ -57,13 +57,13 @@ if you are unsure.")
  
 A numerical identifier is assigned to each quotation added
 to the database. Using this unique identifier, it is possible
-to quickly fetch and display quotations.")
+to quickly fetch and display quotations.", true)
 
       Modulus.addCmd(self, "QuoteServ", "SEARCH", "cmd_qs_search",
                      "Search the database for quotations.",
                      "Usage: SEARCH query
  
-The search query is case-insensitive. Wildcards are not supported.")
+The search query is case-insensitive. Wildcards are not supported.", true)
 
       Modulus.addCmd(self, "QuoteServ", "JOIN", "cmd_qs_join",
                      "Bring QuoteServ to a channel.",
@@ -91,7 +91,7 @@ return unless brought back.")
 All quotations in QuoteServ's database are assigned a numerical
 rank. When a quotation is created, this rank begins at 0. Each
 time a user uses the UP command for that quotation ID, the
-quotation will have 1 added to its rank.")
+quotation will have 1 added to its rank.", true)
 
       Modulus.addCmd(self, "QuoteServ", "DOWN", "cmd_qs_down",
                      "Vote against a quotation, causing its rank to decrease.",
@@ -100,7 +100,7 @@ quotation will have 1 added to its rank.")
 All quotations in QuoteServ's database are assigned a numerical
 rank. When a quotation is created, this rank begins at 0. Each
 time a user uses the DOWN command for that quotation ID, the
-quotation will have 1 subtracted from rank.")
+quotation will have 1 subtracted from rank.", true)
 
       Modulus.addCmd(self, "QuoteServ", "REMOVE", "cmd_qs_remove",
                      "Remove a quotation from the database by quotation ID.",
@@ -112,7 +112,7 @@ services administrators to prevent abuse.
  
 As such, the best practice when adding quotation is to be sure
 that all parties being quoted do not mind the information being
-available to the entire network and likely the entire Internet.")
+available to the entire network and likely the entire Internet.", true)
 
     end
 

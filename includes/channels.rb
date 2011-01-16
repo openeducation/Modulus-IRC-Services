@@ -38,6 +38,14 @@ module Modulus
       @channels[origin.message].join origin.source
     end
 
+    def mod_join(nick, channel)
+      unless @channels.has_key? channel
+        @channels[channel] = Channel.new(channel)
+      end
+
+      @channels[channel].join nick
+    end
+
     def on_mode(origin)
       origin = origin[0]
       return unless Modulus.link.isChannel? origin.target

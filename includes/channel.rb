@@ -20,7 +20,7 @@ module Modulus
 
   class Channel
 
-    attr_reader :name, :topic, :modes, :bans, :nicks
+    attr_reader :name, :topic, :modes, :bans, :users
 
     def initialize(name)
       @name = name

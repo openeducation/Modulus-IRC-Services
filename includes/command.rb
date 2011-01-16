@@ -20,14 +20,15 @@ module Modulus
 
   class Command
 
-    attr_reader :commandText, :shortDesc, :longDesc
+    attr_reader :commandText, :shortDesc, :longDesc, :allowFantasy
 
-    def initialize(sender, funcName, commandText, shortDesc, longDesc)
+    def initialize(sender, funcName, commandText, shortDesc, longDesc, allowFantasy)
       @owner = sender
       @commandText = commandText
       @shortDesc = shortDesc
       @longDesc = longDesc
       @funcName = funcName
+      @allowFantasy = allowFantasy
     end
 
     def run(origin)

@@ -45,6 +45,8 @@ module Modulus
     @@events.register(:privmsg, self, "doHelp")
     @@events.register(:notice, self, "doHelp")
 
+    @@events.register(:privmsg, self, "fantasy")
+
     Dir["./modules/*"].each { |servDir|
       servName = File.basename servDir
       $log.debug "core", "Attemping to load module #{servName}."
@@ -102,12 +104,17 @@ module Modulus
     thread.join
   end
 
-  def Modulus.reply(origin,  message)
-    # TODO: Privmsg if public
-    #       Notice if private or privmsg if private (config!)
-    message.split("\n").each { |msg|
-      @@link.sendNotice(origin.target, origin.source, msg)
-    }
+  def Modulus.reply(origin, message)
+    if @@link.isChannel? origin.target
+      # TODO: Make this come from the actual service that sent it!
+      message.split("\n").each { |msg|
+        @@link.sendPrivmsg("Global", origin.target, msg)
+      }
+    else
+      message.split("\n").each { |msg|
+        @@link.sendNotice(origin.target, origin.source, msg)
+      }
+    end
   end
 
   def Modulus.runHooks(origin)
@@ -147,18 +154,76 @@ module Modulus
     end
   end
 
+  def Modulus.fantasy(origin)
+    origin = origin[0]
+    return unless @@link.isChannel? origin.target
+
+    prefix = @@config.getOption('Core', 'fantasy_prefix')
+
+    if prefix == nil
+      return
+    end
+
+    if prefix.length == 0
+      return
+    end
+
+    $log.debug 'core', "Checking for fantasy prefix (#{prefix})"
+
+    unless origin.cmd.start_with? prefix
+      return
+    end
+
+    command = origin.cmd.upcase[prefix.length..origin.message.length-prefix.length]
+
+    $log.debug 'core', "Got what looks like a fantasy command: #{command}"
+
+    @@cmdHooks.keys.each { |receiver|
+      @@serviceModules.modules.keys.each { |mod| 
+        next unless @@channels.channels.has_key? origin.target
+
+        $log.debug 'core', "Checking if #{mod} is in #{origin.target}"
+
+        if @@channels.channels[origin.target].users.has_key? mod
+          unless @@cmdHooks.has_key? mod
+            $log.debug 'core', "No commands for present module."
+            next
+          end
+
+          unless @@cmdHooks[mod].has_key? command
+            $log.debug 'core', "Present module does not have this command."
+            next
+          end
+
+          unless @@cmdHooks[mod][command].allowFantasy
+            $log.debug 'core', "This command is not enabled for fantasy use."
+            next
+          end
+
+          $log.debug 'core', "Definitely a fantasy command. Running: #{origin}"
+
+          @@cmdHooks[mod][command].run(origin)
+          return
+        else
+          $log.debug 'core', "#{mod} is not in the channel. Skipping."
+          next
+        end
+      }
+    }
+  end
+
   def Modulus.addService(name, modClass, description)
     @@serviceModules.addService(name, modClass, description)
   end
 
-  def Modulus.addCmd(modClass, receiver, cmdStr, funcName, shortHelp, longHelp="")
+  def Modulus.addCmd(modClass, receiver, cmdStr, funcName, shortHelp, longHelp="", allowFantasy=false)
     cmdStr.upcase!
     @@cmdHooks[receiver] = Hash.new unless @@cmdHooks.has_key? receiver
     #@cmdHooks[receiver][cmdStr] = Array.new unless @cmdHooks[receiver].has_key? cmdStr
 
     $log.debug "core", "Adding command hook: #{cmdStr} for #{modClass.class}"
 
-    hook = Command.new(modClass, funcName, cmdStr, shortHelp, longHelp)
+    hook = Command.new(modClass, funcName, cmdStr, shortHelp, longHelp, allowFantasy)
 
     #@cmdHooks[receiver][cmdStr] << hook
     @@cmdHooks[receiver][cmdStr] = hook

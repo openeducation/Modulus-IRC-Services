@@ -35,7 +35,7 @@ module Modulus
           $log.debug "protocol", "Socket reader thread started."
           @parser = Modulus::Parser.new(@cmdList)
 
-          while line = @socket.gets
+          while line = @socket.gets.chomp
             #TODO: Parse this, hand it off to something else.
             #puts "<-- #{line}"
             begin

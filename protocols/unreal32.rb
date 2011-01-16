@@ -370,6 +370,7 @@ module Modulus
       # Yeah, we're assigning ourselves +a on join in every case right now.
       # Should this be done separately?
       @sendq << ":#{nick} G #{channel} +a #{nick}"
+      Modulus.channels.mod_join nick, channel
     end
 
     def partChannel(nick, channel)
