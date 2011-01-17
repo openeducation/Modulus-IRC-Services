@@ -131,6 +131,7 @@
 * Formatting
 * Limit
 * Punishment
+* Whitelisting (Channels, Nicks, Regex?)
 
 ### NoteServ
 
@@ -145,6 +146,7 @@
 * List
 * Delete
 * Auto
+* Vote
 
 ### BuddyServ
 
