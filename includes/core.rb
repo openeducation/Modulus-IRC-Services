@@ -18,12 +18,28 @@
 
 module Modulus
 
+  ##
+  # When Modulus starts, this is the first thing that runs at the end of the
+  # main launcher.
 
   def Modulus.start(config)
+    # Module attribute accessors.
+
     Modulus.mattr_accessor :events, :clients, :serviceModules, :users, :hooks, :cmdHooks, :messageHooks, :scheduler, :hostname, :name, :config
+
     @@config = config
+
+    # We want to go ahead and load the logger early since we'll want to record
+    # the load process. Config has to be loaded before this since it will affect
+    # where logs go and how verbose they are.
+
     $log = Modulus::Log.new(config)
     $log.info "core", "#{NAME} version #{VERSION} is starting."
+
+
+    # Lots of classes to instantiate.
+    # It probably wouldn't hurt to have this event-driven, but we'll at least
+    # need to keep the event class here for that to work.
 
     @@events = Modulus::Events.new
 
@@ -32,21 +48,56 @@ module Modulus
     @@users = Modulus::Users.new
     @@channels = Modulus::Channels.new
 
+    # Classes are ready. Now we need some hash tables for runtime data, like
+    # hooks. These will probably go away before beta since everything will be
+    # driven by the Events class.
+
     @@hooks = Hash.new
     @@cmdHooks = Hash.new
     @@messageHooks = Hash.new
 
+    # The scheduler gets started now that everything is instantiated and tables
+    # are ready. We're using a third-party library for this. Why reinvent it?
+
     @@scheduler = Rufus::Scheduler.start_new
     
+    # Let's go ahead and pull some config values into the class since we'll
+    # probably need to use them quite a bit.
+
     @@hostname = config.getOption("Core", "services_hostname")
     @@name = config.getOption("Core", "services_name")
 
+    # Important config values are in memory, classes are ready, and tables are
+    # instantiated. Since we're event-driven, we'll need to register some
+    # events that will run in the core code.
+
+    # When we're done connecting to whatever database we're configured to use,
+    # we have to make sure it is ready for use and has tables we need.
     @@events.register(:database_connected, self, "prepDatabase")
+
+    # Help is currently controlled by the core. Presumably, almost all modules
+    # will have commands or other features that might require some explanation
+    # for end users or network staff. It is therefore reasonable that we include
+    # help as part of the core code, rather than as a module.
+    #
+    # In order for help to work, we have to intercept all PRIVMSGs and NOTICES
+    # as events to see if they are requests for help or information.
     @@events.register(:privmsg, self, "doHelp")
     @@events.register(:notice, self, "doHelp")
 
+    # We also have to intercept PRIVMSGs to check if they are fantasy commands.
     @@events.register(:privmsg, self, "fantasy")
 
+    # Now it's time to load our modules. This will likely be moved off to its
+    # own file at some point, but for now we do it here. Modules are stored in
+    # the modules directory, each inside their own directory. There can be many
+    # files for each module. Right now, we're loading all of them here. What we
+    # should do, though, is just load main.rb and let it take care of including
+    # other files as needed.
+    #
+    # We might need to change this to make it more friendly to dynamic module
+    # reloading, but that's probably something that will happen when we move it
+    # to another file.
     Dir["./modules/*"].each { |servDir|
       servName = File.basename servDir
       $log.debug "core", "Attemping to load module #{servName}."
@@ -58,8 +109,14 @@ module Modulus
       eval("#{servName}.new")
     }
 
+    # Start the database. This will connect us, open a file, or whatever has to
+    # be done for the selected database, and then fire the event.
     Modulus.startDB()
 
+    # Next, we'll need to load the appropriate file for the IRC server protocol
+    # we're configured to use. These are kept in the protocol directory. We'll
+    # first check if the file exists, then load it. No checks are made here if
+    # the file contains everything it needs to.
     protocol = config.getOption('Network', 'link_protocol')
 
     $log.debug "core", "Checking for protocol handler for #{protocol}."
@@ -74,22 +131,25 @@ module Modulus
 
     load("protocols/#{protocol}.rb")
 
+    # This will instantiate the classes and whatnot needed for communication
+    # with the IRC server. We'll keep this in @@link and use that for sending
+    # commands and messages to IRC.
     @@link = Modulus::ProtocolAbstraction.new
 
+    # Now that we're connected to the IRC server, we need to hook ourselves to
+    # process signals so we can cleanly quit or rehash when asked.
     trap("INT"){ @@link.closeConnection() }
     trap("TERM"){ @@link.closeConnection() }
     trap("KILL"){ exit } # Kill (signal 9) is pretty hardcore. Just exit!
 
     trap("HUP", "IGNORE") # TODO: Rehash.
 
-    #@link.createPreSyncClient('Global', "Global Noticer")
-    #
+    # We're going to need at least one way to talk to IRC users, so let's
+    # create the Global user first thing.
     @@clients.addClient('Global', "Global Noticer")
 
-    #link.createClient(servName, config.getOption('Network', 'services_user'), config.getOption('Network', 'services_hostname'))
-
-    #@clients.connectAll
-
+    # Let's start connecting! This is synchronous, but ends with the listener
+    # loop thread being returned once connection is complete.
     $log.debug "core", "Connecting."
     thread = startConnectionThread
 
@@ -97,12 +157,17 @@ module Modulus
 
     $log.info "core", "IRC Services has started successfully."
 
-    # TODO: This probably needs to just happen on end of sync.
+    # TODO: Don't sleep. Fire an event when sync is done!
     sleep 0.5
     @@events.event(:done_connecting)
 
+    # Right now, we're going to keep running in the foreground. Before we go to
+    # beta, we'll want to fork to the background instead.
     thread.join
   end
+
+  ##
+  # Send a message to the user that sent the given origin.
 
   def Modulus.reply(origin, message)
     if message.empty?
@@ -121,6 +186,9 @@ module Modulus
       }
     end
   end
+
+  ##
+  # Run hooks and message hooks for a given origin type.
 
   def Modulus.runHooks(origin)
     @@events.event(origin.type, origin)
@@ -146,6 +214,10 @@ module Modulus
     end
   end
 
+  ##
+  # Run hooks for the given command, if the command is sent privately and is
+  # sent to a user that can receive commands, and the message contains a command
+
   def Modulus.runCmds(cmdOrigin)
     return if @@link.isChannel? cmdOrigin.target
 
@@ -158,6 +230,10 @@ module Modulus
       end
     end
   end
+
+  ##
+  # Check to see if a channel message is a fantasy command. If so, run the
+  # appropriate function.
 
   def Modulus.fantasy(origin)
     origin = origin[0]
