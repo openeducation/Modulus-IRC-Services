@@ -147,7 +147,7 @@ if they still exist.")
         return
       end
 
-      if ReservedNick.find_by_nick(origin.argsArr[0])
+      if ReservedNick.find_by_nick(origin.argsArr[0].downcase)
         Modulus.reply(origin, "That nick is reserved by services.")
         return
       end
@@ -183,6 +183,11 @@ if they still exist.")
       BotServBot.create(
         :nick => origin.argsArr[0],
         :account_id => account.id)
+
+      ReservedNick.create(
+        :nick => origin.argsArr[0].downcase,
+        :dateAdded => DateTime.now,
+        :module => "BotServ")
 
       self.bring_bot_online(origin.argsArr[0])
 
