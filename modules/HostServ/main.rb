@@ -27,14 +27,12 @@ module Modulus
 HostServ allows users and staff to create vanity host
 names to hide or replace their normal host name.")
 
+      Modulus.events.register(:done_connecting, self, "done_connecting")
       Modulus.events.register(:database_connected, self, "dbConnected")
       Modulus.events.register(:connect, self, "on_connect")
       Modulus.events.register(:logged_in, self, "on_log_in")
 
-
       Modulus.clients.addClient("HostServ", "Vanity Host Name Assignment Service")
-
-
 
       Modulus.addCmd(self, "HostServ", "SET", "cmd_hs_set",
                      "Set or request a vanity host name.",
@@ -50,7 +48,7 @@ will be notified of the approval.
  
 Host names are often restricted so that they may not contain certain
 things, such as common TLDs (.com,Modulus.net, etc.) in order to reduce
-abuse. Staff may be able to override this limitation on request.")
+abuse. Staff may be able to override this limitation on request.", true)
 
       Modulus.addCmd(self, "HostServ", "REMOVE", "cmd_hs_remove",
                      "Remove your vanity host name.",
@@ -261,7 +259,7 @@ deleted. The user will be notified of the failure if they are on-line.")
         if user.svid == account.username
           self.activate(user.nick, host.hostname)
           host.active = true
-         Modulus.sendNotice("HostServ", user.nick, "Your pending host name has been approved and automatically activated.")
+         Modulus.link.sendNotice("HostServ", user.nick, "Your pending host name has been approved and automatically activated.")
         end
       end
 
@@ -386,6 +384,24 @@ deleted. The user will be notified of the failure if they are on-line.")
 
       self.deactivate(origin.source)
       Modulus.reply(origin, "Your host mask has been deactivated.")
+    end
+
+    def done_connecting
+      $log.debug "HostServ", "Joining interactive channel, if set."
+
+      chan = Modulus.config.getOption("HostServ", "interactive_channel")
+
+      return if chan == nil
+      return if chan.empty?
+
+      client = Modulus.clients.clients['HostServ']
+
+      if client == nil
+        $log.error 'HostServ', "While attempting to join HostServ to a channel, I was unable to find it in my client list."
+        return
+      end
+
+      client.addChannel(chan)      
     end
 
     def dbConnected
