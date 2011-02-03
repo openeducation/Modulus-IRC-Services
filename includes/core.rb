@@ -105,6 +105,11 @@ module Modulus
   end
 
   def Modulus.reply(origin, message)
+    if message.empty?
+      $log.warning "core", "Attempted to send an empty message to #{origin.target} (#{origin.source})"
+      return
+    end
+
     if @@link.isChannel? origin.target
       # TODO: Make this come from the actual service that sent it!
       message.split("\n").each { |msg|
