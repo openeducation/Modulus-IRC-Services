@@ -140,6 +140,7 @@ module Modulus
         "KILL" => :kill,
         "SETHOST" => :sethost,
         "SWHOIS" => :swhois,
+        "BA" => :swhois,
         "AA" => :sethost,
         "AL" => :chghost,
         "CHGHOST" => :chghost,
