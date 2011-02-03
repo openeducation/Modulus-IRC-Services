@@ -61,6 +61,10 @@ log_channel_verbosity = info
 # Default: notice
 reply_type = notice
 
+# The prefix to be used for fantasy commands. May be multiple characters.
+# Default: !
+fantasy_prefix = !
+
 [Network]
 
 # The name of the network. This should be the same as that configurwith your
