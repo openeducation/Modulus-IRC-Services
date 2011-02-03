@@ -126,46 +126,58 @@ while logged in to your account.")
 
       if origin.argsArr.length != 1
         Modulus.reply(origin, "Usage: REGISTER channel")
-      else
-        user = Modulus.users.find(origin.source)
-
-        unless user.logged_in?
-          Modulus.reply(origin, "You must be logged in to a services account in order to register a channel.")
-          return
-        end
-
-        if Channel.find_by_name(origin.args)
-          Modulus.reply(origin, "The channel #{origin.args} is already registered.")
-        else
-
-          account = Account.find_by_username(user.svid)
-
-          if account == nil
-            Modulus.reply(origin, "You must be logged in to a services account in order to register a channel.")
-            return
-          end
-
-          channel = Channel.create(
-            :name => origin.args,
-            :owner_id => account.id,
-            :dateRegistered => DateTime.now)
-
-          ChannelUsers.create(
-            :channel_id => channel.id,
-            :account_id => account.id,
-            :access => "OWN")
-
-          self.join origin.args
-
-          Modulus.reply(origin, "You have registered #{origin.args}.")
-        end
+        return
       end
+
+      user = Modulus.users.find(origin.source)
+
+      unless user.logged_in?
+        Modulus.reply(origin, "You must be logged in to a services account in order to register a channel.")
+        return
+      end
+
+      channel_name = origin.argsArr[0].downcase
+
+      if Channel.find_by_name(channel_name)
+        Modulus.reply(origin, "The channel #{channel_name} is already registered.")
+        return
+      end
+
+      account = Account.find_by_username(user.svid)
+
+      if account == nil
+        Modulus.reply(origin, "You must be logged in to a services account in order to register a channel.")
+        return
+      end
+
+      channel = Channel.create(
+        :name => channel_name,
+        :owner_id => account.id,
+        :dateRegistered => DateTime.now)
+
+      ChannelUsers.create(
+        :channel_id => channel.id,
+        :account_id => account.id,
+        :access => "OWN")
+
+      self.join origin.args
+
+      Modulus.reply(origin, "You have registered #{origin.args}.")
+      $log.info "ChanServ", "#{origin.source} has registered #{channel_name} to #{account.username}"
     end
 
     def cmd_cs_drop(origin)
       $log.debug "ChanServ", "Got: #{origin.raw}"
 
+      if origin.argsArr.length != 1
+        Modulus.reply(origin, "Usage: DROP channel")
+        return
+      end
+
+      channel_name = origin.argsArr[0].downcase
       user = Modulus.users.find(origin.source)
+
+      return if user == nil
 
       unless user.logged_in?
         Modulus.reply(origin, "You must be logged in to a services account in order to use this command.")
@@ -179,20 +191,22 @@ while logged in to your account.")
 
       if channel == nil
         Modulus.reply(origin, "That channel is not registered.")
-      else
-        channel = Channel.find_by_name(origin.argsArr[0])
-        channel.destroy
-
-        self.leave origin.argsArr[0]
-        Modulus.reply(origin, "You have dropped the registration for #{origin.argsArr[0]}.")
-        $log.info 'ChanServ', "#{origin.source} has dropped the registration for #{origin.argsArr[0]}."
+        return
       end
+      channel = Channel.find_by_name(channel_name)
+      channel.destroy
+
+      self.leave origin.argsArr[0]
+      Modulus.reply(origin, "You have dropped the registration for #{channel_name}.")
+      $log.info 'ChanServ', "#{origin.source} has dropped the registration for #{channel_name}."
     end
 
     def cmd_cs_grant(origin)
       $log.debug "ChanServ", "Got: #{origin.raw}"
 
       user = Modulus.users.find(origin.source)
+
+      return if user == nil
 
       unless user.logged_in?
         Modulus.reply(origin, "You must be logged in to a services account in order to use this command.")
@@ -205,7 +219,9 @@ while logged in to your account.")
         return
       end
 
-      channel = Channel.find_by_name(origin.argsArr[0])
+      channel_name = origin.argsArr[0].downcase
+
+      channel = Channel.find_by_name(channel_name)
 
       if channel == nil
         Modulus.reply(origin, "That channel is not registered.")
@@ -215,7 +231,7 @@ while logged in to your account.")
       user = Modulus.users.find(origin.argsArr[1])
 
       if user == nil
-        Modulus.reply(origin, "The user must be on-line.")
+        Modulus.reply(origin, "The user must be on-line. Hint: Nick is case-sensitive.")
         return
       end
 
