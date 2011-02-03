@@ -15,6 +15,10 @@
 
 ### Protocol Support
 
+For complete interoperability, a lot of things are going to have to be moved around.
+
+Until then, things might look a little hackish.
+
 * Bahamut
 * Charybdis
 * DreamForge
@@ -33,7 +37,7 @@
 
 ## Modules
 
-* Move commands to individual files
+* Move commands to individual files?
 
 ### NickServ
 
