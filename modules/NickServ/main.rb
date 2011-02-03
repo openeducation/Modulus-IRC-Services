@@ -91,6 +91,8 @@ contact your network's staff.")
 
       user = Modulus.users.find(origin.source)
 
+      return if user == nil
+
       unless user.logged_in?
         Modulus.reply(origin, "You must be logged in to a services account in order to use this command.")
         return
@@ -98,19 +100,25 @@ contact your network's staff.")
 
       nicks = Nick.find_all_by_account_id(Account.find_by_username(user.svid))
 
-      if nicks.length != 0
-        Modulus.reply(origin, "Nicks registered to #{user.svid}:")
-
-        Modulus.reply(origin, sprintf("%30.30s  %-25.25s", "Nick", "Date Registered"))
-
-        nicks.each { |nick|
-          Modulus.reply(origin, sprintf("%30.30s  %-25.25s", nick.nick, nick.dateRegistered))
-        }
-
-        Modulus.reply(origin, "Total nicks registered: #{nicks.length}")
-      else
+      if nicks == nil
         Modulus.reply(origin, "There are currently no nicks registered to #{user.svid}.")
-      end            
+        return
+      end
+
+      if nicks.length == 0
+        Modulus.reply(origin, "There are currently no nicks registered to #{user.svid}.")
+        return
+      end
+
+      Modulus.reply(origin, "Nicks registered to #{user.svid}:")
+
+      Modulus.reply(origin, sprintf("%30.30s  %-25.25s", "Nick", "Date Registered"))
+
+      nicks.each { |nick|
+        Modulus.reply(origin, sprintf("%30.30s  %-25.25s", nick.nick, nick.dateRegistered))
+      }
+
+      Modulus.reply(origin, "Total nicks registered: #{nicks.length}")
     end
       
     def cmd_ns_unidentify(origin)
@@ -130,8 +138,9 @@ contact your network's staff.")
       end
 
       password = origin.argsArr[0]
+      source = origin.source.downcase
 
-      nickRecord = Nick.find_by_nick(origin.source)
+      nickRecord = Nick.find_by_nick(source)
 
       if nickRecord == nil
         Modulus.reply(origin, "Your nick is not registered.")
@@ -143,19 +152,19 @@ contact your network's staff.")
       if account == nil
         # This should never happen.
 
-        $log.error 'NickServ', "While performing an IDENTIFY, the services account for #{origin.source} could not be found, but the nick is in the database as registered."
+        $log.error 'NickServ', "While performing an IDENTIFY, the services account for #{source} could not be found, but the nick is in the database as registered."
         Modulus.reply(origin, "There was a problem with your request. The services account associated with this nick no longer exists. Please contact your network's staff for assistance.")
         return
       end
 
       if account.password == password
-        self.logIn(account.username, origin.source)
+        self.logIn(account.username, source)
 
-        Modulus.reply(origin, "You have been identified as the owner of #{origin.source}")
-        $log.info "NickServ", "#{origin.source} has been identified as account #{account.username}."
+        Modulus.reply(origin, "You have been identified as the owner of #{source}")
+        $log.info "NickServ", "#{source} has been identified as account #{account.username}."
       else
         Modulus.reply(origin, "Incorrect password.")
-        $log.info "NickServ", "Login failed for #{origin.source}."
+        $log.info "NickServ", "Login failed for #{source}."
 
         #TODO: Record this. Ban for too many failures.
         #TODO: Make the above TODO configurable.
@@ -168,29 +177,31 @@ contact your network's staff.")
       
       if origin.argsArr.length != 1
         Modulus.reply(origin, "Usage: DROP password")
+        return
+      end
+
+      source = origin.source.downcase
+
+      nickRecord = Nick.find_by_nick(source)
+
+      if nickRecord == nil
+        Modulus.reply(origin, "Your nick is not currently registered.")
       else
-        nickRecord = Nick.find_by_nick(origin.source)
+        account = Account.find(nickRecord.account_id)
+        if account.password == origin.argsArr[0]
+          nickRecord.destroy
 
+          Modulus.reply(origin, "Nick registration dropped.")
+          $log.info "NickServ", "#{source} has dropped their nick registration."
 
-          if nickRecord == nil
-            Modulus.reply(origin, "Your nick is not currently registered.")
-          else
-            account = Account.find(nickRecord.account_id)
-            if account.password == origin.argsArr[0]
-              nickRecord.destroy
+          nickRecords = Nick.find_all_by_account_id(account.id)
 
-              Modulus.reply(origin, "Nick registration dropped.")
-              $log.info "NickServ", "#{origin.source} has dropped their nick registration."
-
-              nickRecords = Nick.find_all_by_account_id(account.id)
-
-              if nickRecords.length == 0
-                Modulus.reply(origin, "You no longer have any nicks registered. Your services account #{account.username} will remain intact for use with other modules until it expires (if expiration is enabled here).")
-              end
-            else
-              Modulus.reply(origin, "Incorrect password.")
-            end
+          if nickRecords.length == 0
+            Modulus.reply(origin, "You no longer have any nicks registered. Your services account #{account.username} will remain active and may be used to register new nicks or use with other modules.")
           end
+        else
+          Modulus.reply(origin, "Incorrect password.")
+        end
       end
     end
 
@@ -201,21 +212,22 @@ contact your network's staff.")
         Modulus.reply(origin, "Usage: REGISTER password e-mail [username]")
       else
         password = origin.argsArr[0]
-        email = origin.argsArr[1]
+        email = origin.argsArr[1].downcase
+        source = origin.source.downcase
         
         if origin.argsArr.length == 3
-          username = origin.argsArr[2]
+          username = origin.argsArr[2].downcase
         else
-          username = origin.source
+          username = origin.source.downcase
         end
 
-        if Nick.find_by_nick(origin.source)
-          Modulus.reply(origin, "The nick #{origin.source} is already registered.")
+        if Nick.find_by_nick(source)
+          Modulus.reply(origin, "The nick #{source} is already registered.")
           return
         end
 
-        if ReservedNick.find_by_nick(origin.source)
-          Modulus.reply(origin, "The nick #{origin.source} is reserved by services.")
+        if ReservedNick.find_by_nick(source)
+          Modulus.reply(origin, "The nick #{source} is reserved by services.")
           return
         end
 
@@ -243,24 +255,24 @@ contact your network's staff.")
           Modulus.reply(origin, "I have created a new account for #{username} (#{email}). If you register additional nicks in the future, use this e-mail address and username and the same password to keep nicks attached to this account. Otherwise, managing your services use will becoming confusing for both you and the network staff.")
         elsif acc.password != password
           Modulus.reply(origin, "Incorrect password for the existing account with that e-mail address.")
-          $log.info "NickServ", "Login failed: #{origin.source} tried to register a new nick for account #{acc.username} but used the wrong password."
+          $log.info "NickServ", "Login failed: #{source} tried to register a new nick for account #{acc.username} but used the wrong password."
           return
         end
 
         # Everyything looks good. Go ahead and make it.
         Nick.create(
           :account_id => acc.id,
-          :nick => origin.source,
+          :nick => source,
           :dateRegistered => DateTime.now)
 
         ReservedNick.create(
-          :nick => origin.source,
+          :nick => source,
           :dateAdded => DateTime.now,
           :module => "NickServ")
 
         self.logIn(username, origin.source)
-        Modulus.reply(origin, "You have registered #{origin.source} to #{username} (#{email}).")
-        $log.info "NickServ", "Nick #{origin.source} registered to #{username}."
+        Modulus.reply(origin, "You have registered #{source} to #{username} (#{email}).")
+        $log.info "NickServ", "Nick #{source} registered to #{username}."
       end
     end
 
