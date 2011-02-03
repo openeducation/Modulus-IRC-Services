@@ -41,8 +41,6 @@ Until then, things might look a little hackish.
 
 ### NickServ
 
-* Drop
-* Identify
 * Info
 * Ghost
 * Noexpire
@@ -69,6 +67,7 @@ Until then, things might look a little hackish.
 * Unforbid
 * Mode
 * Invite
+* Greet (Send saved notice to users when they join)
 * Store grants in boolean columns rather than the dumb string
 
 ### OperServ
@@ -83,6 +82,8 @@ Until then, things might look a little hackish.
 * AddAccount
 * ListAccounts
 * Global
+* Oper News (Send news items to users when they oper)
+* User News (Send news items to users when they connect)
 
 ### HostServ
 
@@ -114,6 +115,8 @@ Until then, things might look a little hackish.
 
 * Akill
 * RegexKill
+* ChanKill
+* Akill user@host when joining specified channels
 
 ### MemoServ
 
