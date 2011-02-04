@@ -1,0 +1,717 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: Modulus::User</title>
+
+	<link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../includes/user_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="includes/user.rb">includes/user.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link"><a href="../Object.html">Object</a></p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-c-new">::new</a></li>
+					
+					<li><a href="#method-i-is_oper%3F">#is_oper?</a></li>
+					
+					<li><a href="#method-i-is_services_admin%3F">#is_services_admin?</a></li>
+					
+					<li><a href="#method-i-logIn">#logIn</a></li>
+					
+					<li><a href="#method-i-logged_in%3F">#logged_in?</a></li>
+					
+					<li><a href="#method-i-modes">#modes</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../LICENSE.html">LICENSE</a></li>
+				
+					<li class="file"><a href="../README.html">README</a></li>
+				
+					<li class="file"><a href="../Rakefile.html">Rakefile</a></li>
+				
+					<li class="file"><a href="../head.html">head</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../Modulus.html">Modulus</a></li>
+				
+					<li><a href="../Modulus/Account.html">Modulus::Account</a></li>
+				
+					<li><a href="../Modulus/BanServ.html">Modulus::BanServ</a></li>
+				
+					<li><a href="../Modulus/BanServ/Autokill.html">Modulus::BanServ::Autokill</a></li>
+				
+					<li><a href="../Modulus/BanServ/Regexkill.html">Modulus::BanServ::Regexkill</a></li>
+				
+					<li><a href="../Modulus/BotServ.html">Modulus::BotServ</a></li>
+				
+					<li><a href="../Modulus/BotServ/BotServBot.html">Modulus::BotServ::BotServBot</a></li>
+				
+					<li><a href="../Modulus/BotServ/BotServChannel.html">Modulus::BotServ::BotServChannel</a></li>
+				
+					<li><a href="../Modulus/ChanServ.html">Modulus::ChanServ</a></li>
+				
+					<li><a href="../Modulus/ChanServ/Channel.html">Modulus::ChanServ::Channel</a></li>
+				
+					<li><a href="../Modulus/ChanServ/ChannelUsers.html">Modulus::ChanServ::ChannelUsers</a></li>
+				
+					<li><a href="../Modulus/Channel.html">Modulus::Channel</a></li>
+				
+					<li><a href="../Modulus/ChannelUser.html">Modulus::ChannelUser</a></li>
+				
+					<li><a href="../Modulus/Channels.html">Modulus::Channels</a></li>
+				
+					<li><a href="../Modulus/Clients.html">Modulus::Clients</a></li>
+				
+					<li><a href="../Modulus/Command.html">Modulus::Command</a></li>
+				
+					<li><a href="../Modulus/Config.html">Modulus::Config</a></li>
+				
+					<li><a href="../Modulus/EventCallback.html">Modulus::EventCallback</a></li>
+				
+					<li><a href="../Modulus/Events.html">Modulus::Events</a></li>
+				
+					<li><a href="../Modulus/Hook.html">Modulus::Hook</a></li>
+				
+					<li><a href="../Modulus/HostServ.html">Modulus::HostServ</a></li>
+				
+					<li><a href="../Modulus/HostServ/Host.html">Modulus::HostServ::Host</a></li>
+				
+					<li><a href="../Modulus/Log.html">Modulus::Log</a></li>
+				
+					<li><a href="../Modulus/Module.html">Modulus::Module</a></li>
+				
+					<li><a href="../Modulus/ModuleManager.html">Modulus::ModuleManager</a></li>
+				
+					<li><a href="../Modulus/NickServ.html">Modulus::NickServ</a></li>
+				
+					<li><a href="../Modulus/NickServ/Account.html">Modulus::NickServ::Account</a></li>
+				
+					<li><a href="../Modulus/NickServ/Nick.html">Modulus::NickServ::Nick</a></li>
+				
+					<li><a href="../Modulus/OperServ.html">Modulus::OperServ</a></li>
+				
+					<li><a href="../Modulus/OriginInfo.html">Modulus::OriginInfo</a></li>
+				
+					<li><a href="../Modulus/Parser.html">Modulus::Parser</a></li>
+				
+					<li><a href="../Modulus/ProtocolAbstraction.html">Modulus::ProtocolAbstraction</a></li>
+				
+					<li><a href="../Modulus/ProtocolAbstractionMixin.html">Modulus::ProtocolAbstractionMixin</a></li>
+				
+					<li><a href="../Modulus/Pseudoclient.html">Modulus::Pseudoclient</a></li>
+				
+					<li><a href="../Modulus/QuoteServ.html">Modulus::QuoteServ</a></li>
+				
+					<li><a href="../Modulus/QuoteServ/Quote.html">Modulus::QuoteServ::Quote</a></li>
+				
+					<li><a href="../Modulus/QuoteServ/QuoteChannel.html">Modulus::QuoteServ::QuoteChannel</a></li>
+				
+					<li><a href="../Modulus/QuoteServ/QuoteRater.html">Modulus::QuoteServ::QuoteRater</a></li>
+				
+					<li><a href="../Modulus/ReservedNick.html">Modulus::ReservedNick</a></li>
+				
+					<li><a href="../Modulus/Service.html">Modulus::Service</a></li>
+				
+					<li><a href="../Modulus/ServiceModules.html">Modulus::ServiceModules</a></li>
+				
+					<li><a href="../Modulus/User.html">Modulus::User</a></li>
+				
+					<li><a href="../Modulus/Users.html">Modulus::Users</a></li>
+				
+					<li><a href="../Object.html">Object</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">Modulus::User</h1>
+
+		<div id="description">
+			
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+		<div id="attribute-method-details" class="method-section section">
+			<h3 class="section-header">Attributes</h3>
+
+			
+			<div id="nick-attribute-method" class="method-detail">
+				<a name="nick"></a>
+				
+				<a name="nick="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">nick</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+			<div id="svid-attribute-method" class="method-detail">
+				<a name="svid"></a>
+				
+				<a name="svid="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">svid</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+			<div id="username-attribute-method" class="method-detail">
+				<a name="username"></a>
+				
+				<a name="username="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">username</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+			<div id="hostname-attribute-method" class="method-detail">
+				<a name="hostname"></a>
+				
+				<a name="hostname="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">hostname</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+			<div id="channels-attribute-method" class="method-detail">
+				<a name="channels"></a>
+				
+				<a name="channels="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">channels</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+			<div id="timestamp-attribute-method" class="method-detail">
+				<a name="timestamp"></a>
+				
+				<a name="timestamp="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">timestamp</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+			<div id="modes-attribute-method" class="method-detail">
+				<a name="modes"></a>
+				
+				<a name="modes="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">modes</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+			<div id="logged-n-attribute-method" class="method-detail">
+				<a name="loggedIn"></a>
+				
+				<a name="loggedIn="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">loggedIn</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+			<div id="vhost-attribute-method" class="method-detail">
+				<a name="vhost"></a>
+				
+				<a name="vhost="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">vhost</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+			<div id="modes-attribute-method" class="method-detail">
+				<a name="modes"></a>
+				
+				<a name="modes="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">modes</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+		</div>
+		
+
+		<!-- Methods -->
+		
+		<div id="public-class-method-details" class="method-section section">
+			<h3 class="section-header">Public Class Methods</h3>
+
+		
+			<div id="new-method" class="method-detail ">
+				<a name="method-c-new"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">new</span><span
+						class="method-args">(nick, svid, username, hostname, timestamp)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Create a new user object.
+</p>
+<p>
+Parameters are the nick, svid (logged in user name), user name, host name,
+and timestamp for the user.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="new-source">
+<pre>
+    <span class="ruby-comment cmt"># File includes/user.rb, line 31</span>
+31:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">nick</span>, <span class="ruby-identifier">svid</span>, <span class="ruby-identifier">username</span>, <span class="ruby-identifier">hostname</span>, <span class="ruby-identifier">timestamp</span>)
+32:       <span class="ruby-comment cmt">#TODO: SVID is not the right thing to use here.</span>
+33:       <span class="ruby-ivar">@nick</span> = <span class="ruby-identifier">nick</span>
+34:       <span class="ruby-ivar">@svid</span> = <span class="ruby-identifier">svid</span>
+35:       <span class="ruby-ivar">@username</span> = <span class="ruby-identifier">username</span>
+36:       <span class="ruby-ivar">@hostname</span> = <span class="ruby-identifier">hostname</span>
+37:       <span class="ruby-ivar">@timestamp</span> = <span class="ruby-identifier">timestamp</span>
+38:       <span class="ruby-ivar">@modes</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+39:       <span class="ruby-ivar">@vhost</span> = <span class="ruby-value str">&quot;&quot;</span>
+40:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">svid</span> <span class="ruby-operator">!=</span> <span class="ruby-value str">'*'</span>
+41:         <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">logIn</span>(<span class="ruby-identifier">svid</span>)
+42:       <span class="ruby-keyword kw">else</span>
+43:         <span class="ruby-ivar">@loggedIn</span> = <span class="ruby-keyword kw">false</span>
+44:       <span class="ruby-keyword kw">end</span>
+45:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="is-oper--method" class="method-detail ">
+				<a name="method-i-is_oper%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">is_oper?</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Check if this user&#8217;s modes include any that are listed in the
+protocol class&#8217;s list of operator modes.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="is-oper--source">
+<pre>
+     <span class="ruby-comment cmt"># File includes/user.rb, line 97</span>
+ 97:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">is_oper?</span>
+ 98:       <span class="ruby-ivar">@modes</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">mode</span><span class="ruby-operator">|</span>
+ 99:         <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">link</span>.<span class="ruby-identifier">operModes</span>.<span class="ruby-identifier">include?</span> <span class="ruby-identifier">mode</span>
+100:           <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">true</span>
+101:         <span class="ruby-keyword kw">end</span>      
+102:       }
+103:       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">false</span>
+104:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="is-services-admin--method" class="method-detail ">
+				<a name="method-i-is_services_admin%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">is_services_admin?</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Check if any of the user modes indicate the user is a services admin or
+higher, according to the modes listed in the protocol class&#8217;s list.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="is-services-admin--source">
+<pre>
+     <span class="ruby-comment cmt"># File includes/user.rb, line 110</span>
+110:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">is_services_admin?</span>
+111:       <span class="ruby-comment cmt"># TODO: This probably won't work for all protocols. Will it? Maybe we need</span>
+112:       <span class="ruby-comment cmt"># to do like Anope and just keep our own list of services admins. Dunno!</span>
+113:       <span class="ruby-ivar">@modes</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">mode</span><span class="ruby-operator">|</span>
+114: 
+115:         <span class="ruby-identifier">mode</span> = <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">link</span>.<span class="ruby-identifier">userModes</span>[<span class="ruby-identifier">mode</span>]
+116:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">mode</span> <span class="ruby-operator">==</span> <span class="ruby-value">:services_admin</span> <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">mode</span> <span class="ruby-operator">==</span> <span class="ruby-value">:network_admin</span> <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">mode</span> <span class="ruby-operator">==</span> <span class="ruby-value">:co_admin</span> <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">mode</span> <span class="ruby-operator">==</span> <span class="ruby-value">:server_admin</span>
+117:           <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">true</span>
+118:         <span class="ruby-keyword kw">end</span>      
+119:       }
+120:       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">false</span>
+121:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="log-n-method" class="method-detail ">
+				<a name="method-i-logIn"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">logIn</span><span
+						class="method-args">(username)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+<a href="Log.html">Log</a> this user in with the given user name. Marks the
+user as logged in but does not send anything to the IRC server.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="log-n-source">
+<pre>
+    <span class="ruby-comment cmt"># File includes/user.rb, line 83</span>
+83:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">logIn</span>(<span class="ruby-identifier">username</span>)
+84:       <span class="ruby-comment cmt">#TODO: Make this send stuff to the server. We shouldn't be handling that</span>
+85:       <span class="ruby-comment cmt"># in the modules. In fact, it should be done in the protocol handler,</span>
+86:       <span class="ruby-comment cmt"># since it won't be the same for each!</span>
+87:       <span class="ruby-identifier">$log</span>.<span class="ruby-identifier">debug</span> <span class="ruby-value str">'user'</span>, <span class="ruby-node">&quot;User at nick #{@nick} has logged in as #{username}&quot;</span>
+88:       <span class="ruby-ivar">@svid</span> = <span class="ruby-identifier">username</span>
+89:       <span class="ruby-ivar">@loggedIn</span> = <span class="ruby-keyword kw">true</span>
+90:       <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">events</span>.<span class="ruby-identifier">event</span>(<span class="ruby-value">:logged_in</span>, <span class="ruby-keyword kw">self</span>)
+91:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="logged-in--method" class="method-detail ">
+				<a name="method-i-logged_in%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">logged_in?</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Check whether or not the user is logged in.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="logged-in--source">
+<pre>
+    <span class="ruby-comment cmt"># File includes/user.rb, line 50</span>
+50:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">logged_in?</span>
+51:       <span class="ruby-ivar">@loggedIn</span>
+52:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="modes-method" class="method-detail ">
+				<a name="method-i-modes"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">modes</span><span
+						class="method-args">(modes)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Called when a MODE message is received for this user. Updates the array of
+modes by parsing the mode update string to find +/- changes.
+</p>
+<p>
+Parameter is the mode change string (<b>not</b> an origin info object).
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="modes-source">
+<pre>
+    <span class="ruby-comment cmt"># File includes/user.rb, line 60</span>
+60:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">modes</span>(<span class="ruby-identifier">modes</span>)
+61:       <span class="ruby-identifier">plus</span> = <span class="ruby-keyword kw">true</span>
+62: 
+63:       <span class="ruby-identifier">modes</span>.<span class="ruby-identifier">each_char</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span>
+64:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">c</span> <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;+&quot;</span>
+65:           <span class="ruby-identifier">plus</span> = <span class="ruby-keyword kw">true</span>
+66:         <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">c</span> <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;-&quot;</span>
+67:           <span class="ruby-identifier">plus</span> = <span class="ruby-keyword kw">false</span>
+68:         <span class="ruby-keyword kw">else</span>
+69:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">plus</span>
+70:             <span class="ruby-ivar">@modes</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">c</span>
+71:           <span class="ruby-keyword kw">else</span>
+72:             <span class="ruby-ivar">@modes</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">c</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@modes</span>.<span class="ruby-identifier">include?</span> <span class="ruby-identifier">c</span>
+73:           <span class="ruby-keyword kw">end</span>
+74:         <span class="ruby-keyword kw">end</span>
+75:       }
+76:       <span class="ruby-identifier">$log</span>.<span class="ruby-identifier">debug</span> <span class="ruby-value str">'user'</span>, <span class="ruby-node">&quot;Updated modes for #{nick}: #{@modes.join(&quot;, &quot;)}&quot;</span>
+77:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

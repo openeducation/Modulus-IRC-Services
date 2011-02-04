@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: Modulus::Command</title>
+
+	<link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../includes/command_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="includes/command.rb">includes/command.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link"><a href="../Object.html">Object</a></p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-c-new">::new</a></li>
+					
+					<li><a href="#method-i-run">#run</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../LICENSE.html">LICENSE</a></li>
+				
+					<li class="file"><a href="../README.html">README</a></li>
+				
+					<li class="file"><a href="../Rakefile.html">Rakefile</a></li>
+				
+					<li class="file"><a href="../head.html">head</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../Modulus.html">Modulus</a></li>
+				
+					<li><a href="../Modulus/Account.html">Modulus::Account</a></li>
+				
+					<li><a href="../Modulus/BanServ.html">Modulus::BanServ</a></li>
+				
+					<li><a href="../Modulus/BanServ/Autokill.html">Modulus::BanServ::Autokill</a></li>
+				
+					<li><a href="../Modulus/BanServ/Regexkill.html">Modulus::BanServ::Regexkill</a></li>
+				
+					<li><a href="../Modulus/BotServ.html">Modulus::BotServ</a></li>
+				
+					<li><a href="../Modulus/BotServ/BotServBot.html">Modulus::BotServ::BotServBot</a></li>
+				
+					<li><a href="../Modulus/BotServ/BotServChannel.html">Modulus::BotServ::BotServChannel</a></li>
+				
+					<li><a href="../Modulus/ChanServ.html">Modulus::ChanServ</a></li>
+				
+					<li><a href="../Modulus/ChanServ/Channel.html">Modulus::ChanServ::Channel</a></li>
+				
+					<li><a href="../Modulus/ChanServ/ChannelUsers.html">Modulus::ChanServ::ChannelUsers</a></li>
+				
+					<li><a href="../Modulus/Channel.html">Modulus::Channel</a></li>
+				
+					<li><a href="../Modulus/ChannelUser.html">Modulus::ChannelUser</a></li>
+				
+					<li><a href="../Modulus/Channels.html">Modulus::Channels</a></li>
+				
+					<li><a href="../Modulus/Clients.html">Modulus::Clients</a></li>
+				
+					<li><a href="../Modulus/Command.html">Modulus::Command</a></li>
+				
+					<li><a href="../Modulus/Config.html">Modulus::Config</a></li>
+				
+					<li><a href="../Modulus/EventCallback.html">Modulus::EventCallback</a></li>
+				
+					<li><a href="../Modulus/Events.html">Modulus::Events</a></li>
+				
+					<li><a href="../Modulus/Hook.html">Modulus::Hook</a></li>
+				
+					<li><a href="../Modulus/HostServ.html">Modulus::HostServ</a></li>
+				
+					<li><a href="../Modulus/HostServ/Host.html">Modulus::HostServ::Host</a></li>
+				
+					<li><a href="../Modulus/Log.html">Modulus::Log</a></li>
+				
+					<li><a href="../Modulus/Module.html">Modulus::Module</a></li>
+				
+					<li><a href="../Modulus/ModuleManager.html">Modulus::ModuleManager</a></li>
+				
+					<li><a href="../Modulus/NickServ.html">Modulus::NickServ</a></li>
+				
+					<li><a href="../Modulus/NickServ/Account.html">Modulus::NickServ::Account</a></li>
+				
+					<li><a href="../Modulus/NickServ/Nick.html">Modulus::NickServ::Nick</a></li>
+				
+					<li><a href="../Modulus/OperServ.html">Modulus::OperServ</a></li>
+				
+					<li><a href="../Modulus/OriginInfo.html">Modulus::OriginInfo</a></li>
+				
+					<li><a href="../Modulus/Parser.html">Modulus::Parser</a></li>
+				
+					<li><a href="../Modulus/ProtocolAbstraction.html">Modulus::ProtocolAbstraction</a></li>
+				
+					<li><a href="../Modulus/ProtocolAbstractionMixin.html">Modulus::ProtocolAbstractionMixin</a></li>
+				
+					<li><a href="../Modulus/Pseudoclient.html">Modulus::Pseudoclient</a></li>
+				
+					<li><a href="../Modulus/QuoteServ.html">Modulus::QuoteServ</a></li>
+				
+					<li><a href="../Modulus/QuoteServ/Quote.html">Modulus::QuoteServ::Quote</a></li>
+				
+					<li><a href="../Modulus/QuoteServ/QuoteChannel.html">Modulus::QuoteServ::QuoteChannel</a></li>
+				
+					<li><a href="../Modulus/QuoteServ/QuoteRater.html">Modulus::QuoteServ::QuoteRater</a></li>
+				
+					<li><a href="../Modulus/ReservedNick.html">Modulus::ReservedNick</a></li>
+				
+					<li><a href="../Modulus/Service.html">Modulus::Service</a></li>
+				
+					<li><a href="../Modulus/ServiceModules.html">Modulus::ServiceModules</a></li>
+				
+					<li><a href="../Modulus/User.html">Modulus::User</a></li>
+				
+					<li><a href="../Modulus/Users.html">Modulus::Users</a></li>
+				
+					<li><a href="../Object.html">Object</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">Modulus::Command</h1>
+
+		<div id="description">
+			
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+		<div id="attribute-method-details" class="method-section section">
+			<h3 class="section-header">Attributes</h3>
+
+			
+			<div id="command-ext-attribute-method" class="method-detail">
+				<a name="commandText"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">commandText</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+			<div id="short-esc-attribute-method" class="method-detail">
+				<a name="shortDesc"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">shortDesc</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+			<div id="long-esc-attribute-method" class="method-detail">
+				<a name="longDesc"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">longDesc</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+			<div id="allow-antasy-attribute-method" class="method-detail">
+				<a name="allowFantasy"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">allowFantasy</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+		</div>
+		
+
+		<!-- Methods -->
+		
+		<div id="public-class-method-details" class="method-section section">
+			<h3 class="section-header">Public Class Methods</h3>
+
+		
+			<div id="new-method" class="method-detail ">
+				<a name="method-c-new"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">new</span><span
+						class="method-args">(sender, funcName, commandText, shortDesc, longDesc, allowFantasy)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Create a new command object. This is called when the hook is being created
+and will use all of the same parameters.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="new-source">
+<pre>
+    <span class="ruby-comment cmt"># File includes/command.rb, line 29</span>
+29:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">sender</span>, <span class="ruby-identifier">funcName</span>, <span class="ruby-identifier">commandText</span>, <span class="ruby-identifier">shortDesc</span>, <span class="ruby-identifier">longDesc</span>, <span class="ruby-identifier">allowFantasy</span>)
+30:       <span class="ruby-ivar">@owner</span> = <span class="ruby-identifier">sender</span>
+31:       <span class="ruby-ivar">@commandText</span> = <span class="ruby-identifier">commandText</span>
+32:       <span class="ruby-ivar">@shortDesc</span> = <span class="ruby-identifier">shortDesc</span>
+33:       <span class="ruby-ivar">@longDesc</span> = <span class="ruby-identifier">longDesc</span>
+34:       <span class="ruby-ivar">@funcName</span> = <span class="ruby-identifier">funcName</span>
+35:       <span class="ruby-ivar">@allowFantasy</span> = <span class="ruby-identifier">allowFantasy</span>
+36:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="run-method" class="method-detail ">
+				<a name="method-i-run"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">run</span><span
+						class="method-args">(origin)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Run the command. The only parameter is the origin info that triggered the
+command.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="run-source">
+<pre>
+    <span class="ruby-comment cmt"># File includes/command.rb, line 42</span>
+42:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">run</span>(<span class="ruby-identifier">origin</span>)
+43:       <span class="ruby-identifier">$log</span>.<span class="ruby-identifier">debug</span> <span class="ruby-value str">'command'</span>, <span class="ruby-node">&quot;Running command #{@commandText} for #{origin.source}&quot;</span>
+44:       <span class="ruby-identifier">eval</span>(<span class="ruby-node">&quot;@owner.#{@funcName}(origin)&quot;</span>)
+45:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

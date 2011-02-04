@@ -1,0 +1,928 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: Modulus::Parser</title>
+
+	<link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../includes/parse_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="includes/parse.rb">includes/parse.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link"><a href="../Object.html">Object</a></p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-c-new">::new</a></li>
+					
+					<li><a href="#method-i-handleJoin">#handleJoin</a></li>
+					
+					<li><a href="#method-i-handleKick">#handleKick</a></li>
+					
+					<li><a href="#method-i-handleKill">#handleKill</a></li>
+					
+					<li><a href="#method-i-handleMode">#handleMode</a></li>
+					
+					<li><a href="#method-i-handleNick">#handleNick</a></li>
+					
+					<li><a href="#method-i-handleNotice">#handleNotice</a></li>
+					
+					<li><a href="#method-i-handleOther">#handleOther</a></li>
+					
+					<li><a href="#method-i-handlePart">#handlePart</a></li>
+					
+					<li><a href="#method-i-handlePrivmsg">#handlePrivmsg</a></li>
+					
+					<li><a href="#method-i-handleQuit">#handleQuit</a></li>
+					
+					<li><a href="#method-i-handleServer">#handleServer</a></li>
+					
+					<li><a href="#method-i-handleServerQuit">#handleServerQuit</a></li>
+					
+					<li><a href="#method-i-parse">#parse</a></li>
+					
+					<li><a href="#method-i-work">#work</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../LICENSE.html">LICENSE</a></li>
+				
+					<li class="file"><a href="../README.html">README</a></li>
+				
+					<li class="file"><a href="../Rakefile.html">Rakefile</a></li>
+				
+					<li class="file"><a href="../head.html">head</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../Modulus.html">Modulus</a></li>
+				
+					<li><a href="../Modulus/Account.html">Modulus::Account</a></li>
+				
+					<li><a href="../Modulus/BanServ.html">Modulus::BanServ</a></li>
+				
+					<li><a href="../Modulus/BanServ/Autokill.html">Modulus::BanServ::Autokill</a></li>
+				
+					<li><a href="../Modulus/BanServ/Regexkill.html">Modulus::BanServ::Regexkill</a></li>
+				
+					<li><a href="../Modulus/BotServ.html">Modulus::BotServ</a></li>
+				
+					<li><a href="../Modulus/BotServ/BotServBot.html">Modulus::BotServ::BotServBot</a></li>
+				
+					<li><a href="../Modulus/BotServ/BotServChannel.html">Modulus::BotServ::BotServChannel</a></li>
+				
+					<li><a href="../Modulus/ChanServ.html">Modulus::ChanServ</a></li>
+				
+					<li><a href="../Modulus/ChanServ/Channel.html">Modulus::ChanServ::Channel</a></li>
+				
+					<li><a href="../Modulus/ChanServ/ChannelUsers.html">Modulus::ChanServ::ChannelUsers</a></li>
+				
+					<li><a href="../Modulus/Channel.html">Modulus::Channel</a></li>
+				
+					<li><a href="../Modulus/ChannelUser.html">Modulus::ChannelUser</a></li>
+				
+					<li><a href="../Modulus/Channels.html">Modulus::Channels</a></li>
+				
+					<li><a href="../Modulus/Clients.html">Modulus::Clients</a></li>
+				
+					<li><a href="../Modulus/Command.html">Modulus::Command</a></li>
+				
+					<li><a href="../Modulus/Config.html">Modulus::Config</a></li>
+				
+					<li><a href="../Modulus/EventCallback.html">Modulus::EventCallback</a></li>
+				
+					<li><a href="../Modulus/Events.html">Modulus::Events</a></li>
+				
+					<li><a href="../Modulus/Hook.html">Modulus::Hook</a></li>
+				
+					<li><a href="../Modulus/HostServ.html">Modulus::HostServ</a></li>
+				
+					<li><a href="../Modulus/HostServ/Host.html">Modulus::HostServ::Host</a></li>
+				
+					<li><a href="../Modulus/Log.html">Modulus::Log</a></li>
+				
+					<li><a href="../Modulus/Module.html">Modulus::Module</a></li>
+				
+					<li><a href="../Modulus/ModuleManager.html">Modulus::ModuleManager</a></li>
+				
+					<li><a href="../Modulus/NickServ.html">Modulus::NickServ</a></li>
+				
+					<li><a href="../Modulus/NickServ/Account.html">Modulus::NickServ::Account</a></li>
+				
+					<li><a href="../Modulus/NickServ/Nick.html">Modulus::NickServ::Nick</a></li>
+				
+					<li><a href="../Modulus/OperServ.html">Modulus::OperServ</a></li>
+				
+					<li><a href="../Modulus/OriginInfo.html">Modulus::OriginInfo</a></li>
+				
+					<li><a href="../Modulus/Parser.html">Modulus::Parser</a></li>
+				
+					<li><a href="../Modulus/ProtocolAbstraction.html">Modulus::ProtocolAbstraction</a></li>
+				
+					<li><a href="../Modulus/ProtocolAbstractionMixin.html">Modulus::ProtocolAbstractionMixin</a></li>
+				
+					<li><a href="../Modulus/Pseudoclient.html">Modulus::Pseudoclient</a></li>
+				
+					<li><a href="../Modulus/QuoteServ.html">Modulus::QuoteServ</a></li>
+				
+					<li><a href="../Modulus/QuoteServ/Quote.html">Modulus::QuoteServ::Quote</a></li>
+				
+					<li><a href="../Modulus/QuoteServ/QuoteChannel.html">Modulus::QuoteServ::QuoteChannel</a></li>
+				
+					<li><a href="../Modulus/QuoteServ/QuoteRater.html">Modulus::QuoteServ::QuoteRater</a></li>
+				
+					<li><a href="../Modulus/ReservedNick.html">Modulus::ReservedNick</a></li>
+				
+					<li><a href="../Modulus/Service.html">Modulus::Service</a></li>
+				
+					<li><a href="../Modulus/ServiceModules.html">Modulus::ServiceModules</a></li>
+				
+					<li><a href="../Modulus/User.html">Modulus::User</a></li>
+				
+					<li><a href="../Modulus/Users.html">Modulus::Users</a></li>
+				
+					<li><a href="../Object.html">Object</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">Modulus::Parser</h1>
+
+		<div id="description">
+			
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+
+		<!-- Methods -->
+		
+		<div id="public-class-method-details" class="method-section section">
+			<h3 class="section-header">Public Class Methods</h3>
+
+		
+			<div id="new-method" class="method-detail ">
+				<a name="method-c-new"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">new</span><span
+						class="method-args">(cmdList)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Create a new parser object.
+</p>
+<p>
+The only parmeter is a list of valid commands (message types) that may be
+parsed by this class.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="new-source">
+<pre>
+    <span class="ruby-comment cmt"># File includes/parse.rb, line 29</span>
+29:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">cmdList</span>)
+30:       <span class="ruby-ivar">@cmdList</span> = <span class="ruby-identifier">cmdList</span>
+31:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="handle-oin-method" class="method-detail ">
+				<a name="method-i-handleJoin"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">handleJoin</span><span
+						class="method-args">(origin)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="handle-oin-source">
+<pre>
+     <span class="ruby-comment cmt"># File includes/parse.rb, line 184</span>
+184:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">handleJoin</span>(<span class="ruby-identifier">origin</span>)
+185:       <span class="ruby-identifier">$log</span>.<span class="ruby-identifier">debug</span> <span class="ruby-value str">&quot;parser&quot;</span>, <span class="ruby-node">&quot;Handling join for #{origin.source} -&gt; #{origin.message}&quot;</span>
+186:       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">handleOther</span> <span class="ruby-identifier">origin</span>
+187:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="handle-ick-method" class="method-detail ">
+				<a name="method-i-handleKick"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">handleKick</span><span
+						class="method-args">(origin)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="handle-ick-source">
+<pre>
+     <span class="ruby-comment cmt"># File includes/parse.rb, line 156</span>
+156:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">handleKick</span>(<span class="ruby-identifier">origin</span>)
+157:       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">handleOther</span> <span class="ruby-identifier">origin</span>
+158:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="handle-ill-method" class="method-detail ">
+				<a name="method-i-handleKill"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">handleKill</span><span
+						class="method-args">(origin)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+This is triggered by the protocol parser when we receive a KILL command.
+</p>
+<p>
+The only parameter is the origin info object for the message that triggered
+the call.
+</p>
+<p>
+If the KILL is meant for one of our services, we&#8217;ll go ahead and tell
+the IRC server that the client just connected again. If it is not, then
+we&#8217;ll just delete our record for the killed user.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="handle-ill-source">
+<pre>
+     <span class="ruby-comment cmt"># File includes/parse.rb, line 146</span>
+146:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">handleKill</span>(<span class="ruby-identifier">origin</span>)
+147:       <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">clients</span>.<span class="ruby-identifier">isMyClient?</span> <span class="ruby-identifier">origin</span>.<span class="ruby-identifier">target</span>
+148:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">clients</span>.<span class="ruby-identifier">connect</span> <span class="ruby-identifier">origin</span>.<span class="ruby-identifier">target</span>
+149:       <span class="ruby-keyword kw">else</span>
+150:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">users</span>.<span class="ruby-identifier">delete</span> <span class="ruby-identifier">origin</span>.<span class="ruby-identifier">target</span>
+151:       <span class="ruby-keyword kw">end</span>
+152: 
+153:       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">work</span>(<span class="ruby-identifier">origin</span>)
+154:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="handle-ode-method" class="method-detail ">
+				<a name="method-i-handleMode"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">handleMode</span><span
+						class="method-args">(origin)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="handle-ode-source">
+<pre>
+     <span class="ruby-comment cmt"># File includes/parse.rb, line 194</span>
+194:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">handleMode</span>(<span class="ruby-identifier">origin</span>)
+195:       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">handleOther</span> <span class="ruby-identifier">origin</span>
+196: 
+197:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="handle-ick-method" class="method-detail ">
+				<a name="method-i-handleNick"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">handleNick</span><span
+						class="method-args">(origin)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+If we got a NICK message, we&#8217;ll figure out what to do with it in this
+function.
+</p>
+<p>
+The only parameter is the ogiin info object for the message that  triggered
+the call.
+</p>
+<p>
+In here, we&#8217;ll figure out if this is a new user connecting to IRC or
+if it is someone changing nicks.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="handle-ick-source">
+<pre>
+     <span class="ruby-comment cmt"># File includes/parse.rb, line 118</span>
+118:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">handleNick</span>(<span class="ruby-identifier">origin</span>)
+119:       <span class="ruby-comment cmt"># Have the protocol handler figure out how to make it a user object since</span>
+120:       <span class="ruby-comment cmt"># nobody follows 2813 just right.</span>
+121:       <span class="ruby-comment cmt"># TODO: Move part of this to protocol handler</span>
+122:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">origin</span>.<span class="ruby-identifier">arr</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-value">4</span>
+123:         <span class="ruby-comment cmt">#nick cahnge</span>
+124:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">users</span>.<span class="ruby-identifier">changeNick</span>(<span class="ruby-identifier">origin</span>.<span class="ruby-identifier">source</span>, <span class="ruby-identifier">origin</span>.<span class="ruby-identifier">arr</span>[<span class="ruby-value">2</span>], <span class="ruby-identifier">origin</span>.<span class="ruby-identifier">arr</span>[<span class="ruby-value">3</span>])
+125:       <span class="ruby-keyword kw">else</span>
+126:         <span class="ruby-identifier">user</span> = <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">link</span>.<span class="ruby-identifier">createUser</span>(<span class="ruby-identifier">origin</span>)
+127:         <span class="ruby-identifier">$log</span>.<span class="ruby-identifier">debug</span> <span class="ruby-value str">&quot;parser&quot;</span>, <span class="ruby-node">&quot;Added user #{user.nick}!#{user.username}@#{user.hostname} (#{user.svid} / #{user.timestamp}) after receiving NICK.&quot;</span>
+128: 
+129:         <span class="ruby-comment cmt"># Add the user to whatever this is.</span>
+130:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">users</span>.<span class="ruby-identifier">addUser</span>(<span class="ruby-identifier">user</span>)
+131:       <span class="ruby-keyword kw">end</span>
+132: 
+133:       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">work</span>(<span class="ruby-identifier">origin</span>)
+134:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="handle-otice-method" class="method-detail ">
+				<a name="method-i-handleNotice"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">handleNotice</span><span
+						class="method-args">(origin)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+This function also calls core&#8217;s run commands function.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="handle-otice-source">
+<pre>
+     <span class="ruby-comment cmt"># File includes/parse.rb, line 171</span>
+171:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">handleNotice</span>(<span class="ruby-identifier">origin</span>)
+172:       <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">runCmds</span>(<span class="ruby-identifier">origin</span>)
+173:       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">handleOther</span> <span class="ruby-identifier">origin</span>
+174:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="handle-ther-method" class="method-detail ">
+				<a name="method-i-handleOther"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">handleOther</span><span
+						class="method-args">(origin)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Pass this to the parser work function.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="handle-ther-source">
+<pre>
+     <span class="ruby-comment cmt"># File includes/parse.rb, line 212</span>
+212:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">handleOther</span>(<span class="ruby-identifier">origin</span>)
+213:       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">work</span>(<span class="ruby-identifier">origin</span>)
+214:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="handle-art-method" class="method-detail ">
+				<a name="method-i-handlePart"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">handlePart</span><span
+						class="method-args">(origin)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="handle-art-source">
+<pre>
+     <span class="ruby-comment cmt"># File includes/parse.rb, line 189</span>
+189:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">handlePart</span>(<span class="ruby-identifier">origin</span>)
+190:       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">handleOther</span> <span class="ruby-identifier">origin</span>
+191: 
+192:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="handle-rivmsg-method" class="method-detail ">
+				<a name="method-i-handlePrivmsg"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">handlePrivmsg</span><span
+						class="method-args">(origin)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+This function also calls core&#8217;s run commands function.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="handle-rivmsg-source">
+<pre>
+     <span class="ruby-comment cmt"># File includes/parse.rb, line 163</span>
+163:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">handlePrivmsg</span>(<span class="ruby-identifier">origin</span>)
+164:       <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">runCmds</span>(<span class="ruby-identifier">origin</span>)
+165:       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">handleOther</span> <span class="ruby-identifier">origin</span>
+166:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="handle-uit-method" class="method-detail ">
+				<a name="method-i-handleQuit"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">handleQuit</span><span
+						class="method-args">(origin)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Delete the associated user from our user list.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="handle-uit-source">
+<pre>
+     <span class="ruby-comment cmt"># File includes/parse.rb, line 179</span>
+179:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">handleQuit</span>(<span class="ruby-identifier">origin</span>)
+180:       <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">users</span>.<span class="ruby-identifier">delete</span> <span class="ruby-identifier">origin</span>.<span class="ruby-identifier">target</span>
+181:       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">work</span>(<span class="ruby-identifier">origin</span>)
+182:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="handle-erver-method" class="method-detail ">
+				<a name="method-i-handleServer"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">handleServer</span><span
+						class="method-args">(origin)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="handle-erver-source">
+<pre>
+     <span class="ruby-comment cmt"># File includes/parse.rb, line 199</span>
+199:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">handleServer</span>(<span class="ruby-identifier">origin</span>)
+200:       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">handleOther</span> <span class="ruby-identifier">origin</span>
+201: 
+202:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="handle-erver-uit-method" class="method-detail ">
+				<a name="method-i-handleServerQuit"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">handleServerQuit</span><span
+						class="method-args">(origin)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="handle-erver-uit-source">
+<pre>
+     <span class="ruby-comment cmt"># File includes/parse.rb, line 204</span>
+204:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">handleServerQuit</span>(<span class="ruby-identifier">origin</span>)
+205:       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">handleOther</span> <span class="ruby-identifier">origin</span>
+206: 
+207:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="parse-method" class="method-detail ">
+				<a name="method-i-parse"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">parse</span><span
+						class="method-args">(line)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Parse a raw line that has arrived from the IRC server.
+</p>
+<p>
+During parsing, we will determine what type of message this is, who caused
+it to be sent, where it is going, and whatever else is relevant.
+</p>
+<p>
+Once this information has been determined, we feed it to the
+protocol&#8217;s parser. If the message is a server PING meant to check for
+us being alive, we&#8217;ll answer it here (we wouldn&#8217;t want to keep
+the server waiting too long, would we?) before passing the data to the
+protocol parser.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="parse-source">
+<pre>
+    <span class="ruby-comment cmt"># File includes/parse.rb, line 44</span>
+44:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">parse</span>(<span class="ruby-identifier">line</span>)
+45: 
+46:       <span class="ruby-identifier">line</span> = <span class="ruby-identifier">line</span>.<span class="ruby-identifier">strip</span>
+47: 
+48:       <span class="ruby-comment cmt"># No sense in parsing an empty line.</span>
+49:       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">line</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+50: 
+51:       <span class="ruby-identifier">origin</span> = <span class="ruby-value str">&quot;&quot;</span>
+52:       <span class="ruby-identifier">cmd</span> = <span class="ruby-value str">&quot;&quot;</span>
+53:       <span class="ruby-identifier">lineArr</span> = <span class="ruby-identifier">line</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">&quot; &quot;</span>)
+54: 
+55:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">line</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;:&quot;</span>
+56:         <span class="ruby-comment cmt"># First bit is going to be a source of some kind!</span>
+57:         <span class="ruby-identifier">origin</span> = <span class="ruby-identifier">lineArr</span>[<span class="ruby-value">0</span>][<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-identifier">lineArr</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">length</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>]
+58:         <span class="ruby-identifier">cmd</span> = <span class="ruby-identifier">lineArr</span>[<span class="ruby-value">1</span>]
+59:         <span class="ruby-identifier">cmdName</span> = <span class="ruby-ivar">@cmdList</span>[<span class="ruby-identifier">cmd</span>]
+60: 
+61:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">cmdName</span> <span class="ruby-operator">==</span> <span class="ruby-keyword kw">nil</span>
+62:           <span class="ruby-identifier">$log</span>.<span class="ruby-identifier">warning</span> <span class="ruby-value str">'parse'</span>, <span class="ruby-node">&quot;Received unknown message type #{cmd} from server.&quot;</span>
+63:           <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;--&gt; #{origin} sent unknown cmd #{cmd} (#{line})&quot;</span>
+64:           <span class="ruby-keyword kw">return</span>
+65:         <span class="ruby-keyword kw">else</span>
+66: 
+67:           <span class="ruby-identifier">line</span>[<span class="ruby-value">0</span>] = <span class="ruby-value str">&quot;&quot;</span>
+68:           <span class="ruby-identifier">msg</span> = <span class="ruby-value str">&quot;&quot;</span>
+69:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">line</span>.<span class="ruby-identifier">include?</span> <span class="ruby-value str">&quot;:&quot;</span>
+70:             <span class="ruby-comment cmt">#splt = line.split(&quot;:&quot;)</span>
+71:             <span class="ruby-comment cmt">#msg = splt[1..splt.length-1].join(&quot; &quot;)</span>
+72:             <span class="ruby-identifier">msg</span> = <span class="ruby-identifier">line</span>[<span class="ruby-identifier">line</span>.<span class="ruby-identifier">index</span>(<span class="ruby-value str">&quot;:&quot;</span>)<span class="ruby-operator">+</span><span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-identifier">line</span>.<span class="ruby-identifier">length</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>]
+73:           <span class="ruby-keyword kw">else</span>
+74:             <span class="ruby-identifier">msg</span> = <span class="ruby-identifier">line</span>
+75:           <span class="ruby-keyword kw">end</span>
+76: 
+77:           <span class="ruby-identifier">origin</span> = <span class="ruby-constant">OriginInfo</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">line</span>, <span class="ruby-identifier">origin</span>, <span class="ruby-identifier">lineArr</span>[<span class="ruby-value">2</span>], <span class="ruby-identifier">msg</span>, <span class="ruby-identifier">cmdName</span>)
+78:           <span class="ruby-comment cmt">#puts &quot;--&gt; #{origin} sent #{cmdName} (#{line})&quot;</span>
+79:         <span class="ruby-keyword kw">end</span>
+80:       <span class="ruby-keyword kw">else</span>
+81:         <span class="ruby-identifier">cmd</span> = <span class="ruby-identifier">lineArr</span>[<span class="ruby-value">0</span>]
+82:         <span class="ruby-identifier">cmdName</span> = <span class="ruby-ivar">@cmdList</span>[<span class="ruby-identifier">cmd</span>]
+83: 
+84:         <span class="ruby-identifier">origin</span> = <span class="ruby-constant">OriginInfo</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">line</span>, <span class="ruby-identifier">origin</span>, <span class="ruby-identifier">lineArr</span>[<span class="ruby-value">1</span>], <span class="ruby-identifier">cmd</span>, <span class="ruby-identifier">cmdName</span>)
+85:         <span class="ruby-comment cmt">#puts &quot;-&gt;&gt; unknown sent (#{line})&quot;</span>
+86:       <span class="ruby-keyword kw">end</span>
+87: 
+88:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">origin</span>.<span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-value">:ping</span>
+89:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">link</span>.<span class="ruby-identifier">sendPong</span>(<span class="ruby-identifier">origin</span>)
+90:       <span class="ruby-keyword kw">end</span>
+91: 
+92:       <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;#{origin}&quot;</span>
+93:       <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">link</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">origin</span>)
+94:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="work-method" class="method-detail ">
+				<a name="method-i-work"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">work</span><span
+						class="method-args">(origin)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+This function originally took care of the entire parsing and protocol
+parsing deal, but now just hands the message off to the core&#8217;s
+function to run hooks.
+</p>
+<p>
+The only parameter is an origin info object.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="work-source">
+<pre>
+     <span class="ruby-comment cmt"># File includes/parse.rb, line 103</span>
+103:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">work</span>(<span class="ruby-identifier">origin</span>)
+104:       <span class="ruby-identifier">$log</span>.<span class="ruby-identifier">debug</span> <span class="ruby-value str">'parser'</span>, <span class="ruby-node">&quot;Doing work on #{origin}&quot;</span>
+105:       <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">runHooks</span>(<span class="ruby-identifier">origin</span>)
+106:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

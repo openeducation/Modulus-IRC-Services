@@ -1,0 +1,960 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: Modulus::Users</title>
+
+	<link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../includes/users_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="includes/users.rb">includes/users.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link"><a href="../Object.html">Object</a></p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-c-new">::new</a></li>
+					
+					<li><a href="#method-i-addUser">#addUser</a></li>
+					
+					<li><a href="#method-i-changeHostname">#changeHostname</a></li>
+					
+					<li><a href="#method-i-changeModes">#changeModes</a></li>
+					
+					<li><a href="#method-i-changeNick">#changeNick</a></li>
+					
+					<li><a href="#method-i-changeSVID">#changeSVID</a></li>
+					
+					<li><a href="#method-i-changeUsername">#changeUsername</a></li>
+					
+					<li><a href="#method-i-delByNick">#delByNick</a></li>
+					
+					<li><a href="#method-i-delBySVID">#delBySVID</a></li>
+					
+					<li><a href="#method-i-delete">#delete</a></li>
+					
+					<li><a href="#method-i-find">#find</a></li>
+					
+					<li><a href="#method-i-findByNick">#findByNick</a></li>
+					
+					<li><a href="#method-i-findBySVID">#findBySVID</a></li>
+					
+					<li><a href="#method-i-logIn">#logIn</a></li>
+					
+					<li><a href="#method-i-logOut">#logOut</a></li>
+					
+					<li><a href="#method-i-on_mode">#on_mode</a></li>
+					
+					<li><a href="#method-i-on_set_host">#on_set_host</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../LICENSE.html">LICENSE</a></li>
+				
+					<li class="file"><a href="../README.html">README</a></li>
+				
+					<li class="file"><a href="../Rakefile.html">Rakefile</a></li>
+				
+					<li class="file"><a href="../head.html">head</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../Modulus.html">Modulus</a></li>
+				
+					<li><a href="../Modulus/Account.html">Modulus::Account</a></li>
+				
+					<li><a href="../Modulus/BanServ.html">Modulus::BanServ</a></li>
+				
+					<li><a href="../Modulus/BanServ/Autokill.html">Modulus::BanServ::Autokill</a></li>
+				
+					<li><a href="../Modulus/BanServ/Regexkill.html">Modulus::BanServ::Regexkill</a></li>
+				
+					<li><a href="../Modulus/BotServ.html">Modulus::BotServ</a></li>
+				
+					<li><a href="../Modulus/BotServ/BotServBot.html">Modulus::BotServ::BotServBot</a></li>
+				
+					<li><a href="../Modulus/BotServ/BotServChannel.html">Modulus::BotServ::BotServChannel</a></li>
+				
+					<li><a href="../Modulus/ChanServ.html">Modulus::ChanServ</a></li>
+				
+					<li><a href="../Modulus/ChanServ/Channel.html">Modulus::ChanServ::Channel</a></li>
+				
+					<li><a href="../Modulus/ChanServ/ChannelUsers.html">Modulus::ChanServ::ChannelUsers</a></li>
+				
+					<li><a href="../Modulus/Channel.html">Modulus::Channel</a></li>
+				
+					<li><a href="../Modulus/ChannelUser.html">Modulus::ChannelUser</a></li>
+				
+					<li><a href="../Modulus/Channels.html">Modulus::Channels</a></li>
+				
+					<li><a href="../Modulus/Clients.html">Modulus::Clients</a></li>
+				
+					<li><a href="../Modulus/Command.html">Modulus::Command</a></li>
+				
+					<li><a href="../Modulus/Config.html">Modulus::Config</a></li>
+				
+					<li><a href="../Modulus/EventCallback.html">Modulus::EventCallback</a></li>
+				
+					<li><a href="../Modulus/Events.html">Modulus::Events</a></li>
+				
+					<li><a href="../Modulus/Hook.html">Modulus::Hook</a></li>
+				
+					<li><a href="../Modulus/HostServ.html">Modulus::HostServ</a></li>
+				
+					<li><a href="../Modulus/HostServ/Host.html">Modulus::HostServ::Host</a></li>
+				
+					<li><a href="../Modulus/Log.html">Modulus::Log</a></li>
+				
+					<li><a href="../Modulus/Module.html">Modulus::Module</a></li>
+				
+					<li><a href="../Modulus/ModuleManager.html">Modulus::ModuleManager</a></li>
+				
+					<li><a href="../Modulus/NickServ.html">Modulus::NickServ</a></li>
+				
+					<li><a href="../Modulus/NickServ/Account.html">Modulus::NickServ::Account</a></li>
+				
+					<li><a href="../Modulus/NickServ/Nick.html">Modulus::NickServ::Nick</a></li>
+				
+					<li><a href="../Modulus/OperServ.html">Modulus::OperServ</a></li>
+				
+					<li><a href="../Modulus/OriginInfo.html">Modulus::OriginInfo</a></li>
+				
+					<li><a href="../Modulus/Parser.html">Modulus::Parser</a></li>
+				
+					<li><a href="../Modulus/ProtocolAbstraction.html">Modulus::ProtocolAbstraction</a></li>
+				
+					<li><a href="../Modulus/ProtocolAbstractionMixin.html">Modulus::ProtocolAbstractionMixin</a></li>
+				
+					<li><a href="../Modulus/Pseudoclient.html">Modulus::Pseudoclient</a></li>
+				
+					<li><a href="../Modulus/QuoteServ.html">Modulus::QuoteServ</a></li>
+				
+					<li><a href="../Modulus/QuoteServ/Quote.html">Modulus::QuoteServ::Quote</a></li>
+				
+					<li><a href="../Modulus/QuoteServ/QuoteChannel.html">Modulus::QuoteServ::QuoteChannel</a></li>
+				
+					<li><a href="../Modulus/QuoteServ/QuoteRater.html">Modulus::QuoteServ::QuoteRater</a></li>
+				
+					<li><a href="../Modulus/ReservedNick.html">Modulus::ReservedNick</a></li>
+				
+					<li><a href="../Modulus/Service.html">Modulus::Service</a></li>
+				
+					<li><a href="../Modulus/ServiceModules.html">Modulus::ServiceModules</a></li>
+				
+					<li><a href="../Modulus/User.html">Modulus::User</a></li>
+				
+					<li><a href="../Modulus/Users.html">Modulus::Users</a></li>
+				
+					<li><a href="../Object.html">Object</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">Modulus::Users</h1>
+
+		<div id="description">
+			
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+
+		<!-- Methods -->
+		
+		<div id="public-class-method-details" class="method-section section">
+			<h3 class="section-header">Public Class Methods</h3>
+
+		
+			<div id="new-method" class="method-detail ">
+				<a name="method-c-new"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">new</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Create our users object. Initialize the data structures we&#8217;ll use,
+here. We also register for relevant events: sethost and mode.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="new-source">
+<pre>
+    <span class="ruby-comment cmt"># File includes/users.rb, line 27</span>
+27:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>
+28:       <span class="ruby-ivar">@nicks</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span> <span class="ruby-comment cmt"># Nick =&gt; ESVID</span>
+29:       <span class="ruby-ivar">@users</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span> <span class="ruby-comment cmt"># ESVID =&gt; User Object</span>
+30: 
+31:       <span class="ruby-comment cmt"># TODO: We also need to register for and handle other events, such as</span>
+32:       <span class="ruby-comment cmt"># swhois.</span>
+33: 
+34:       <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">events</span>.<span class="ruby-identifier">register</span>(<span class="ruby-value">:sethost</span>, <span class="ruby-keyword kw">self</span>, <span class="ruby-value str">&quot;on_set_host&quot;</span>)
+35:       <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">events</span>.<span class="ruby-identifier">register</span>(<span class="ruby-value">:mode</span>, <span class="ruby-keyword kw">self</span>, <span class="ruby-value str">&quot;on_mode&quot;</span>)
+36:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="add-ser-method" class="method-detail ">
+				<a name="method-i-addUser"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">addUser</span><span
+						class="method-args">(user)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Add a new user to the tables. Duplicates will result in overwrites.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="add-ser-source">
+<pre>
+    <span class="ruby-comment cmt"># File includes/users.rb, line 41</span>
+41:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">addUser</span>(<span class="ruby-identifier">user</span>)
+42:       <span class="ruby-comment cmt"># TODO: Fix possible race condition?</span>
+43:       <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@nicks</span>.<span class="ruby-identifier">has_key?</span> <span class="ruby-identifier">user</span>.<span class="ruby-identifier">nick</span>
+44:         <span class="ruby-identifier">$log</span>.<span class="ruby-identifier">warning</span> <span class="ruby-value str">'users'</span>, <span class="ruby-node">&quot;Duplicate nick being added to internal list: #{user.nick}. Overwriting.&quot;</span>
+45:       <span class="ruby-keyword kw">end</span>
+46: 
+47:       <span class="ruby-comment cmt"># TODO: This is sort of bad. What if the same user logs in from two</span>
+48:       <span class="ruby-comment cmt"># locations?</span>
+49:       <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@users</span>.<span class="ruby-identifier">has_key?</span> <span class="ruby-identifier">user</span>.<span class="ruby-identifier">svid</span>
+50:         <span class="ruby-identifier">$log</span>.<span class="ruby-identifier">warning</span> <span class="ruby-value str">'users'</span>, <span class="ruby-node">&quot;Duplicate SVID being added to internal list: #{user.svid}. Overwriting.&quot;</span>
+51:       <span class="ruby-keyword kw">end</span>
+52: 
+53:       <span class="ruby-ivar">@nicks</span>[<span class="ruby-identifier">user</span>.<span class="ruby-identifier">nick</span>] = <span class="ruby-identifier">user</span>.<span class="ruby-identifier">svid</span>
+54:       <span class="ruby-ivar">@users</span>[<span class="ruby-identifier">user</span>.<span class="ruby-identifier">svid</span>] = <span class="ruby-identifier">user</span>
+55:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="change-ostname-method" class="method-detail ">
+				<a name="method-i-changeHostname"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">changeHostname</span><span
+						class="method-args">(ind, newHost)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Change the host name for the given user. This is different from changing
+the vhost.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="change-ostname-source">
+<pre>
+     <span class="ruby-comment cmt"># File includes/users.rb, line 135</span>
+135:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">changeHostname</span>(<span class="ruby-identifier">ind</span>, <span class="ruby-identifier">newHost</span>)
+136:       <span class="ruby-identifier">user</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">ind</span>)
+137:       <span class="ruby-identifier">user</span>.<span class="ruby-identifier">hostname</span> = <span class="ruby-identifier">newHost</span>
+138:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="change-odes-method" class="method-detail ">
+				<a name="method-i-changeModes"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">changeModes</span><span
+						class="method-args">(ind, newModes)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Change the modes for the given user. This is an explicit change, not a
+parser for mode strings.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="change-odes-source">
+<pre>
+     <span class="ruby-comment cmt"># File includes/users.rb, line 144</span>
+144:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">changeModes</span>(<span class="ruby-identifier">ind</span>, <span class="ruby-identifier">newModes</span>)
+145:       <span class="ruby-identifier">user</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">ind</span>)
+146:       <span class="ruby-identifier">user</span>.<span class="ruby-identifier">modes</span> = <span class="ruby-identifier">newModes</span>
+147:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="change-ick-method" class="method-detail ">
+				<a name="method-i-changeNick"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">changeNick</span><span
+						class="method-args">(ind, newNick, newTimestamp)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Change the nick for the given user. This is probably called by the nick
+event when a nick change is taking place.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="change-ick-source">
+<pre>
+     <span class="ruby-comment cmt"># File includes/users.rb, line 110</span>
+110:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">changeNick</span>(<span class="ruby-identifier">ind</span>, <span class="ruby-identifier">newNick</span>, <span class="ruby-identifier">newTimestamp</span>)
+111:       <span class="ruby-identifier">user</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">ind</span>)
+112: 
+113:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">user</span> <span class="ruby-operator">==</span> <span class="ruby-keyword kw">nil</span>
+114:         <span class="ruby-identifier">$log</span>.<span class="ruby-identifier">error</span> <span class="ruby-value str">&quot;user&quot;</span>, <span class="ruby-node">&quot;While performing a nick change, user #{ind} could not be found.&quot;</span>
+115:         <span class="ruby-keyword kw">return</span>
+116:       <span class="ruby-keyword kw">end</span>
+117: 
+118:       <span class="ruby-identifier">user</span>.<span class="ruby-identifier">nick</span> = <span class="ruby-identifier">newNick</span>
+119:       <span class="ruby-identifier">user</span>.<span class="ruby-identifier">timestamp</span> = <span class="ruby-identifier">newTimestamp</span>
+120:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="change--method" class="method-detail ">
+				<a name="method-i-changeSVID"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">changeSVID</span><span
+						class="method-args">(ind, newSVID)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Set a new SVID (logged in user name) for the given user.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="change--source">
+<pre>
+     <span class="ruby-comment cmt"># File includes/users.rb, line 152</span>
+152:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">changeSVID</span>(<span class="ruby-identifier">ind</span>, <span class="ruby-identifier">newSVID</span>)
+153:       <span class="ruby-identifier">user</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">ind</span>)
+154:       <span class="ruby-identifier">user</span>.<span class="ruby-identifier">svid</span> = <span class="ruby-identifier">newSVID</span>
+155:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="change-sername-method" class="method-detail ">
+				<a name="method-i-changeUsername"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">changeUsername</span><span
+						class="method-args">(ind, newUser)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Change the user name for the given user. (nick!USER@host)
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="change-sername-source">
+<pre>
+     <span class="ruby-comment cmt"># File includes/users.rb, line 126</span>
+126:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">changeUsername</span>(<span class="ruby-identifier">ind</span>, <span class="ruby-identifier">newUser</span>)
+127:       <span class="ruby-identifier">user</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">ind</span>)
+128:       <span class="ruby-identifier">user</span>.<span class="ruby-identifier">username</span> = <span class="ruby-identifier">newUser</span>
+129:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="del-y-ick-method" class="method-detail ">
+				<a name="method-i-delByNick"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">delByNick</span><span
+						class="method-args">(nick)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="del-y-ick-source">
+<pre>
+     <span class="ruby-comment cmt"># File includes/users.rb, line 192</span>
+192:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">delByNick</span>(<span class="ruby-identifier">nick</span>)
+193:       <span class="ruby-ivar">@users</span>.<span class="ruby-identifier">delete</span> <span class="ruby-ivar">@nicks</span>[<span class="ruby-identifier">nick</span>]
+194:       <span class="ruby-ivar">@nicks</span>.<span class="ruby-identifier">delete</span> <span class="ruby-identifier">nick</span>
+195:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="del-y--method" class="method-detail ">
+				<a name="method-i-delBySVID"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">delBySVID</span><span
+						class="method-args">(svid)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="del-y--source">
+<pre>
+     <span class="ruby-comment cmt"># File includes/users.rb, line 187</span>
+187:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">delBySVID</span>(<span class="ruby-identifier">svid</span>)
+188:       <span class="ruby-ivar">@nicks</span>.<span class="ruby-identifier">delete</span> <span class="ruby-ivar">@users</span>[<span class="ruby-identifier">svid</span>].<span class="ruby-identifier">nick</span>
+189:       <span class="ruby-ivar">@users</span>.<span class="ruby-identifier">delete</span> <span class="ruby-identifier">svid</span>
+190:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="delete-method" class="method-detail ">
+				<a name="method-i-delete"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">delete</span><span
+						class="method-args">(ind)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Delete the user object for the given nick or user name.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="delete-source">
+<pre>
+     <span class="ruby-comment cmt"># File includes/users.rb, line 179</span>
+179:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">delete</span>(<span class="ruby-identifier">ind</span>)
+180:       <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@nicks</span>.<span class="ruby-identifier">has_key?</span> <span class="ruby-identifier">ind</span>
+181:         <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">delByNick</span>(<span class="ruby-identifier">ind</span>)
+182:       <span class="ruby-keyword kw">else</span>
+183:         <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">delBySVID</span>(<span class="ruby-identifier">ind</span>)
+184:       <span class="ruby-keyword kw">end</span>
+185:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="find-method" class="method-detail ">
+				<a name="method-i-find"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">find</span><span
+						class="method-args">(ind)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Find the user object for the given nick or user name.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="find-source">
+<pre>
+     <span class="ruby-comment cmt"># File includes/users.rb, line 160</span>
+160:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">find</span>(<span class="ruby-identifier">ind</span>)
+161:       <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@nicks</span>.<span class="ruby-identifier">has_key?</span> <span class="ruby-identifier">ind</span>
+162:         <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">findByNick</span>(<span class="ruby-identifier">ind</span>)
+163:       <span class="ruby-keyword kw">else</span>
+164:         <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">findBySVID</span>(<span class="ruby-identifier">ind</span>)
+165:       <span class="ruby-keyword kw">end</span>
+166:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="find-y-ick-method" class="method-detail ">
+				<a name="method-i-findByNick"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">findByNick</span><span
+						class="method-args">(nick)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="find-y-ick-source">
+<pre>
+     <span class="ruby-comment cmt"># File includes/users.rb, line 168</span>
+168:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">findByNick</span>(<span class="ruby-identifier">nick</span>)
+169:       <span class="ruby-ivar">@users</span>[<span class="ruby-ivar">@nicks</span>[<span class="ruby-identifier">nick</span>]]
+170:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="find-y--method" class="method-detail ">
+				<a name="method-i-findBySVID"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">findBySVID</span><span
+						class="method-args">(svid)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="find-y--source">
+<pre>
+     <span class="ruby-comment cmt"># File includes/users.rb, line 172</span>
+172:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">findBySVID</span>(<span class="ruby-identifier">svid</span>)
+173:       <span class="ruby-ivar">@users</span>[<span class="ruby-identifier">svid</span>]
+174:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="log-n-method" class="method-detail ">
+				<a name="method-i-logIn"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">logIn</span><span
+						class="method-args">(ind, svid)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+<a href="Log.html">Log</a> in the give user/nick with the given user name.
+No data is sent to the IRC server.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="log-n-source">
+<pre>
+    <span class="ruby-comment cmt"># File includes/users.rb, line 89</span>
+89:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">logIn</span>(<span class="ruby-identifier">ind</span>, <span class="ruby-identifier">svid</span>)
+90:       <span class="ruby-comment cmt">#TODO: Make sure the network supports ESVID</span>
+91:       <span class="ruby-identifier">user</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">ind</span>)
+92:       <span class="ruby-identifier">user</span>.<span class="ruby-identifier">svid</span> = <span class="ruby-identifier">svid</span>
+93:       <span class="ruby-identifier">user</span>.<span class="ruby-identifier">loggedIn</span> = <span class="ruby-keyword kw">true</span>
+94:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="log-ut-method" class="method-detail ">
+				<a name="method-i-logOut"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">logOut</span><span
+						class="method-args">(ind)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+<a href="Log.html">Log</a> out the given nick/user. No data is sent to the
+IRC server.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="log-ut-source">
+<pre>
+     <span class="ruby-comment cmt"># File includes/users.rb, line 99</span>
+ 99:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">logOut</span>(<span class="ruby-identifier">ind</span>)
+100:       <span class="ruby-comment cmt">#TODO: Make sure the network supports ESVID</span>
+101:       <span class="ruby-identifier">user</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">ind</span>)
+102:       <span class="ruby-identifier">user</span>.<span class="ruby-identifier">svid</span> = <span class="ruby-value str">'*'</span>
+103:       <span class="ruby-identifier">user</span>.<span class="ruby-identifier">loggedIn</span> = <span class="ruby-keyword kw">false</span>
+104:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="on-mode-method" class="method-detail ">
+				<a name="method-i-on_mode"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">on_mode</span><span
+						class="method-args">(origin)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Called by the mode event. If this turns out to be for a channel abort.
+Otherwise, go ahead and find the user and then call the modes function for
+it.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="on-mode-source">
+<pre>
+    <span class="ruby-comment cmt"># File includes/users.rb, line 73</span>
+73:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">on_mode</span>(<span class="ruby-identifier">origin</span>)
+74:       <span class="ruby-identifier">origin</span> = <span class="ruby-identifier">origin</span>[<span class="ruby-value">0</span>]
+75:       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">link</span>.<span class="ruby-identifier">isChannel?</span> <span class="ruby-identifier">origin</span>.<span class="ruby-identifier">target</span>
+76: 
+77:       <span class="ruby-identifier">$log</span>.<span class="ruby-identifier">debug</span> <span class="ruby-value str">'users'</span>, <span class="ruby-node">&quot;Doing modes for #{origin.target}&quot;</span>
+78: 
+79:       <span class="ruby-identifier">user</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">origin</span>.<span class="ruby-identifier">target</span>)
+80:       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">user</span> <span class="ruby-operator">==</span> <span class="ruby-keyword kw">nil</span>
+81: 
+82:       <span class="ruby-identifier">user</span>.<span class="ruby-identifier">modes</span>(<span class="ruby-identifier">origin</span>.<span class="ruby-identifier">message</span>)
+83:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="on-set-host-method" class="method-detail ">
+				<a name="method-i-on_set_host"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">on_set_host</span><span
+						class="method-args">(origin)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Called by sethost event. Used to update the user&#8217;s vhost, but does
+not update the actual host name since we might need that for bans or
+something.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="on-set-host-source">
+<pre>
+    <span class="ruby-comment cmt"># File includes/users.rb, line 62</span>
+62:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">on_set_host</span>(<span class="ruby-identifier">origin</span>)
+63:       <span class="ruby-identifier">origin</span> = <span class="ruby-identifier">origin</span>[<span class="ruby-value">0</span>]
+64:       <span class="ruby-identifier">user</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">origin</span>.<span class="ruby-identifier">source</span>)
+65:       <span class="ruby-identifier">user</span>.<span class="ruby-identifier">vhost</span> = <span class="ruby-identifier">origin</span>.<span class="ruby-identifier">target</span>
+66:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

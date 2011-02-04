@@ -1,0 +1,631 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: Modulus::BanServ</title>
+
+	<link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../modules/BanServ/main_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="modules/BanServ/main.rb">modules/BanServ/main.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link"><a href="../Object.html">Object</a></p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+			<div id="namespace-list-section" class="section">
+				<h3 class="section-header">Namespace</h3>
+				<ul class="link-list">
+					
+					<li><span class="type">CLASS</span> <a href="BanServ/Autokill.html">Modulus::BanServ::Autokill</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="BanServ/Regexkill.html">Modulus::BanServ::Regexkill</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-c-new">::new</a></li>
+					
+					<li><a href="#method-i-cmd_bs_autokill">#cmd_bs_autokill</a></li>
+					
+					<li><a href="#method-i-cmd_bs_check">#cmd_bs_check</a></li>
+					
+					<li><a href="#method-i-cmd_bs_regexkill">#cmd_bs_regexkill</a></li>
+					
+					<li><a href="#method-i-dbConnected">#dbConnected</a></li>
+					
+					<li><a href="#method-i-done_connecting">#done_connecting</a></li>
+					
+					<li><a href="#method-i-join">#join</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../LICENSE.html">LICENSE</a></li>
+				
+					<li class="file"><a href="../README.html">README</a></li>
+				
+					<li class="file"><a href="../Rakefile.html">Rakefile</a></li>
+				
+					<li class="file"><a href="../head.html">head</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../Modulus.html">Modulus</a></li>
+				
+					<li><a href="../Modulus/Account.html">Modulus::Account</a></li>
+				
+					<li><a href="../Modulus/BanServ.html">Modulus::BanServ</a></li>
+				
+					<li><a href="../Modulus/BanServ/Autokill.html">Modulus::BanServ::Autokill</a></li>
+				
+					<li><a href="../Modulus/BanServ/Regexkill.html">Modulus::BanServ::Regexkill</a></li>
+				
+					<li><a href="../Modulus/BotServ.html">Modulus::BotServ</a></li>
+				
+					<li><a href="../Modulus/BotServ/BotServBot.html">Modulus::BotServ::BotServBot</a></li>
+				
+					<li><a href="../Modulus/BotServ/BotServChannel.html">Modulus::BotServ::BotServChannel</a></li>
+				
+					<li><a href="../Modulus/ChanServ.html">Modulus::ChanServ</a></li>
+				
+					<li><a href="../Modulus/ChanServ/Channel.html">Modulus::ChanServ::Channel</a></li>
+				
+					<li><a href="../Modulus/ChanServ/ChannelUsers.html">Modulus::ChanServ::ChannelUsers</a></li>
+				
+					<li><a href="../Modulus/Channel.html">Modulus::Channel</a></li>
+				
+					<li><a href="../Modulus/ChannelUser.html">Modulus::ChannelUser</a></li>
+				
+					<li><a href="../Modulus/Channels.html">Modulus::Channels</a></li>
+				
+					<li><a href="../Modulus/Clients.html">Modulus::Clients</a></li>
+				
+					<li><a href="../Modulus/Command.html">Modulus::Command</a></li>
+				
+					<li><a href="../Modulus/Config.html">Modulus::Config</a></li>
+				
+					<li><a href="../Modulus/EventCallback.html">Modulus::EventCallback</a></li>
+				
+					<li><a href="../Modulus/Events.html">Modulus::Events</a></li>
+				
+					<li><a href="../Modulus/Hook.html">Modulus::Hook</a></li>
+				
+					<li><a href="../Modulus/HostServ.html">Modulus::HostServ</a></li>
+				
+					<li><a href="../Modulus/HostServ/Host.html">Modulus::HostServ::Host</a></li>
+				
+					<li><a href="../Modulus/Log.html">Modulus::Log</a></li>
+				
+					<li><a href="../Modulus/Module.html">Modulus::Module</a></li>
+				
+					<li><a href="../Modulus/ModuleManager.html">Modulus::ModuleManager</a></li>
+				
+					<li><a href="../Modulus/NickServ.html">Modulus::NickServ</a></li>
+				
+					<li><a href="../Modulus/NickServ/Account.html">Modulus::NickServ::Account</a></li>
+				
+					<li><a href="../Modulus/NickServ/Nick.html">Modulus::NickServ::Nick</a></li>
+				
+					<li><a href="../Modulus/OperServ.html">Modulus::OperServ</a></li>
+				
+					<li><a href="../Modulus/OriginInfo.html">Modulus::OriginInfo</a></li>
+				
+					<li><a href="../Modulus/Parser.html">Modulus::Parser</a></li>
+				
+					<li><a href="../Modulus/ProtocolAbstraction.html">Modulus::ProtocolAbstraction</a></li>
+				
+					<li><a href="../Modulus/ProtocolAbstractionMixin.html">Modulus::ProtocolAbstractionMixin</a></li>
+				
+					<li><a href="../Modulus/Pseudoclient.html">Modulus::Pseudoclient</a></li>
+				
+					<li><a href="../Modulus/QuoteServ.html">Modulus::QuoteServ</a></li>
+				
+					<li><a href="../Modulus/QuoteServ/Quote.html">Modulus::QuoteServ::Quote</a></li>
+				
+					<li><a href="../Modulus/QuoteServ/QuoteChannel.html">Modulus::QuoteServ::QuoteChannel</a></li>
+				
+					<li><a href="../Modulus/QuoteServ/QuoteRater.html">Modulus::QuoteServ::QuoteRater</a></li>
+				
+					<li><a href="../Modulus/ReservedNick.html">Modulus::ReservedNick</a></li>
+				
+					<li><a href="../Modulus/Service.html">Modulus::Service</a></li>
+				
+					<li><a href="../Modulus/ServiceModules.html">Modulus::ServiceModules</a></li>
+				
+					<li><a href="../Modulus/User.html">Modulus::User</a></li>
+				
+					<li><a href="../Modulus/Users.html">Modulus::Users</a></li>
+				
+					<li><a href="../Object.html">Object</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">Modulus::BanServ</h1>
+
+		<div id="description">
+			
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+
+		<!-- Methods -->
+		
+		<div id="public-class-method-details" class="method-section section">
+			<h3 class="section-header">Public Class Methods</h3>
+
+		
+			<div id="new-method" class="method-detail ">
+				<a name="method-c-new"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">new</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="new-source">
+<pre>
+    <span class="ruby-comment cmt"># File modules/BanServ/main.rb, line 25</span>
+25:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>
+26:       <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">addService</span>(<span class="ruby-value str">&quot;BanServ&quot;</span>, <span class="ruby-keyword kw">self</span>,
+27:                          <span class="ruby-value str">&quot;Ban Management Service
+28:                          
+29: BanServ allows services administrators to create and
+30: remove network bans, as well as monitor the network
+31: for blacklisted connections.&quot;</span>)
+32: 
+33:       <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">events</span>.<span class="ruby-identifier">register</span>(<span class="ruby-value">:database_connected</span>, <span class="ruby-keyword kw">self</span>, <span class="ruby-value str">&quot;dbConnected&quot;</span>)
+34:       <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">events</span>.<span class="ruby-identifier">register</span>(<span class="ruby-value">:connected</span>, <span class="ruby-keyword kw">self</span>, <span class="ruby-value str">&quot;on_connect&quot;</span>)
+35: 
+36:       <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">clients</span>.<span class="ruby-identifier">addClient</span>(<span class="ruby-value str">&quot;BanServ&quot;</span>, <span class="ruby-value str">&quot;Ban Management Service&quot;</span>)
+37: 
+38: 
+39:       <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">addCmd</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-value str">&quot;BanServ&quot;</span>, <span class="ruby-value str">&quot;AUTOKILL&quot;</span>, <span class="ruby-value str">&quot;cmd_bs_autokill&quot;</span>,
+40:                      <span class="ruby-value str">&quot;Manage the automatic kill list.&quot;</span>,
+41:                      <span class="ruby-value str">&quot;Usage: AUTOKILL command parameters
+42:  
+43: This command is for services administrators only.
+44:                       
+45: Commands:
+46:   LIST - List all AUTOKILLs
+47:   ADD user@ip/host reason - Add a user@ip or user@host to the
+48:                             AUTOKILL list with specified ban reason.
+49:   REMOVE user@ip/host - Remove a user@ip or user@host from the
+50:                         AUTOKILL list
+51:  
+52: When a new client connects to the network, it will be checked against
+53: the AUTOKILL list. Matches will be banned from the network as appropriate
+54: with your network's protocol. The set ban reason will be used as the
+55: protocol's ban reason.&quot;</span>)
+56: 
+57: 
+58:       <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">addCmd</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-value str">&quot;BanServ&quot;</span>, <span class="ruby-value str">&quot;REGEXKILL&quot;</span>, <span class="ruby-value str">&quot;cmd_bs_regexkill&quot;</span>,
+59:                      <span class="ruby-value str">&quot;Manage the regular expression kill list.&quot;</span>,
+60:                      <span class="ruby-value str">&quot;Usage: REGEXKILL command parameters
+61:  
+62: This command is for services administrators only.
+63:  
+64: Commands:
+65:   LIST - List all REGEXKILLs
+66:   ADD regex reason - Add a regular expression to the REGEXKILL list with
+67:                      specified ban reason.
+68:   REMOVE regex - Remove a regular expression from the REGEXKILL list.
+69:  
+70: When a new client connects to the network, it will be checked against
+71: the REGEXKILL list. nick!user@host will be checked against the
+72: regular expression. Matches will be banned from the network as appropriate
+73: with your network's protocol. The set ban reason will be used as the
+74: protocol's ban reason.&quot;</span>)
+75: 
+76: 
+77:       <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">addCmd</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-value str">&quot;BanServ&quot;</span>, <span class="ruby-value str">&quot;CHECK&quot;</span>, <span class="ruby-value str">&quot;cmd_bs_check&quot;</span>,
+78:                      <span class="ruby-value str">&quot;Check IP addresses against DNSBLs.&quot;</span>,
+79:                      <span class="ruby-value str">&quot;Usage: CHECK host
+80:  
+81: This command is for services administrators only.
+82:  
+83: The given address must be a valid IP address. Host name lookups could
+84: take a while and may time out, so in order to ensure services performance,
+85: host names are not allowed.
+86:  
+87: Matching IP addresses will not be automatically banned.&quot;</span>)
+88: 
+89:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="cmd-bs-autokill-method" class="method-detail ">
+				<a name="method-i-cmd_bs_autokill"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">cmd_bs_autokill</span><span
+						class="method-args">(origin)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="cmd-bs-autokill-source">
+<pre>
+    <span class="ruby-comment cmt"># File modules/BanServ/main.rb, line 91</span>
+91:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">cmd_bs_autokill</span>(<span class="ruby-identifier">origin</span>)
+92:       <span class="ruby-identifier">$log</span>.<span class="ruby-identifier">debug</span> <span class="ruby-value str">&quot;BanServ&quot;</span>, <span class="ruby-node">&quot;Got: #{origin.raw}&quot;</span>
+93: 
+94:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="cmd-bs-check-method" class="method-detail ">
+				<a name="method-i-cmd_bs_check"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">cmd_bs_check</span><span
+						class="method-args">(origin)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="cmd-bs-check-source">
+<pre>
+     <span class="ruby-comment cmt"># File modules/BanServ/main.rb, line 101</span>
+101:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">cmd_bs_check</span>(<span class="ruby-identifier">origin</span>)
+102:       <span class="ruby-identifier">$log</span>.<span class="ruby-identifier">debug</span> <span class="ruby-value str">&quot;BanServ&quot;</span>, <span class="ruby-node">&quot;Got: #{origin.raw}&quot;</span>
+103: 
+104:       <span class="ruby-identifier">blacklists</span> = <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">getOption</span>(<span class="ruby-value str">&quot;BanServ&quot;</span>, <span class="ruby-value str">&quot;use_dnsbl&quot;</span>)
+105: 
+106:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">blacklists</span> <span class="ruby-operator">==</span> <span class="ruby-keyword kw">nil</span>
+107:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-value str">&quot;DNSBL lookups are not enabled&quot;</span>)
+108:         <span class="ruby-keyword kw">return</span>
+109:       <span class="ruby-keyword kw">end</span>
+110: 
+111:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">blacklists</span> <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;disabled&quot;</span>
+112:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-value str">&quot;DNSBL lookups are not enabled&quot;</span>)
+113:         <span class="ruby-keyword kw">return</span>
+114:       <span class="ruby-keyword kw">end</span>
+115: 
+116:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">origin</span>.<span class="ruby-identifier">argsArr</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">!=</span> <span class="ruby-value">1</span>
+117:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-value str">&quot;Usage: CHECK ip&quot;</span>)
+118:         <span class="ruby-keyword kw">return</span>
+119:       <span class="ruby-keyword kw">end</span>
+120: 
+121:       <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">origin</span>.<span class="ruby-identifier">argsArr</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">match</span>(<span class="ruby-regexp re">/\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}/</span>)
+122:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-value str">&quot;You must provide a valid IP address.&quot;</span>)
+123:         <span class="ruby-keyword kw">return</span>
+124:       <span class="ruby-keyword kw">end</span>
+125: 
+126:       <span class="ruby-identifier">check</span> = <span class="ruby-identifier">origin</span>.<span class="ruby-identifier">argsArr</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">split</span>(<span class="ruby-value str">'.'</span>).<span class="ruby-identifier">reverse</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">'.'</span>)
+127: 
+128:       <span class="ruby-identifier">blacklists</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">&quot; &quot;</span>).<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">dnsbl</span><span class="ruby-operator">|</span>
+129:         <span class="ruby-keyword kw">begin</span>
+130:           <span class="ruby-identifier">result</span> = <span class="ruby-constant">Resolv</span><span class="ruby-operator">::</span><span class="ruby-identifier">getaddress</span>(<span class="ruby-node">&quot;#{check}.#{dnsbl}&quot;</span>)
+131:           <span class="ruby-identifier">result</span> = <span class="ruby-identifier">result</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">&quot;.&quot;</span>)[<span class="ruby-value">3</span>]
+132: 
+133:           <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-node">&quot;Found in #{dnsbl} as #{result}&quot;</span>)
+134:         <span class="ruby-keyword kw">rescue</span>
+135:           <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-node">&quot;Not found in #{dnsbl}.&quot;</span>)
+136:         <span class="ruby-keyword kw">end</span>
+137:       }
+138:       
+139:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="cmd-bs-regexkill-method" class="method-detail ">
+				<a name="method-i-cmd_bs_regexkill"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">cmd_bs_regexkill</span><span
+						class="method-args">(origin)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="cmd-bs-regexkill-source">
+<pre>
+    <span class="ruby-comment cmt"># File modules/BanServ/main.rb, line 96</span>
+96:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">cmd_bs_regexkill</span>(<span class="ruby-identifier">origin</span>)
+97:       <span class="ruby-identifier">$log</span>.<span class="ruby-identifier">debug</span> <span class="ruby-value str">&quot;BanServ&quot;</span>, <span class="ruby-node">&quot;Got: #{origin.raw}&quot;</span>
+98: 
+99:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="db-onnected-method" class="method-detail ">
+				<a name="method-i-dbConnected"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">dbConnected</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="db-onnected-source">
+<pre>
+     <span class="ruby-comment cmt"># File modules/BanServ/main.rb, line 148</span>
+148:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">dbConnected</span>
+149:       <span class="ruby-identifier">$log</span>.<span class="ruby-identifier">debug</span> <span class="ruby-value str">&quot;BanServ&quot;</span>, <span class="ruby-value str">&quot;Received database_connected callback. Beginning database check.&quot;</span>
+150: 
+151:       <span class="ruby-comment cmt">#unless Quote.table_exists?</span>
+152:         <span class="ruby-comment cmt">#ActiveRecord::Schema.define do</span>
+153:           <span class="ruby-comment cmt">#create_table :quotes do |t|</span>
+154:             <span class="ruby-comment cmt">#t.column :added_by_nick, :string, :null =&gt; false</span>
+155:             <span class="ruby-comment cmt">#t.column :date_added, :datetime, :null =&gt; false</span>
+156:             <span class="ruby-comment cmt">#t.column :place_added, :string, :null =&gt; false</span>
+157:             <span class="ruby-comment cmt">#t.column :content, :string, :null =&gt; false</span>
+158:             <span class="ruby-comment cmt">#t.column :rank, :integer, :default =&gt; 0</span>
+159:             <span class="ruby-comment cmt">#t.column :views, :integer, :default =&gt; 0</span>
+160:           <span class="ruby-comment cmt">#end</span>
+161:         <span class="ruby-comment cmt">#end</span>
+162:       <span class="ruby-comment cmt">#end</span>
+163: 
+164:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="done-connecting-method" class="method-detail ">
+				<a name="method-i-done_connecting"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">done_connecting</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="done-connecting-source">
+<pre>
+     <span class="ruby-comment cmt"># File modules/BanServ/main.rb, line 141</span>
+141:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">done_connecting</span>
+142:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="join-method" class="method-detail ">
+				<a name="method-i-join"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">join</span><span
+						class="method-args">(chan)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="join-source">
+<pre>
+     <span class="ruby-comment cmt"># File modules/BanServ/main.rb, line 144</span>
+144:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">join</span>(<span class="ruby-identifier">chan</span>)
+145:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">clients</span>.<span class="ruby-identifier">clients</span>[<span class="ruby-value str">&quot;BanServ&quot;</span>].<span class="ruby-identifier">addChannel</span>(<span class="ruby-identifier">chan</span>)
+146:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

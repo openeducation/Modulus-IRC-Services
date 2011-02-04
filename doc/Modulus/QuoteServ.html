@@ -1,0 +1,1148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: Modulus::QuoteServ</title>
+
+	<link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../modules/QuoteServ/main_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="modules/QuoteServ/main.rb">modules/QuoteServ/main.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link"><a href="../Object.html">Object</a></p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+			<div id="namespace-list-section" class="section">
+				<h3 class="section-header">Namespace</h3>
+				<ul class="link-list">
+					
+					<li><span class="type">CLASS</span> <a href="QuoteServ/Quote.html">Modulus::QuoteServ::Quote</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="QuoteServ/QuoteChannel.html">Modulus::QuoteServ::QuoteChannel</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="QuoteServ/QuoteRater.html">Modulus::QuoteServ::QuoteRater</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-c-new">::new</a></li>
+					
+					<li><a href="#method-i-cmd_qs_add">#cmd_qs_add</a></li>
+					
+					<li><a href="#method-i-cmd_qs_down">#cmd_qs_down</a></li>
+					
+					<li><a href="#method-i-cmd_qs_get">#cmd_qs_get</a></li>
+					
+					<li><a href="#method-i-cmd_qs_join">#cmd_qs_join</a></li>
+					
+					<li><a href="#method-i-cmd_qs_part">#cmd_qs_part</a></li>
+					
+					<li><a href="#method-i-cmd_qs_remove">#cmd_qs_remove</a></li>
+					
+					<li><a href="#method-i-cmd_qs_search">#cmd_qs_search</a></li>
+					
+					<li><a href="#method-i-cmd_qs_up">#cmd_qs_up</a></li>
+					
+					<li><a href="#method-i-dbConnected">#dbConnected</a></li>
+					
+					<li><a href="#method-i-done_connecting">#done_connecting</a></li>
+					
+					<li><a href="#method-i-join">#join</a></li>
+					
+					<li><a href="#method-i-show_quotation">#show_quotation</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../LICENSE.html">LICENSE</a></li>
+				
+					<li class="file"><a href="../README.html">README</a></li>
+				
+					<li class="file"><a href="../Rakefile.html">Rakefile</a></li>
+				
+					<li class="file"><a href="../head.html">head</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../Modulus.html">Modulus</a></li>
+				
+					<li><a href="../Modulus/Account.html">Modulus::Account</a></li>
+				
+					<li><a href="../Modulus/BanServ.html">Modulus::BanServ</a></li>
+				
+					<li><a href="../Modulus/BanServ/Autokill.html">Modulus::BanServ::Autokill</a></li>
+				
+					<li><a href="../Modulus/BanServ/Regexkill.html">Modulus::BanServ::Regexkill</a></li>
+				
+					<li><a href="../Modulus/BotServ.html">Modulus::BotServ</a></li>
+				
+					<li><a href="../Modulus/BotServ/BotServBot.html">Modulus::BotServ::BotServBot</a></li>
+				
+					<li><a href="../Modulus/BotServ/BotServChannel.html">Modulus::BotServ::BotServChannel</a></li>
+				
+					<li><a href="../Modulus/ChanServ.html">Modulus::ChanServ</a></li>
+				
+					<li><a href="../Modulus/ChanServ/Channel.html">Modulus::ChanServ::Channel</a></li>
+				
+					<li><a href="../Modulus/ChanServ/ChannelUsers.html">Modulus::ChanServ::ChannelUsers</a></li>
+				
+					<li><a href="../Modulus/Channel.html">Modulus::Channel</a></li>
+				
+					<li><a href="../Modulus/ChannelUser.html">Modulus::ChannelUser</a></li>
+				
+					<li><a href="../Modulus/Channels.html">Modulus::Channels</a></li>
+				
+					<li><a href="../Modulus/Clients.html">Modulus::Clients</a></li>
+				
+					<li><a href="../Modulus/Command.html">Modulus::Command</a></li>
+				
+					<li><a href="../Modulus/Config.html">Modulus::Config</a></li>
+				
+					<li><a href="../Modulus/EventCallback.html">Modulus::EventCallback</a></li>
+				
+					<li><a href="../Modulus/Events.html">Modulus::Events</a></li>
+				
+					<li><a href="../Modulus/Hook.html">Modulus::Hook</a></li>
+				
+					<li><a href="../Modulus/HostServ.html">Modulus::HostServ</a></li>
+				
+					<li><a href="../Modulus/HostServ/Host.html">Modulus::HostServ::Host</a></li>
+				
+					<li><a href="../Modulus/Log.html">Modulus::Log</a></li>
+				
+					<li><a href="../Modulus/Module.html">Modulus::Module</a></li>
+				
+					<li><a href="../Modulus/ModuleManager.html">Modulus::ModuleManager</a></li>
+				
+					<li><a href="../Modulus/NickServ.html">Modulus::NickServ</a></li>
+				
+					<li><a href="../Modulus/NickServ/Account.html">Modulus::NickServ::Account</a></li>
+				
+					<li><a href="../Modulus/NickServ/Nick.html">Modulus::NickServ::Nick</a></li>
+				
+					<li><a href="../Modulus/OperServ.html">Modulus::OperServ</a></li>
+				
+					<li><a href="../Modulus/OriginInfo.html">Modulus::OriginInfo</a></li>
+				
+					<li><a href="../Modulus/Parser.html">Modulus::Parser</a></li>
+				
+					<li><a href="../Modulus/ProtocolAbstraction.html">Modulus::ProtocolAbstraction</a></li>
+				
+					<li><a href="../Modulus/ProtocolAbstractionMixin.html">Modulus::ProtocolAbstractionMixin</a></li>
+				
+					<li><a href="../Modulus/Pseudoclient.html">Modulus::Pseudoclient</a></li>
+				
+					<li><a href="../Modulus/QuoteServ.html">Modulus::QuoteServ</a></li>
+				
+					<li><a href="../Modulus/QuoteServ/Quote.html">Modulus::QuoteServ::Quote</a></li>
+				
+					<li><a href="../Modulus/QuoteServ/QuoteChannel.html">Modulus::QuoteServ::QuoteChannel</a></li>
+				
+					<li><a href="../Modulus/QuoteServ/QuoteRater.html">Modulus::QuoteServ::QuoteRater</a></li>
+				
+					<li><a href="../Modulus/ReservedNick.html">Modulus::ReservedNick</a></li>
+				
+					<li><a href="../Modulus/Service.html">Modulus::Service</a></li>
+				
+					<li><a href="../Modulus/ServiceModules.html">Modulus::ServiceModules</a></li>
+				
+					<li><a href="../Modulus/User.html">Modulus::User</a></li>
+				
+					<li><a href="../Modulus/Users.html">Modulus::Users</a></li>
+				
+					<li><a href="../Object.html">Object</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">Modulus::QuoteServ</h1>
+
+		<div id="description">
+			
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+
+		<!-- Methods -->
+		
+		<div id="public-class-method-details" class="method-section section">
+			<h3 class="section-header">Public Class Methods</h3>
+
+		
+			<div id="new-method" class="method-detail ">
+				<a name="method-c-new"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">new</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="new-source">
+<pre>
+     <span class="ruby-comment cmt"># File modules/QuoteServ/main.rb, line 23</span>
+ 23:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>
+ 24:       <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">addService</span>(<span class="ruby-value str">&quot;QuoteServ&quot;</span>, <span class="ruby-keyword kw">self</span>,
+ 25:                          <span class="ruby-value str">&quot;Quotation Storage Service
+ 26:                          
+ 27: QuoteServ allows services users to store memorable
+ 28: quotes in a database.&quot;</span>)
+ 29: 
+ 30:       <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">events</span>.<span class="ruby-identifier">register</span>(<span class="ruby-value">:database_connected</span>, <span class="ruby-keyword kw">self</span>, <span class="ruby-value str">&quot;dbConnected&quot;</span>)
+ 31:       <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">events</span>.<span class="ruby-identifier">register</span>(<span class="ruby-value">:done_connecting</span>, <span class="ruby-keyword kw">self</span>, <span class="ruby-value str">&quot;done_connecting&quot;</span>)
+ 32: 
+ 33:       <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">clients</span>.<span class="ruby-identifier">addClient</span>(<span class="ruby-value str">&quot;QuoteServ&quot;</span>, <span class="ruby-value str">&quot;Quotation Storage Service&quot;</span>)
+ 34: 
+ 35: 
+ 36:       <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">addCmd</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-value str">&quot;QuoteServ&quot;</span>, <span class="ruby-value str">&quot;ADD&quot;</span>, <span class="ruby-value str">&quot;cmd_qs_add&quot;</span>,
+ 37:                      <span class="ruby-value str">&quot;Add a quotation to the database.&quot;</span>,
+ 38:                      <span class="ruby-value str">&quot;Usage: ADD quotation
+ 39:  
+ 40: Add the quotation to the database. Each quotation is stored
+ 41: by a unique, numerical identifier. You may use this identifier
+ 42: to call up this exact quotation. The IRC nickname and location
+ 43: of the user that added the quotation will be stored as well.
+ 44:  
+ 45: Take care when adding quotations to the database, as many users
+ 46: do not want their chat to be recorded in a potentially public
+ 47: database.
+ 48:  
+ 49: Many networks have terms of service or privacy policies which
+ 50: may restrict your rights to add private chats or chats in
+ 51: secret or private channels to the database. Ask network staff
+ 52: if you are unsure.&quot;</span>, <span class="ruby-keyword kw">true</span>)
+ 53: 
+ 54:       <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">addCmd</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-value str">&quot;QuoteServ&quot;</span>, <span class="ruby-value str">&quot;GET&quot;</span>, <span class="ruby-value str">&quot;cmd_qs_get&quot;</span>,
+ 55:                      <span class="ruby-value str">&quot;Get a quotation from the database by quotation ID.&quot;</span>,
+ 56:                      <span class="ruby-value str">&quot;Usage: GET quotationID
+ 57:  
+ 58: A numerical identifier is assigned to each quotation added
+ 59: to the database. Using this unique identifier, it is possible
+ 60: to quickly fetch and display quotations.&quot;</span>, <span class="ruby-keyword kw">true</span>)
+ 61: 
+ 62:       <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">addCmd</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-value str">&quot;QuoteServ&quot;</span>, <span class="ruby-value str">&quot;SEARCH&quot;</span>, <span class="ruby-value str">&quot;cmd_qs_search&quot;</span>,
+ 63:                      <span class="ruby-value str">&quot;Search the database for quotations.&quot;</span>,
+ 64:                      <span class="ruby-value str">&quot;Usage: SEARCH query
+ 65:  
+ 66: The search query is case-insensitive. Wildcards are not supported.&quot;</span>, <span class="ruby-keyword kw">true</span>)
+ 67: 
+ 68:       <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">addCmd</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-value str">&quot;QuoteServ&quot;</span>, <span class="ruby-value str">&quot;JOIN&quot;</span>, <span class="ruby-value str">&quot;cmd_qs_join&quot;</span>,
+ 69:                      <span class="ruby-value str">&quot;Bring QuoteServ to a channel.&quot;</span>,
+ 70:                      <span class="ruby-value str">&quot;Usage: JOIN channel
+ 71:  
+ 72: You must be a channel operator in the given channel for this to
+ 73: work. If you want QuoteServ in a channel in which you are not
+ 74: an operator, ask the channel owner or other operators.
+ 75:  
+ 76: Once QuoteServ has joined a channel, it will persistently remain
+ 77: there.&quot;</span>)
+ 78: 
+ 79:       <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">addCmd</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-value str">&quot;QuoteServ&quot;</span>, <span class="ruby-value str">&quot;PART&quot;</span>, <span class="ruby-value str">&quot;cmd_qs_part&quot;</span>,
+ 80:                      <span class="ruby-value str">&quot;Cause QuoteServ to leave a channel.&quot;</span>,
+ 81:                      <span class="ruby-value str">&quot;Usage: PART channel
+ 82:  
+ 83: You must be a channel operator in the given channel for this to
+ 84: work. QuoteServ will immediately leave the channel and will not
+ 85: return unless brought back.&quot;</span>)
+ 86: 
+ 87:       <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">addCmd</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-value str">&quot;QuoteServ&quot;</span>, <span class="ruby-value str">&quot;UP&quot;</span>, <span class="ruby-value str">&quot;cmd_qs_up&quot;</span>,
+ 88:                      <span class="ruby-value str">&quot;Vote for a quotation, causing its rank to increase.&quot;</span>,
+ 89:                      <span class="ruby-value str">&quot;Usage: UP quotationId
+ 90:  
+ 91: All quotations in QuoteServ's database are assigned a numerical
+ 92: rank. When a quotation is created, this rank begins at 0. Each
+ 93: time a user uses the UP command for that quotation ID, the
+ 94: quotation will have 1 added to its rank.&quot;</span>, <span class="ruby-keyword kw">true</span>)
+ 95: 
+ 96:       <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">addCmd</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-value str">&quot;QuoteServ&quot;</span>, <span class="ruby-value str">&quot;DOWN&quot;</span>, <span class="ruby-value str">&quot;cmd_qs_down&quot;</span>,
+ 97:                      <span class="ruby-value str">&quot;Vote against a quotation, causing its rank to decrease.&quot;</span>,
+ 98:                      <span class="ruby-value str">&quot;Usage: DOWN quotationId
+ 99:  
+100: All quotations in QuoteServ's database are assigned a numerical
+101: rank. When a quotation is created, this rank begins at 0. Each
+102: time a user uses the DOWN command for that quotation ID, the
+103: quotation will have 1 subtracted from rank.&quot;</span>, <span class="ruby-keyword kw">true</span>)
+104: 
+105:       <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">addCmd</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-value str">&quot;QuoteServ&quot;</span>, <span class="ruby-value str">&quot;REMOVE&quot;</span>, <span class="ruby-value str">&quot;cmd_qs_remove&quot;</span>,
+106:                      <span class="ruby-value str">&quot;Remove a quotation from the database by quotation ID.&quot;</span>,
+107:                      <span class="ruby-value str">&quot;Usage: REMOVE quotationID
+108:  
+109: This command will immediately and permanently delete a quotation
+110: from the database. On some networks, this is restricted to
+111: services administrators to prevent abuse.
+112:  
+113: As such, the best practice when adding quotation is to be sure
+114: that all parties being quoted do not mind the information being
+115: available to the entire network and likely the entire Internet.&quot;</span>, <span class="ruby-keyword kw">true</span>)
+116: 
+117:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="cmd-qs-add-method" class="method-detail ">
+				<a name="method-i-cmd_qs_add"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">cmd_qs_add</span><span
+						class="method-args">(origin)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="cmd-qs-add-source">
+<pre>
+     <span class="ruby-comment cmt"># File modules/QuoteServ/main.rb, line 203</span>
+203:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">cmd_qs_add</span>(<span class="ruby-identifier">origin</span>)
+204:       <span class="ruby-identifier">$log</span>.<span class="ruby-identifier">debug</span> <span class="ruby-value str">&quot;QuoteServ&quot;</span>, <span class="ruby-node">&quot;Got: #{origin.raw}&quot;</span>
+205: 
+206:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">origin</span>.<span class="ruby-identifier">argsArr</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">1</span>
+207:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-value str">&quot;Usage: ADD quotation&quot;</span>)
+208:         <span class="ruby-keyword kw">return</span>
+209:       <span class="ruby-keyword kw">end</span>
+210: 
+211:       <span class="ruby-identifier">user</span> = <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">users</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">origin</span>.<span class="ruby-identifier">source</span>)
+212: 
+213:       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">user</span> <span class="ruby-operator">==</span> <span class="ruby-keyword kw">nil</span>
+214: 
+215:       <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">user</span>.<span class="ruby-identifier">logged_in?</span>
+216:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-value str">&quot;You must be logged in to a services account in order to use this command.&quot;</span>)
+217:         <span class="ruby-keyword kw">return</span>
+218:       <span class="ruby-keyword kw">end</span>
+219: 
+220:       <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">origin</span>.<span class="ruby-identifier">args</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">300</span>
+221:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-value str">&quot;Quotations cannot be longer than 300 characters.&quot;</span>)
+222:         <span class="ruby-keyword kw">return</span>
+223:       <span class="ruby-keyword kw">end</span>
+224: 
+225:       <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">link</span>.<span class="ruby-identifier">isChannel?</span> <span class="ruby-identifier">origin</span>.<span class="ruby-identifier">target</span>
+226:         <span class="ruby-identifier">source</span> = <span class="ruby-value str">&quot;Private Message&quot;</span>
+227:       <span class="ruby-keyword kw">else</span>
+228:         <span class="ruby-identifier">source</span> = <span class="ruby-identifier">origin</span>.<span class="ruby-identifier">target</span>
+229:       <span class="ruby-keyword kw">end</span>
+230: 
+231:       <span class="ruby-constant">Quote</span>.<span class="ruby-identifier">create</span>(
+232:         <span class="ruby-value">:content</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">origin</span>.<span class="ruby-identifier">args</span>,
+233:         <span class="ruby-value">:place_added</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">source</span>,
+234:         <span class="ruby-value">:date_added</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">DateTime</span>.<span class="ruby-identifier">now</span>(),
+235:         <span class="ruby-value">:added_by_nick</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">origin</span>.<span class="ruby-identifier">source</span>,
+236:         <span class="ruby-value">:account_name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">user</span>.<span class="ruby-identifier">svid</span>
+237:       )
+238: 
+239:       <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-value str">&quot;Quotation successfully added to the database.&quot;</span>)
+240:       <span class="ruby-identifier">$log</span>.<span class="ruby-identifier">info</span> <span class="ruby-value str">'QuoteServ'</span>, <span class="ruby-node">&quot;#{origin.source} added a new quotation to the database from #{source}&quot;</span>
+241:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="cmd-qs-down-method" class="method-detail ">
+				<a name="method-i-cmd_qs_down"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">cmd_qs_down</span><span
+						class="method-args">(origin)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="cmd-qs-down-source">
+<pre>
+     <span class="ruby-comment cmt"># File modules/QuoteServ/main.rb, line 393</span>
+393:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">cmd_qs_down</span>(<span class="ruby-identifier">origin</span>)
+394:       <span class="ruby-identifier">$log</span>.<span class="ruby-identifier">debug</span> <span class="ruby-value str">&quot;QuoteServ&quot;</span>, <span class="ruby-node">&quot;Got: #{origin.raw}&quot;</span>
+395:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">origin</span>.<span class="ruby-identifier">argsArr</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">!=</span> <span class="ruby-value">1</span>
+396:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-value str">&quot;Usage: DOWN id&quot;</span>)
+397:         <span class="ruby-keyword kw">return</span>
+398:       <span class="ruby-keyword kw">end</span>
+399: 
+400:       <span class="ruby-identifier">user</span> = <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">users</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">origin</span>.<span class="ruby-identifier">source</span>)
+401: 
+402:       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">user</span> <span class="ruby-operator">==</span> <span class="ruby-keyword kw">nil</span>
+403: 
+404:       <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">user</span>.<span class="ruby-identifier">logged_in?</span>
+405:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-value str">&quot;You must be logged in to a services account in order to use this command.&quot;</span>)
+406:         <span class="ruby-keyword kw">return</span>
+407:       <span class="ruby-keyword kw">end</span>
+408: 
+409:       <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">origin</span>.<span class="ruby-identifier">args</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^[\d]+$/</span>
+410:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-value str">&quot;You must give a numerical quotation ID.&quot;</span>)
+411:         <span class="ruby-keyword kw">return</span>
+412:       <span class="ruby-keyword kw">end</span>
+413: 
+414:       <span class="ruby-keyword kw">begin</span>
+415:         <span class="ruby-identifier">found</span> = <span class="ruby-constant">Quote</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">origin</span>.<span class="ruby-identifier">args</span>)
+416: 
+417:         <span class="ruby-identifier">rater</span> = <span class="ruby-constant">QuoteRater</span>.<span class="ruby-identifier">find_by_id_and_account_name</span>(<span class="ruby-identifier">found</span>.<span class="ruby-identifier">id</span>, <span class="ruby-identifier">user</span>.<span class="ruby-identifier">svid</span>)
+418: 
+419:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">rater</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword kw">nil</span>
+420:           <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-value str">&quot;You have already rated this quotation.&quot;</span>)
+421:           <span class="ruby-keyword kw">return</span>
+422:         <span class="ruby-keyword kw">end</span>
+423: 
+424:         <span class="ruby-constant">QuoteRater</span>.<span class="ruby-identifier">create</span>(
+425:           <span class="ruby-value">:quote_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">found</span>.<span class="ruby-identifier">id</span>,
+426:           <span class="ruby-value">:account_name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">user</span>.<span class="ruby-identifier">svid</span>
+427:         )
+428: 
+429:         <span class="ruby-identifier">found</span>.<span class="ruby-identifier">rank</span> <span class="ruby-operator">-=</span> <span class="ruby-value">1</span>
+430:         <span class="ruby-identifier">found</span>.<span class="ruby-identifier">save!</span>
+431:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-node">&quot;#{found.id} is now ranked #{found.rank}&quot;</span>)
+432:       <span class="ruby-keyword kw">rescue</span>
+433:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-value str">&quot;There is no such quotation.&quot;</span>)
+434:       <span class="ruby-keyword kw">end</span>
+435:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="cmd-qs-get-method" class="method-detail ">
+				<a name="method-i-cmd_qs_get"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">cmd_qs_get</span><span
+						class="method-args">(origin)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="cmd-qs-get-source">
+<pre>
+     <span class="ruby-comment cmt"># File modules/QuoteServ/main.rb, line 282</span>
+282:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">cmd_qs_get</span>(<span class="ruby-identifier">origin</span>)
+283:       <span class="ruby-identifier">$log</span>.<span class="ruby-identifier">debug</span> <span class="ruby-value str">&quot;QuoteServ&quot;</span>, <span class="ruby-node">&quot;Got: #{origin.raw}&quot;</span>
+284: 
+285:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">origin</span>.<span class="ruby-identifier">argsArr</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">!=</span> <span class="ruby-value">1</span>
+286:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-value str">&quot;Usage: GET id&quot;</span>)
+287:         <span class="ruby-keyword kw">return</span>
+288:       <span class="ruby-keyword kw">end</span>
+289: 
+290:       <span class="ruby-identifier">user</span> = <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">users</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">origin</span>.<span class="ruby-identifier">source</span>)
+291: 
+292:       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">user</span> <span class="ruby-operator">==</span> <span class="ruby-keyword kw">nil</span>
+293: 
+294:       <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">user</span>.<span class="ruby-identifier">logged_in?</span>
+295:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-value str">&quot;You must be logged in to a services account in order to use this command.&quot;</span>)
+296:         <span class="ruby-keyword kw">return</span>
+297:       <span class="ruby-keyword kw">end</span>
+298: 
+299:       <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">origin</span>.<span class="ruby-identifier">args</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^[\d]+$/</span>
+300:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-value str">&quot;You must give a numerical quotation ID.&quot;</span>)
+301:         <span class="ruby-keyword kw">return</span>
+302:       <span class="ruby-keyword kw">end</span>
+303: 
+304:       <span class="ruby-keyword kw">begin</span>
+305:         <span class="ruby-identifier">found</span> = <span class="ruby-constant">Quote</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">origin</span>.<span class="ruby-identifier">args</span>)
+306:         <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">show_quotation</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-identifier">found</span>)
+307:       <span class="ruby-keyword kw">rescue</span>
+308:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-value str">&quot;There is no such quotation.&quot;</span>)
+309:       <span class="ruby-keyword kw">end</span>
+310:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="cmd-qs-join-method" class="method-detail ">
+				<a name="method-i-cmd_qs_join"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">cmd_qs_join</span><span
+						class="method-args">(origin)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="cmd-qs-join-source">
+<pre>
+     <span class="ruby-comment cmt"># File modules/QuoteServ/main.rb, line 119</span>
+119:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">cmd_qs_join</span>(<span class="ruby-identifier">origin</span>)
+120:       <span class="ruby-identifier">$log</span>.<span class="ruby-identifier">debug</span> <span class="ruby-value str">&quot;QuoteServ&quot;</span>, <span class="ruby-node">&quot;Got: #{origin.raw}&quot;</span>
+121:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">origin</span>.<span class="ruby-identifier">argsArr</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">!=</span> <span class="ruby-value">1</span>
+122:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-value str">&quot;Usage: JOIN channel&quot;</span>)
+123:         <span class="ruby-keyword kw">return</span>
+124:       <span class="ruby-keyword kw">end</span>
+125: 
+126:       <span class="ruby-identifier">user</span> = <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">users</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">origin</span>.<span class="ruby-identifier">source</span>)
+127: 
+128:       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">user</span> <span class="ruby-operator">==</span> <span class="ruby-keyword kw">nil</span>
+129: 
+130:       <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">user</span>.<span class="ruby-identifier">logged_in?</span>
+131:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-value str">&quot;You must be logged in to a services account in order to use this command.&quot;</span>)
+132:         <span class="ruby-keyword kw">return</span>
+133:       <span class="ruby-keyword kw">end</span>
+134: 
+135:       <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">user</span>.<span class="ruby-identifier">is_services_admin?</span>
+136:         <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">channels</span>.<span class="ruby-identifier">is_channel_op?</span> <span class="ruby-identifier">origin</span>.<span class="ruby-identifier">source</span>, <span class="ruby-identifier">origin</span>.<span class="ruby-identifier">argsArr</span>[<span class="ruby-value">1</span>]
+137:           <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-value str">&quot;In order to bring QuoteServ to that channel, you must be a channel operator.&quot;</span>)
+138:           <span class="ruby-keyword kw">return</span>
+139:         <span class="ruby-keyword kw">end</span>
+140:       <span class="ruby-keyword kw">end</span>
+141: 
+142:       <span class="ruby-identifier">chan</span> = <span class="ruby-constant">QuoteChannel</span>.<span class="ruby-identifier">find_by_channel</span>(<span class="ruby-identifier">origin</span>.<span class="ruby-identifier">argsArr</span>[<span class="ruby-value">0</span>])
+143: 
+144:       <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">chan</span> <span class="ruby-operator">==</span> <span class="ruby-keyword kw">nil</span>
+145:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-value str">&quot;QuoteServ is already configured to join that channel.&quot;</span>)
+146:         <span class="ruby-keyword kw">return</span>
+147:       <span class="ruby-keyword kw">end</span>
+148: 
+149:       <span class="ruby-constant">QuoteChannel</span>.<span class="ruby-identifier">create</span>(
+150:         <span class="ruby-value">:channel</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">origin</span>.<span class="ruby-identifier">argsArr</span>[<span class="ruby-value">0</span>])
+151: 
+152:       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">origin</span>.<span class="ruby-identifier">argsArr</span>[<span class="ruby-value">0</span>])
+153: 
+154:       <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-node">&quot;QuoteServ has been sent to #{origin.argsArr[0]}.&quot;</span>)
+155:       <span class="ruby-identifier">$log</span>.<span class="ruby-identifier">info</span> <span class="ruby-value str">'QuoteServ'</span>, <span class="ruby-node">&quot;#{origin.source} has joined #{origin.argsArr[0]}&quot;</span>
+156:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="cmd-qs-part-method" class="method-detail ">
+				<a name="method-i-cmd_qs_part"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">cmd_qs_part</span><span
+						class="method-args">(origin)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="cmd-qs-part-source">
+<pre>
+     <span class="ruby-comment cmt"># File modules/QuoteServ/main.rb, line 158</span>
+158:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">cmd_qs_part</span>(<span class="ruby-identifier">origin</span>)
+159:       <span class="ruby-identifier">$log</span>.<span class="ruby-identifier">debug</span> <span class="ruby-value str">&quot;QuoteServ&quot;</span>, <span class="ruby-node">&quot;Got: #{origin.raw}&quot;</span>
+160:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">origin</span>.<span class="ruby-identifier">argsArr</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">!=</span> <span class="ruby-value">1</span>
+161:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-value str">&quot;Usage: PART channel&quot;</span>)
+162:         <span class="ruby-keyword kw">return</span>
+163:       <span class="ruby-keyword kw">end</span>
+164: 
+165:       <span class="ruby-identifier">user</span> = <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">users</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">origin</span>.<span class="ruby-identifier">source</span>)
+166: 
+167:       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">user</span> <span class="ruby-operator">==</span> <span class="ruby-keyword kw">nil</span>
+168: 
+169:       <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">user</span>.<span class="ruby-identifier">logged_in?</span>
+170:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-value str">&quot;You must be logged in to a services account in order to use this command.&quot;</span>)
+171:         <span class="ruby-keyword kw">return</span>
+172:       <span class="ruby-keyword kw">end</span>
+173: 
+174:       <span class="ruby-identifier">chan</span> = <span class="ruby-constant">QuoteChannel</span>.<span class="ruby-identifier">find_by_channel</span>(<span class="ruby-identifier">origin</span>.<span class="ruby-identifier">argsArr</span>[<span class="ruby-value">0</span>])
+175: 
+176:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">chan</span> <span class="ruby-operator">==</span> <span class="ruby-keyword kw">nil</span>
+177:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-value str">&quot;QuoteServ is not configured to join that channel.&quot;</span>)
+178:         <span class="ruby-keyword kw">return</span>
+179:       <span class="ruby-keyword kw">end</span>
+180: 
+181:       <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">user</span>.<span class="ruby-identifier">is_services_admin?</span>
+182:         <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">channels</span>.<span class="ruby-identifier">is_channel_op?</span> <span class="ruby-identifier">origin</span>.<span class="ruby-identifier">source</span>, <span class="ruby-identifier">origin</span>.<span class="ruby-identifier">argsArr</span>[<span class="ruby-value">0</span>]
+183:           <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-value str">&quot;In order to remove QuoteServ from that channel, you must be a channel operator.&quot;</span>)
+184:           <span class="ruby-keyword kw">return</span>
+185:         <span class="ruby-keyword kw">end</span>
+186:       <span class="ruby-keyword kw">end</span>
+187: 
+188:       <span class="ruby-identifier">client</span> = <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">clients</span>.<span class="ruby-identifier">clients</span>[<span class="ruby-value str">'QuoteServ'</span>]
+189: 
+190:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">client</span> <span class="ruby-operator">==</span> <span class="ruby-keyword kw">nil</span>
+191:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-value str">&quot;QuoteServ does not appear to be online.&quot;</span>)
+192:         <span class="ruby-identifier">$log</span>.<span class="ruby-identifier">error</span> <span class="ruby-value str">'BotServ'</span>, <span class="ruby-node">&quot;While attempting to join bot #{nickname} to a channel, I was unable to find it in my client list.&quot;</span>
+193:         <span class="ruby-keyword kw">return</span>
+194:       <span class="ruby-keyword kw">end</span>
+195: 
+196:       <span class="ruby-identifier">chan</span>.<span class="ruby-identifier">destroy</span>
+197:       <span class="ruby-identifier">client</span>.<span class="ruby-identifier">removeChannel</span>(<span class="ruby-identifier">origin</span>.<span class="ruby-identifier">argsArr</span>[<span class="ruby-value">0</span>])
+198: 
+199:       <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-node">&quot;QuoteServ has been removed from #{origin.argsArr[0]}.&quot;</span>)
+200:       <span class="ruby-identifier">$log</span>.<span class="ruby-identifier">info</span> <span class="ruby-value str">'QuoteServ'</span>, <span class="ruby-node">&quot;#{origin.source} has removed QuoteServ from #{origin.argsArr[0]}&quot;</span>
+201:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="cmd-qs-remove-method" class="method-detail ">
+				<a name="method-i-cmd_qs_remove"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">cmd_qs_remove</span><span
+						class="method-args">(origin)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="cmd-qs-remove-source">
+<pre>
+     <span class="ruby-comment cmt"># File modules/QuoteServ/main.rb, line 312</span>
+312:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">cmd_qs_remove</span>(<span class="ruby-identifier">origin</span>)
+313:       <span class="ruby-identifier">$log</span>.<span class="ruby-identifier">debug</span> <span class="ruby-value str">&quot;QuoteServ&quot;</span>, <span class="ruby-node">&quot;Got: #{origin.raw}&quot;</span>
+314: 
+315:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">origin</span>.<span class="ruby-identifier">argsArr</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">!=</span> <span class="ruby-value">1</span>
+316:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-value str">&quot;Usage: GET id&quot;</span>)
+317:         <span class="ruby-keyword kw">return</span>
+318:       <span class="ruby-keyword kw">end</span>
+319: 
+320:       <span class="ruby-identifier">user</span> = <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">users</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">origin</span>.<span class="ruby-identifier">source</span>)
+321: 
+322:       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">user</span> <span class="ruby-operator">==</span> <span class="ruby-keyword kw">nil</span>
+323: 
+324:       <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">user</span>.<span class="ruby-identifier">logged_in?</span>
+325:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-value str">&quot;You must be logged in to a services account in order to use this command.&quot;</span>)
+326:         <span class="ruby-keyword kw">return</span>
+327:       <span class="ruby-keyword kw">end</span>
+328: 
+329:       <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">origin</span>.<span class="ruby-identifier">args</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^[\d]+$/</span>
+330:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-value str">&quot;You must give a numerical quotation ID.&quot;</span>)
+331:         <span class="ruby-keyword kw">return</span>
+332:       <span class="ruby-keyword kw">end</span>
+333: 
+334:       <span class="ruby-keyword kw">begin</span>
+335:         <span class="ruby-identifier">found</span> = <span class="ruby-constant">Quote</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">origin</span>.<span class="ruby-identifier">args</span>)
+336: 
+337:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">found</span>.<span class="ruby-identifier">account</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">user</span>.<span class="ruby-identifier">svid</span> <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">user</span>.<span class="ruby-identifier">is_services_admin?</span>
+338:           <span class="ruby-identifier">found</span>.<span class="ruby-identifier">destroy</span>
+339:           <span class="ruby-identifier">$log</span>.<span class="ruby-identifier">info</span> <span class="ruby-value str">'QuoteServ'</span>, <span class="ruby-node">&quot;#{origin.source} deleted quotation #{origin.args}.&quot;</span>
+340:           <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-value str">&quot;Quotation deleted successfully.&quot;</span>)
+341:         <span class="ruby-keyword kw">else</span>
+342:           <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-value str">&quot;You may only delete quotations which you created.&quot;</span>)
+343:         <span class="ruby-keyword kw">end</span>
+344:       <span class="ruby-keyword kw">rescue</span>
+345:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-value str">&quot;There is no such quotation.&quot;</span>)
+346:       <span class="ruby-keyword kw">end</span>
+347:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="cmd-qs-search-method" class="method-detail ">
+				<a name="method-i-cmd_qs_search"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">cmd_qs_search</span><span
+						class="method-args">(origin)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="cmd-qs-search-source">
+<pre>
+     <span class="ruby-comment cmt"># File modules/QuoteServ/main.rb, line 243</span>
+243:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">cmd_qs_search</span>(<span class="ruby-identifier">origin</span>)
+244:       <span class="ruby-identifier">$log</span>.<span class="ruby-identifier">debug</span> <span class="ruby-value str">&quot;QuoteServ&quot;</span>, <span class="ruby-node">&quot;Got: #{origin.raw}&quot;</span>
+245: 
+246:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">origin</span>.<span class="ruby-identifier">argsArr</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">1</span>
+247:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-value str">&quot;Usage: SEARCH content&quot;</span>)
+248:         <span class="ruby-keyword kw">return</span>
+249:       <span class="ruby-keyword kw">end</span>
+250: 
+251:       <span class="ruby-identifier">user</span> = <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">users</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">origin</span>.<span class="ruby-identifier">source</span>)
+252: 
+253:       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">user</span> <span class="ruby-operator">==</span> <span class="ruby-keyword kw">nil</span>
+254: 
+255:       <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">user</span>.<span class="ruby-identifier">logged_in?</span>
+256:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-value str">&quot;You must be logged in to a services account in order to use this command.&quot;</span>)
+257:         <span class="ruby-keyword kw">return</span>
+258:       <span class="ruby-keyword kw">end</span>
+259: 
+260:       <span class="ruby-identifier">found</span> = <span class="ruby-constant">Quote</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-value str">'content like ?'</span>, <span class="ruby-node">&quot;%#{origin.args}%&quot;</span>])
+261: 
+262:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">found</span>.<span class="ruby-identifier">count</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+263:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-value str">&quot;No matches.&quot;</span>)
+264:       <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">found</span>.<span class="ruby-identifier">count</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">3</span>
+265:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-node">&quot;Found #{found.count} matches.#{&quot; Displaying first 3.&quot; if found.count &gt; 3}&quot;</span>)
+266:         <span class="ruby-identifier">pos</span> = <span class="ruby-value">0</span>
+267: 
+268:         <span class="ruby-identifier">found</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">result</span><span class="ruby-operator">|</span>
+269:           <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">show_quotation</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-identifier">result</span>)
+270:           <span class="ruby-identifier">pos</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+271: 
+272:           <span class="ruby-keyword kw">break</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">pos</span> <span class="ruby-operator">==</span> <span class="ruby-value">3</span>
+273:         }
+274:       <span class="ruby-keyword kw">else</span>
+275:         <span class="ruby-identifier">found</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">result</span><span class="ruby-operator">|</span>
+276:           <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">show_quotation</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-identifier">result</span>)
+277:         }
+278:       <span class="ruby-keyword kw">end</span>
+279:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="cmd-qs-up-method" class="method-detail ">
+				<a name="method-i-cmd_qs_up"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">cmd_qs_up</span><span
+						class="method-args">(origin)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="cmd-qs-up-source">
+<pre>
+     <span class="ruby-comment cmt"># File modules/QuoteServ/main.rb, line 349</span>
+349:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">cmd_qs_up</span>(<span class="ruby-identifier">origin</span>)
+350:       <span class="ruby-identifier">$log</span>.<span class="ruby-identifier">debug</span> <span class="ruby-value str">&quot;QuoteServ&quot;</span>, <span class="ruby-node">&quot;Got: #{origin.raw}&quot;</span>
+351:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">origin</span>.<span class="ruby-identifier">argsArr</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">!=</span> <span class="ruby-value">1</span>
+352:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-value str">&quot;Usage: UP id&quot;</span>)
+353:         <span class="ruby-keyword kw">return</span>
+354:       <span class="ruby-keyword kw">end</span>
+355: 
+356:       <span class="ruby-identifier">user</span> = <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">users</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">origin</span>.<span class="ruby-identifier">source</span>)
+357: 
+358:       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">user</span> <span class="ruby-operator">==</span> <span class="ruby-keyword kw">nil</span>
+359: 
+360:       <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">user</span>.<span class="ruby-identifier">logged_in?</span>
+361:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-value str">&quot;You must be logged in to a services account in order to use this command.&quot;</span>)
+362:         <span class="ruby-keyword kw">return</span>
+363:       <span class="ruby-keyword kw">end</span>
+364: 
+365:       <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">origin</span>.<span class="ruby-identifier">args</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^[\d]+$/</span>
+366:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-value str">&quot;You must give a numerical quotation ID.&quot;</span>)
+367:         <span class="ruby-keyword kw">return</span>
+368:       <span class="ruby-keyword kw">end</span>
+369: 
+370:       <span class="ruby-keyword kw">begin</span>
+371:         <span class="ruby-identifier">found</span> = <span class="ruby-constant">Quote</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">origin</span>.<span class="ruby-identifier">args</span>)
+372: 
+373:         <span class="ruby-identifier">rater</span> = <span class="ruby-constant">QuoteRater</span>.<span class="ruby-identifier">find_by_id_and_account_name</span>(<span class="ruby-identifier">found</span>.<span class="ruby-identifier">id</span>, <span class="ruby-identifier">user</span>.<span class="ruby-identifier">svid</span>)
+374: 
+375:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">rater</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword kw">nil</span>
+376:           <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-value str">&quot;You have already rated this quotation.&quot;</span>)
+377:           <span class="ruby-keyword kw">return</span>
+378:         <span class="ruby-keyword kw">end</span>
+379: 
+380:         <span class="ruby-constant">QuoteRater</span>.<span class="ruby-identifier">create</span>(
+381:           <span class="ruby-value">:quote_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">found</span>.<span class="ruby-identifier">id</span>,
+382:           <span class="ruby-value">:account_name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">user</span>.<span class="ruby-identifier">svid</span>
+383:         )
+384: 
+385:         <span class="ruby-identifier">found</span>.<span class="ruby-identifier">rank</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+386:         <span class="ruby-identifier">found</span>.<span class="ruby-identifier">save!</span>
+387:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-node">&quot;#{found.id} is now ranked #{found.rank}&quot;</span>)
+388:       <span class="ruby-keyword kw">rescue</span>
+389:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-value str">&quot;There is no such quotation.&quot;</span>)
+390:       <span class="ruby-keyword kw">end</span>
+391:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="db-onnected-method" class="method-detail ">
+				<a name="method-i-dbConnected"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">dbConnected</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="db-onnected-source">
+<pre>
+     <span class="ruby-comment cmt"># File modules/QuoteServ/main.rb, line 453</span>
+453:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">dbConnected</span>
+454:       <span class="ruby-identifier">$log</span>.<span class="ruby-identifier">debug</span> <span class="ruby-value str">&quot;QuoteServ&quot;</span>, <span class="ruby-value str">&quot;Received database_connected callback. Beginning database check.&quot;</span>
+455: 
+456:       <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">QuoteChannel</span>.<span class="ruby-identifier">table_exists?</span>
+457:         <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Schema</span>.<span class="ruby-identifier">define</span> <span class="ruby-keyword kw">do</span>
+458:           <span class="ruby-identifier">create_table</span> <span class="ruby-value">:quote_channels</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span>
+459:             <span class="ruby-identifier">t</span>.<span class="ruby-identifier">column</span> <span class="ruby-value">:channel</span>, <span class="ruby-value">:string</span>, <span class="ruby-value">:null</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">false</span>
+460:           <span class="ruby-keyword kw">end</span>
+461:         <span class="ruby-keyword kw">end</span>
+462:       <span class="ruby-keyword kw">end</span>
+463: 
+464:       <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">Quote</span>.<span class="ruby-identifier">table_exists?</span>
+465:         <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Schema</span>.<span class="ruby-identifier">define</span> <span class="ruby-keyword kw">do</span>
+466:           <span class="ruby-identifier">create_table</span> <span class="ruby-value">:quotes</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span>
+467:             <span class="ruby-identifier">t</span>.<span class="ruby-identifier">column</span> <span class="ruby-value">:added_by_nick</span>, <span class="ruby-value">:string</span>, <span class="ruby-value">:null</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">false</span>
+468:             <span class="ruby-identifier">t</span>.<span class="ruby-identifier">column</span> <span class="ruby-value">:account_name</span>, <span class="ruby-value">:string</span>, <span class="ruby-value">:null</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">false</span>
+469:             <span class="ruby-identifier">t</span>.<span class="ruby-identifier">column</span> <span class="ruby-value">:date_added</span>, <span class="ruby-value">:datetime</span>, <span class="ruby-value">:null</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">false</span>
+470:             <span class="ruby-identifier">t</span>.<span class="ruby-identifier">column</span> <span class="ruby-value">:place_added</span>, <span class="ruby-value">:string</span>, <span class="ruby-value">:null</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">false</span>
+471:             <span class="ruby-identifier">t</span>.<span class="ruby-identifier">column</span> <span class="ruby-value">:content</span>, <span class="ruby-value">:string</span>, <span class="ruby-value">:null</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">false</span>
+472:             <span class="ruby-identifier">t</span>.<span class="ruby-identifier">column</span> <span class="ruby-value">:rank</span>, <span class="ruby-value">:integer</span>, <span class="ruby-value">:default</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+473:             <span class="ruby-identifier">t</span>.<span class="ruby-identifier">column</span> <span class="ruby-value">:views</span>, <span class="ruby-value">:integer</span>, <span class="ruby-value">:default</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+474:           <span class="ruby-keyword kw">end</span>
+475:         <span class="ruby-keyword kw">end</span>
+476:       <span class="ruby-keyword kw">end</span>
+477: 
+478:       <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">QuoteRater</span>.<span class="ruby-identifier">table_exists?</span>
+479:         <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Schema</span>.<span class="ruby-identifier">define</span> <span class="ruby-keyword kw">do</span>
+480:           <span class="ruby-identifier">create_table</span> <span class="ruby-value">:quote_raters</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span>
+481:             <span class="ruby-identifier">t</span>.<span class="ruby-identifier">column</span> <span class="ruby-value">:quote_id</span>, <span class="ruby-value">:integer</span>, <span class="ruby-value">:null</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">false</span>
+482:             <span class="ruby-identifier">t</span>.<span class="ruby-identifier">column</span> <span class="ruby-value">:account_name</span>, <span class="ruby-value">:string</span>, <span class="ruby-value">:null</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">false</span>
+483:           <span class="ruby-keyword kw">end</span>
+484:         <span class="ruby-keyword kw">end</span>
+485:       <span class="ruby-keyword kw">end</span>
+486:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="done-connecting-method" class="method-detail ">
+				<a name="method-i-done_connecting"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">done_connecting</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="done-connecting-source">
+<pre>
+     <span class="ruby-comment cmt"># File modules/QuoteServ/main.rb, line 437</span>
+437:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">done_connecting</span>
+438:       <span class="ruby-constant">QuoteChannel</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>).<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span>
+439:         <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">join</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">channel</span>
+440:       }
+441:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="join-method" class="method-detail ">
+				<a name="method-i-join"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">join</span><span
+						class="method-args">(chan)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="join-source">
+<pre>
+     <span class="ruby-comment cmt"># File modules/QuoteServ/main.rb, line 443</span>
+443:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">join</span>(<span class="ruby-identifier">chan</span>)
+444:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">clients</span>.<span class="ruby-identifier">clients</span>[<span class="ruby-value str">&quot;QuoteServ&quot;</span>].<span class="ruby-identifier">addChannel</span>(<span class="ruby-identifier">chan</span>)
+445:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="show-quotation-method" class="method-detail ">
+				<a name="method-i-show_quotation"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">show_quotation</span><span
+						class="method-args">(origin, quotation)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="show-quotation-source">
+<pre>
+     <span class="ruby-comment cmt"># File modules/QuoteServ/main.rb, line 447</span>
+447:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">show_quotation</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-identifier">quotation</span>)
+448:       <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-node">&quot;##{quotation.id} [Rating: #{quotation.rank} Added by: #{quotation.added_by_nick}/#{quotation.place_added}]: #{quotation.content}&quot;</span>)
+449:       <span class="ruby-identifier">quotation</span>.<span class="ruby-identifier">views</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+450:       <span class="ruby-identifier">quotation</span>.<span class="ruby-identifier">save!</span>
+451:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

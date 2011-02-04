@@ -1,0 +1,1117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: Modulus::ChanServ</title>
+
+	<link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../modules/ChanServ/main_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="modules/ChanServ/main.rb">modules/ChanServ/main.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link"><a href="../Object.html">Object</a></p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+			<div id="namespace-list-section" class="section">
+				<h3 class="section-header">Namespace</h3>
+				<ul class="link-list">
+					
+					<li><span class="type">CLASS</span> <a href="ChanServ/Channel.html">Modulus::ChanServ::Channel</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="ChanServ/ChannelUsers.html">Modulus::ChanServ::ChannelUsers</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-c-new">::new</a></li>
+					
+					<li><a href="#method-i-buildAccess">#buildAccess</a></li>
+					
+					<li><a href="#method-i-cmd_cs_drop">#cmd_cs_drop</a></li>
+					
+					<li><a href="#method-i-cmd_cs_grant">#cmd_cs_grant</a></li>
+					
+					<li><a href="#method-i-cmd_cs_join">#cmd_cs_join</a></li>
+					
+					<li><a href="#method-i-cmd_cs_list">#cmd_cs_list</a></li>
+					
+					<li><a href="#method-i-cmd_cs_register">#cmd_cs_register</a></li>
+					
+					<li><a href="#method-i-dbConnected">#dbConnected</a></li>
+					
+					<li><a href="#method-i-getAccess">#getAccess</a></li>
+					
+					<li><a href="#method-i-join">#join</a></li>
+					
+					<li><a href="#method-i-joinRegistered">#joinRegistered</a></li>
+					
+					<li><a href="#method-i-leave">#leave</a></li>
+					
+					<li><a href="#method-i-on_join">#on_join</a></li>
+					
+					<li><a href="#method-i-parseAccess">#parseAccess</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../LICENSE.html">LICENSE</a></li>
+				
+					<li class="file"><a href="../README.html">README</a></li>
+				
+					<li class="file"><a href="../Rakefile.html">Rakefile</a></li>
+				
+					<li class="file"><a href="../head.html">head</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../Modulus.html">Modulus</a></li>
+				
+					<li><a href="../Modulus/Account.html">Modulus::Account</a></li>
+				
+					<li><a href="../Modulus/BanServ.html">Modulus::BanServ</a></li>
+				
+					<li><a href="../Modulus/BanServ/Autokill.html">Modulus::BanServ::Autokill</a></li>
+				
+					<li><a href="../Modulus/BanServ/Regexkill.html">Modulus::BanServ::Regexkill</a></li>
+				
+					<li><a href="../Modulus/BotServ.html">Modulus::BotServ</a></li>
+				
+					<li><a href="../Modulus/BotServ/BotServBot.html">Modulus::BotServ::BotServBot</a></li>
+				
+					<li><a href="../Modulus/BotServ/BotServChannel.html">Modulus::BotServ::BotServChannel</a></li>
+				
+					<li><a href="../Modulus/ChanServ.html">Modulus::ChanServ</a></li>
+				
+					<li><a href="../Modulus/ChanServ/Channel.html">Modulus::ChanServ::Channel</a></li>
+				
+					<li><a href="../Modulus/ChanServ/ChannelUsers.html">Modulus::ChanServ::ChannelUsers</a></li>
+				
+					<li><a href="../Modulus/Channel.html">Modulus::Channel</a></li>
+				
+					<li><a href="../Modulus/ChannelUser.html">Modulus::ChannelUser</a></li>
+				
+					<li><a href="../Modulus/Channels.html">Modulus::Channels</a></li>
+				
+					<li><a href="../Modulus/Clients.html">Modulus::Clients</a></li>
+				
+					<li><a href="../Modulus/Command.html">Modulus::Command</a></li>
+				
+					<li><a href="../Modulus/Config.html">Modulus::Config</a></li>
+				
+					<li><a href="../Modulus/EventCallback.html">Modulus::EventCallback</a></li>
+				
+					<li><a href="../Modulus/Events.html">Modulus::Events</a></li>
+				
+					<li><a href="../Modulus/Hook.html">Modulus::Hook</a></li>
+				
+					<li><a href="../Modulus/HostServ.html">Modulus::HostServ</a></li>
+				
+					<li><a href="../Modulus/HostServ/Host.html">Modulus::HostServ::Host</a></li>
+				
+					<li><a href="../Modulus/Log.html">Modulus::Log</a></li>
+				
+					<li><a href="../Modulus/Module.html">Modulus::Module</a></li>
+				
+					<li><a href="../Modulus/ModuleManager.html">Modulus::ModuleManager</a></li>
+				
+					<li><a href="../Modulus/NickServ.html">Modulus::NickServ</a></li>
+				
+					<li><a href="../Modulus/NickServ/Account.html">Modulus::NickServ::Account</a></li>
+				
+					<li><a href="../Modulus/NickServ/Nick.html">Modulus::NickServ::Nick</a></li>
+				
+					<li><a href="../Modulus/OperServ.html">Modulus::OperServ</a></li>
+				
+					<li><a href="../Modulus/OriginInfo.html">Modulus::OriginInfo</a></li>
+				
+					<li><a href="../Modulus/Parser.html">Modulus::Parser</a></li>
+				
+					<li><a href="../Modulus/ProtocolAbstraction.html">Modulus::ProtocolAbstraction</a></li>
+				
+					<li><a href="../Modulus/ProtocolAbstractionMixin.html">Modulus::ProtocolAbstractionMixin</a></li>
+				
+					<li><a href="../Modulus/Pseudoclient.html">Modulus::Pseudoclient</a></li>
+				
+					<li><a href="../Modulus/QuoteServ.html">Modulus::QuoteServ</a></li>
+				
+					<li><a href="../Modulus/QuoteServ/Quote.html">Modulus::QuoteServ::Quote</a></li>
+				
+					<li><a href="../Modulus/QuoteServ/QuoteChannel.html">Modulus::QuoteServ::QuoteChannel</a></li>
+				
+					<li><a href="../Modulus/QuoteServ/QuoteRater.html">Modulus::QuoteServ::QuoteRater</a></li>
+				
+					<li><a href="../Modulus/ReservedNick.html">Modulus::ReservedNick</a></li>
+				
+					<li><a href="../Modulus/Service.html">Modulus::Service</a></li>
+				
+					<li><a href="../Modulus/ServiceModules.html">Modulus::ServiceModules</a></li>
+				
+					<li><a href="../Modulus/User.html">Modulus::User</a></li>
+				
+					<li><a href="../Modulus/Users.html">Modulus::Users</a></li>
+				
+					<li><a href="../Object.html">Object</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">Modulus::ChanServ</h1>
+
+		<div id="description">
+			
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+
+		<!-- Methods -->
+		
+		<div id="public-class-method-details" class="method-section section">
+			<h3 class="section-header">Public Class Methods</h3>
+
+		
+			<div id="new-method" class="method-detail ">
+				<a name="method-c-new"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">new</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="new-source">
+<pre>
+    <span class="ruby-comment cmt"># File modules/ChanServ/main.rb, line 23</span>
+23:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>
+24:       <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">addService</span>(<span class="ruby-value str">&quot;ChanServ&quot;</span>, <span class="ruby-keyword kw">self</span>,
+25:                          <span class="ruby-value str">&quot;Channel Registration Services
+26:                          
+27: ChanServ allows users to register channels, maintain
+28: channel settings, and maintain channel operator lists.&quot;</span>)
+29: 
+30:       <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">events</span>.<span class="ruby-identifier">register</span>(<span class="ruby-value">:database_connected</span>, <span class="ruby-keyword kw">self</span>, <span class="ruby-value str">&quot;dbConnected&quot;</span>)
+31:       <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">events</span>.<span class="ruby-identifier">register</span>(<span class="ruby-value">:done_connecting</span>, <span class="ruby-keyword kw">self</span>, <span class="ruby-value str">&quot;joinRegistered&quot;</span>)
+32:       <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">events</span>.<span class="ruby-identifier">register</span>(<span class="ruby-value">:join</span>, <span class="ruby-keyword kw">self</span>, <span class="ruby-value str">&quot;on_join&quot;</span>)
+33: 
+34:       <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">clients</span>.<span class="ruby-identifier">addClient</span>(<span class="ruby-value str">&quot;ChanServ&quot;</span>, <span class="ruby-value str">&quot;Channel Registration Service&quot;</span>)
+35: 
+36:       <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">addCmd</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-value str">&quot;ChanServ&quot;</span>, <span class="ruby-value str">&quot;GRANT&quot;</span>, <span class="ruby-value str">&quot;cmd_cs_grant&quot;</span>,
+37:                      <span class="ruby-value str">&quot;Grant user privileges for the specified channel.&quot;</span>,
+38:                      <span class="ruby-value str">&quot;Usage: GRANT channel nick permissions
+39:  
+40: To use this command, you must have appropriate channel permissions.
+41: Additionally, the nick specified must be on-line and
+42: logged in to a services account.
+43:  
+44: Supported permissions include:
+45:  
+46: VOICE - User gains or may acquire voice. (+v)
+47: HALFOP - User gains or may acquire half-op status. (+h)
+48: OP - User gains or may acquire channel operator status. (+o)
+49: PROTECT - User gains or may acquire protected channel status. (+a)
+50: OWNER - User gains or may acquire channel owner status. (+q)
+51:         User may also perform any channel administration tasks.&quot;</span>)
+52: 
+53:       <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">addCmd</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-value str">&quot;ChanServ&quot;</span>, <span class="ruby-value str">&quot;REGISTER&quot;</span>, <span class="ruby-value str">&quot;cmd_cs_register&quot;</span>,
+54:                      <span class="ruby-value str">&quot;Register the specified channel.&quot;</span>,
+55:                      <span class="ruby-value str">&quot;Usage: REGISTER channel password
+56:  
+57: ChanServ will automatically join all registered channels.
+58: Registered channels get access to ChanServ's interactive features,
+59: such as channel ban management, and channel operator and permissions
+60: management. If your network supports it, external control may be
+61: provided, such as through a web portal.&quot;</span>)
+62: 
+63:       <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">addCmd</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-value str">&quot;ChanServ&quot;</span>, <span class="ruby-value str">&quot;DROP&quot;</span>, <span class="ruby-value str">&quot;cmd_cs_drop&quot;</span>,
+64:                      <span class="ruby-value str">&quot;Drop the registration for the specified channel.&quot;</span>,
+65:                      <span class="ruby-value str">&quot;Usage: DROP channel password
+66:  
+67: You must give your services account password to use this command.
+68:  
+69: Dropping a channel deletes all ChanServ data for the channel from
+70: the services database. This action cannot be undone. If you want to
+71: re-register a previously dropped channel, even if it just happened,
+72: you must re-register it.&quot;</span>)
+73: 
+74:       <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">addCmd</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-value str">&quot;ChanServ&quot;</span>, <span class="ruby-value str">&quot;LIST&quot;</span>, <span class="ruby-value str">&quot;cmd_cs_list&quot;</span>,
+75:                      <span class="ruby-value str">&quot;List all channels registered to your services account.&quot;</span>,
+76:                      <span class="ruby-value str">&quot;Usag: LIST
+77:  
+78: All channel registrations are connected to your services account.
+79: Using this command, you can see a list of all channels that you have registered
+80: while logged in to your account.&quot;</span>)
+81: 
+82:       <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">addCmd</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-value str">&quot;ChanServ&quot;</span>, <span class="ruby-value str">&quot;JOIN&quot;</span>, <span class="ruby-value str">&quot;cmd_cs_join&quot;</span>,
+83:                      <span class="ruby-value str">&quot;Force ChanServ to join the specified channel.&quot;</span>)
+84:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="build-ccess-method" class="method-detail ">
+				<a name="method-i-buildAccess"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">buildAccess</span><span
+						class="method-args">(origin, args)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="build-ccess-source">
+<pre>
+     <span class="ruby-comment cmt"># File modules/ChanServ/main.rb, line 393</span>
+393:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">buildAccess</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-identifier">args</span>)
+394:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">6</span>
+395:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-value str">&quot;Too many permissions given.&quot;</span>)
+396:         <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">nil</span>
+397:       <span class="ruby-keyword kw">end</span>
+398: 
+399:       <span class="ruby-identifier">access</span> = <span class="ruby-value str">&quot;&quot;</span>
+400: 
+401:       <span class="ruby-identifier">args</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">arg</span><span class="ruby-operator">|</span>
+402:         <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">upcase</span>
+403:           <span class="ruby-keyword kw">when</span> <span class="ruby-value str">&quot;VOICE&quot;</span>
+404:             <span class="ruby-identifier">access</span> <span class="ruby-operator">+=</span> <span class="ruby-value str">&quot;VOC &quot;</span>
+405:           <span class="ruby-keyword kw">when</span> <span class="ruby-value str">&quot;HALFOP&quot;</span>
+406:             <span class="ruby-identifier">access</span> <span class="ruby-operator">+=</span> <span class="ruby-value str">&quot;HOP &quot;</span>
+407:           <span class="ruby-keyword kw">when</span> <span class="ruby-value str">&quot;OP&quot;</span>
+408:             <span class="ruby-identifier">access</span> <span class="ruby-operator">+=</span> <span class="ruby-value str">&quot;OPS &quot;</span>
+409:           <span class="ruby-keyword kw">when</span> <span class="ruby-value str">&quot;PROTECT&quot;</span>
+410:             <span class="ruby-identifier">access</span> <span class="ruby-operator">+=</span> <span class="ruby-value str">&quot;PRT &quot;</span>
+411:           <span class="ruby-keyword kw">when</span> <span class="ruby-value str">&quot;OWNER&quot;</span>
+412:             <span class="ruby-identifier">access</span> <span class="ruby-operator">+=</span> <span class="ruby-value str">&quot;OWN &quot;</span>
+413:           <span class="ruby-keyword kw">when</span> <span class="ruby-value str">&quot;BAN&quot;</span>
+414:             <span class="ruby-identifier">access</span> <span class="ruby-operator">+=</span> <span class="ruby-value str">&quot;BAN &quot;</span>
+415:           <span class="ruby-keyword kw">else</span>
+416:             <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-node">&quot;Ignoring unknown permission #{arg}&quot;</span>)  
+417:         <span class="ruby-keyword kw">end</span>
+418:       }
+419: 
+420:       <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">access</span>
+421:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="cmd-cs-drop-method" class="method-detail ">
+				<a name="method-i-cmd_cs_drop"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">cmd_cs_drop</span><span
+						class="method-args">(origin)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="cmd-cs-drop-source">
+<pre>
+     <span class="ruby-comment cmt"># File modules/ChanServ/main.rb, line 169</span>
+169:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">cmd_cs_drop</span>(<span class="ruby-identifier">origin</span>)
+170:       <span class="ruby-identifier">$log</span>.<span class="ruby-identifier">debug</span> <span class="ruby-value str">&quot;ChanServ&quot;</span>, <span class="ruby-node">&quot;Got: #{origin.raw}&quot;</span>
+171: 
+172:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">origin</span>.<span class="ruby-identifier">argsArr</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">!=</span> <span class="ruby-value">1</span>
+173:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-value str">&quot;Usage: DROP channel&quot;</span>)
+174:         <span class="ruby-keyword kw">return</span>
+175:       <span class="ruby-keyword kw">end</span>
+176: 
+177:       <span class="ruby-identifier">channel_name</span> = <span class="ruby-identifier">origin</span>.<span class="ruby-identifier">argsArr</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">downcase</span>
+178:       <span class="ruby-identifier">user</span> = <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">users</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">origin</span>.<span class="ruby-identifier">source</span>)
+179: 
+180:       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">user</span> <span class="ruby-operator">==</span> <span class="ruby-keyword kw">nil</span>
+181: 
+182:       <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">user</span>.<span class="ruby-identifier">logged_in?</span>
+183:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-value str">&quot;You must be logged in to a services account in order to use this command.&quot;</span>)
+184:         <span class="ruby-keyword kw">return</span>
+185:       <span class="ruby-keyword kw">end</span>
+186: 
+187:       <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-value str">&quot;Not yet implemented.&quot;</span>)
+188:       <span class="ruby-keyword kw">return</span>
+189: 
+190:       <span class="ruby-identifier">channel</span> = <span class="ruby-constant">Channel</span>.<span class="ruby-identifier">find_by_owner_id</span>(<span class="ruby-constant">Account</span>.<span class="ruby-identifier">find_by_username</span>(<span class="ruby-identifier">user</span>.<span class="ruby-identifier">svid</span>))
+191: 
+192:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">channel</span> <span class="ruby-operator">==</span> <span class="ruby-keyword kw">nil</span>
+193:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-value str">&quot;That channel is not registered.&quot;</span>)
+194:         <span class="ruby-keyword kw">return</span>
+195:       <span class="ruby-keyword kw">end</span>
+196:       <span class="ruby-identifier">channel</span> = <span class="ruby-constant">Channel</span>.<span class="ruby-identifier">find_by_name</span>(<span class="ruby-identifier">channel_name</span>)
+197:       <span class="ruby-identifier">channel</span>.<span class="ruby-identifier">destroy</span>
+198: 
+199:       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">leave</span> <span class="ruby-identifier">origin</span>.<span class="ruby-identifier">argsArr</span>[<span class="ruby-value">0</span>]
+200:       <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-node">&quot;You have dropped the registration for #{channel_name}.&quot;</span>)
+201:       <span class="ruby-identifier">$log</span>.<span class="ruby-identifier">info</span> <span class="ruby-value str">'ChanServ'</span>, <span class="ruby-node">&quot;#{origin.source} has dropped the registration for #{channel_name}.&quot;</span>
+202:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="cmd-cs-grant-method" class="method-detail ">
+				<a name="method-i-cmd_cs_grant"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">cmd_cs_grant</span><span
+						class="method-args">(origin)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="cmd-cs-grant-source">
+<pre>
+     <span class="ruby-comment cmt"># File modules/ChanServ/main.rb, line 204</span>
+204:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">cmd_cs_grant</span>(<span class="ruby-identifier">origin</span>)
+205:       <span class="ruby-identifier">$log</span>.<span class="ruby-identifier">debug</span> <span class="ruby-value str">&quot;ChanServ&quot;</span>, <span class="ruby-node">&quot;Got: #{origin.raw}&quot;</span>
+206: 
+207:       <span class="ruby-identifier">user</span> = <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">users</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">origin</span>.<span class="ruby-identifier">source</span>)
+208: 
+209:       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">user</span> <span class="ruby-operator">==</span> <span class="ruby-keyword kw">nil</span>
+210: 
+211:       <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">user</span>.<span class="ruby-identifier">logged_in?</span>
+212:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-value str">&quot;You must be logged in to a services account in order to use this command.&quot;</span>)
+213:         <span class="ruby-keyword kw">return</span>
+214:       <span class="ruby-keyword kw">end</span>
+215: 
+216:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">origin</span>.<span class="ruby-identifier">argsArr</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">3</span>
+217:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-node">&quot;Usage: GRANT #channel nick privileges&quot;</span>)
+218:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-value str">&quot;See HELP GRANT for more information. Valid privileges: VOICE HALFOP OP PROTECT OWNER BAN&quot;</span>)
+219:         <span class="ruby-keyword kw">return</span>
+220:       <span class="ruby-keyword kw">end</span>
+221: 
+222:       <span class="ruby-identifier">channel_name</span> = <span class="ruby-identifier">origin</span>.<span class="ruby-identifier">argsArr</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">downcase</span>
+223: 
+224:       <span class="ruby-identifier">channel</span> = <span class="ruby-constant">Channel</span>.<span class="ruby-identifier">find_by_name</span>(<span class="ruby-identifier">channel_name</span>)
+225: 
+226:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">channel</span> <span class="ruby-operator">==</span> <span class="ruby-keyword kw">nil</span>
+227:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-value str">&quot;That channel is not registered.&quot;</span>)
+228:         <span class="ruby-keyword kw">return</span>
+229:       <span class="ruby-keyword kw">end</span>
+230: 
+231:       <span class="ruby-identifier">user</span> = <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">users</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">origin</span>.<span class="ruby-identifier">argsArr</span>[<span class="ruby-value">1</span>])
+232: 
+233:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">user</span> <span class="ruby-operator">==</span> <span class="ruby-keyword kw">nil</span>
+234:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-value str">&quot;The user must be on-line. Hint: Nick is case-sensitive.&quot;</span>)
+235:         <span class="ruby-keyword kw">return</span>
+236:       <span class="ruby-keyword kw">end</span>
+237: 
+238:       <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">user</span>.<span class="ruby-identifier">logged_in?</span>
+239:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-value str">&quot;The user must be logged in to a services account.&quot;</span>)
+240:         <span class="ruby-keyword kw">return</span>
+241:       <span class="ruby-keyword kw">end</span>
+242: 
+243:       <span class="ruby-identifier">account</span> = <span class="ruby-constant">Account</span>.<span class="ruby-identifier">find_by_username</span>(<span class="ruby-identifier">user</span>.<span class="ruby-identifier">svid</span>)
+244: 
+245:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">account</span> <span class="ruby-operator">==</span> <span class="ruby-keyword kw">nil</span>
+246:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-value str">&quot;The user must be logged in to a services account.&quot;</span>)
+247:         <span class="ruby-keyword kw">return</span>
+248:       <span class="ruby-keyword kw">end</span>
+249: 
+250:       <span class="ruby-identifier">access</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">buildAccess</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-identifier">origin</span>.<span class="ruby-identifier">argsArr</span>[<span class="ruby-value">2</span><span class="ruby-operator">..</span><span class="ruby-identifier">origin</span>.<span class="ruby-identifier">argsArr</span>.<span class="ruby-identifier">length</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>])
+251: 
+252:       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">access</span> <span class="ruby-operator">==</span> <span class="ruby-keyword kw">nil</span>
+253: 
+254:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">access</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+255:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-value str">&quot;No valid permissions given. See HELP GRANT for more information.&quot;</span>)
+256:         <span class="ruby-keyword kw">return</span>
+257:       <span class="ruby-keyword kw">end</span>
+258: 
+259:       <span class="ruby-identifier">chanAccess</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">getAccess</span>(<span class="ruby-identifier">origin</span>.<span class="ruby-identifier">argsArr</span>[<span class="ruby-value">0</span>], <span class="ruby-identifier">user</span>)
+260: 
+261:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">chanAccess</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword kw">nil</span>
+262:         <span class="ruby-identifier">chanAccess</span>.<span class="ruby-identifier">access</span> = <span class="ruby-identifier">access</span>
+263:         <span class="ruby-identifier">chanAccess</span>.<span class="ruby-identifier">save!</span>
+264:       <span class="ruby-keyword kw">else</span>
+265:         <span class="ruby-constant">ChannelUsers</span>.<span class="ruby-identifier">create</span>(
+266:           <span class="ruby-value">:channel_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">channel</span>.<span class="ruby-identifier">id</span>,
+267:           <span class="ruby-value">:account_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">account</span>.<span class="ruby-identifier">id</span>,
+268:           <span class="ruby-value">:access</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">access</span>)
+269:       <span class="ruby-keyword kw">end</span>
+270: 
+271:       <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-node">&quot;Permissions for #{origin.argsArr[1]} have been changed.&quot;</span>)
+272:       <span class="ruby-identifier">$log</span>.<span class="ruby-identifier">info</span> <span class="ruby-value str">'ChanServ'</span>, <span class="ruby-node">&quot;#{origin.source} updated channel access permissions: #{origin.args}.&quot;</span>
+273:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="cmd-cs-join-method" class="method-detail ">
+				<a name="method-i-cmd_cs_join"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">cmd_cs_join</span><span
+						class="method-args">(origin)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="cmd-cs-join-source">
+<pre>
+    <span class="ruby-comment cmt"># File modules/ChanServ/main.rb, line 86</span>
+86:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">cmd_cs_join</span>(<span class="ruby-identifier">origin</span>)
+87:       <span class="ruby-identifier">$log</span>.<span class="ruby-identifier">debug</span> <span class="ruby-value str">&quot;ChanServ&quot;</span>, <span class="ruby-node">&quot;Got: #{origin.raw}&quot;</span>
+88: 
+89:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">origin</span>.<span class="ruby-identifier">argsArr</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">!=</span> <span class="ruby-value">1</span>
+90:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-value str">&quot;Usage: JOIN channel&quot;</span>)
+91:       <span class="ruby-keyword kw">else</span>
+92:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">joinChannel</span>(<span class="ruby-value str">&quot;ChanServ&quot;</span>, <span class="ruby-identifier">origin</span>.<span class="ruby-identifier">args</span>)
+93:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-node">&quot;I have joined #{origin.args}.&quot;</span>)
+94:       <span class="ruby-keyword kw">end</span>
+95:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="cmd-cs-list-method" class="method-detail ">
+				<a name="method-i-cmd_cs_list"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">cmd_cs_list</span><span
+						class="method-args">(origin)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="cmd-cs-list-source">
+<pre>
+     <span class="ruby-comment cmt"># File modules/ChanServ/main.rb, line 97</span>
+ 97:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">cmd_cs_list</span>(<span class="ruby-identifier">origin</span>)
+ 98:       <span class="ruby-identifier">$log</span>.<span class="ruby-identifier">debug</span> <span class="ruby-value str">&quot;ChanServ&quot;</span>, <span class="ruby-node">&quot;Got: #{origin.raw}&quot;</span>
+ 99:       
+100:       <span class="ruby-identifier">user</span> = <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">users</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">origin</span>.<span class="ruby-identifier">source</span>)
+101: 
+102:       <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">user</span>.<span class="ruby-identifier">logged_in?</span>
+103:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-value str">&quot;You must be logged in to a services account in order to use this command.&quot;</span>)
+104:         <span class="ruby-keyword kw">return</span>
+105:       <span class="ruby-keyword kw">end</span>
+106: 
+107:       <span class="ruby-identifier">channels</span> = <span class="ruby-constant">Channel</span>.<span class="ruby-identifier">find_all_by_owner_id</span>(<span class="ruby-constant">Account</span>.<span class="ruby-identifier">find_by_username</span>(<span class="ruby-identifier">user</span>.<span class="ruby-identifier">svid</span>))
+108: 
+109:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">channels</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">!=</span> <span class="ruby-value">0</span>
+110:       
+111:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-node">&quot;Channels registered to #{user.svid}:&quot;</span>)
+112:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-identifier">sprintf</span>(<span class="ruby-value str">&quot;%30.30s  %-25.25s&quot;</span>, <span class="ruby-value str">&quot;Channel&quot;</span>, <span class="ruby-value str">&quot;Date Registered&quot;</span>))
+113: 
+114:         <span class="ruby-identifier">channels</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">channel</span><span class="ruby-operator">|</span>
+115:           <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-identifier">sprintf</span>(<span class="ruby-value str">&quot;%30.30s  %-25.25s&quot;</span>, <span class="ruby-identifier">channel</span>.<span class="ruby-identifier">name</span>, <span class="ruby-identifier">channel</span>.<span class="ruby-identifier">dateRegistered</span>))
+116:         }
+117: 
+118:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-node">&quot;Total channels registered: #{channels.length}.&quot;</span>)
+119:       <span class="ruby-keyword kw">else</span>
+120:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-node">&quot;There are currently no channels registered to #{user.svid}.&quot;</span>)
+121:       <span class="ruby-keyword kw">end</span>
+122:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="cmd-cs-register-method" class="method-detail ">
+				<a name="method-i-cmd_cs_register"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">cmd_cs_register</span><span
+						class="method-args">(origin)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="cmd-cs-register-source">
+<pre>
+     <span class="ruby-comment cmt"># File modules/ChanServ/main.rb, line 124</span>
+124:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">cmd_cs_register</span>(<span class="ruby-identifier">origin</span>)
+125:       <span class="ruby-identifier">$log</span>.<span class="ruby-identifier">debug</span> <span class="ruby-value str">&quot;ChanServ&quot;</span>, <span class="ruby-node">&quot;Got: #{origin.raw}&quot;</span>
+126: 
+127:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">origin</span>.<span class="ruby-identifier">argsArr</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">!=</span> <span class="ruby-value">1</span>
+128:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-value str">&quot;Usage: REGISTER channel&quot;</span>)
+129:         <span class="ruby-keyword kw">return</span>
+130:       <span class="ruby-keyword kw">end</span>
+131: 
+132:       <span class="ruby-identifier">user</span> = <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">users</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">origin</span>.<span class="ruby-identifier">source</span>)
+133: 
+134:       <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">user</span>.<span class="ruby-identifier">logged_in?</span>
+135:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-value str">&quot;You must be logged in to a services account in order to register a channel.&quot;</span>)
+136:         <span class="ruby-keyword kw">return</span>
+137:       <span class="ruby-keyword kw">end</span>
+138: 
+139:       <span class="ruby-identifier">channel_name</span> = <span class="ruby-identifier">origin</span>.<span class="ruby-identifier">argsArr</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">downcase</span>
+140: 
+141:       <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Channel</span>.<span class="ruby-identifier">find_by_name</span>(<span class="ruby-identifier">channel_name</span>)
+142:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-node">&quot;The channel #{channel_name} is already registered.&quot;</span>)
+143:         <span class="ruby-keyword kw">return</span>
+144:       <span class="ruby-keyword kw">end</span>
+145: 
+146:       <span class="ruby-identifier">account</span> = <span class="ruby-constant">Account</span>.<span class="ruby-identifier">find_by_username</span>(<span class="ruby-identifier">user</span>.<span class="ruby-identifier">svid</span>)
+147: 
+148:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">account</span> <span class="ruby-operator">==</span> <span class="ruby-keyword kw">nil</span>
+149:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-value str">&quot;You must be logged in to a services account in order to register a channel.&quot;</span>)
+150:         <span class="ruby-keyword kw">return</span>
+151:       <span class="ruby-keyword kw">end</span>
+152: 
+153:       <span class="ruby-identifier">channel</span> = <span class="ruby-constant">Channel</span>.<span class="ruby-identifier">create</span>(
+154:         <span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">channel_name</span>,
+155:         <span class="ruby-value">:owner_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">account</span>.<span class="ruby-identifier">id</span>,
+156:         <span class="ruby-value">:dateRegistered</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">DateTime</span>.<span class="ruby-identifier">now</span>)
+157: 
+158:       <span class="ruby-constant">ChannelUsers</span>.<span class="ruby-identifier">create</span>(
+159:         <span class="ruby-value">:channel_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">channel</span>.<span class="ruby-identifier">id</span>,
+160:         <span class="ruby-value">:account_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">account</span>.<span class="ruby-identifier">id</span>,
+161:         <span class="ruby-value">:access</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;OWN&quot;</span>)
+162: 
+163:       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">join</span> <span class="ruby-identifier">origin</span>.<span class="ruby-identifier">args</span>
+164: 
+165:       <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">reply</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-node">&quot;You have registered #{origin.args}.&quot;</span>)
+166:       <span class="ruby-identifier">$log</span>.<span class="ruby-identifier">info</span> <span class="ruby-value str">&quot;ChanServ&quot;</span>, <span class="ruby-node">&quot;#{origin.source} has registered #{channel_name} to #{account.username}&quot;</span>
+167:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="db-onnected-method" class="method-detail ">
+				<a name="method-i-dbConnected"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">dbConnected</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="db-onnected-source">
+<pre>
+     <span class="ruby-comment cmt"># File modules/ChanServ/main.rb, line 302</span>
+302:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">dbConnected</span>
+303:       <span class="ruby-identifier">$log</span>.<span class="ruby-identifier">debug</span> <span class="ruby-value str">&quot;ChanServ&quot;</span>, <span class="ruby-value str">&quot;Received database_connected callback. Beginning database check.&quot;</span>
+304: 
+305:       <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">Channel</span>.<span class="ruby-identifier">table_exists?</span>
+306:         <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Schema</span>.<span class="ruby-identifier">define</span> <span class="ruby-keyword kw">do</span>
+307:           <span class="ruby-identifier">create_table</span> <span class="ruby-value">:channels</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span>
+308:             <span class="ruby-identifier">t</span>.<span class="ruby-identifier">column</span> <span class="ruby-value">:owner_id</span>, <span class="ruby-value">:integer</span>
+309:             <span class="ruby-identifier">t</span>.<span class="ruby-identifier">column</span> <span class="ruby-value">:name</span>, <span class="ruby-value">:string</span>, <span class="ruby-value">:null</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">false</span>
+310:             <span class="ruby-identifier">t</span>.<span class="ruby-identifier">column</span> <span class="ruby-value">:lastTopic</span>, <span class="ruby-value">:string</span>
+311:             <span class="ruby-identifier">t</span>.<span class="ruby-identifier">column</span> <span class="ruby-value">:dateRegistered</span>, <span class="ruby-value">:datetime</span>, <span class="ruby-value">:null</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">false</span>
+312:             <span class="ruby-identifier">t</span>.<span class="ruby-identifier">column</span> <span class="ruby-value">:dateLastActive</span>, <span class="ruby-value">:datetime</span>
+313:             <span class="ruby-identifier">t</span>.<span class="ruby-identifier">column</span> <span class="ruby-value">:heir</span>, <span class="ruby-value">:integer</span>
+314:             <span class="ruby-identifier">t</span>.<span class="ruby-identifier">column</span> <span class="ruby-value">:note</span>, <span class="ruby-value">:text</span>
+315:             <span class="ruby-identifier">t</span>.<span class="ruby-identifier">column</span> <span class="ruby-value">:defaultAccess</span>, <span class="ruby-value">:text</span>, <span class="ruby-value">:default</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;&quot;</span>
+316:           <span class="ruby-keyword kw">end</span>
+317:         <span class="ruby-keyword kw">end</span>
+318:       <span class="ruby-keyword kw">end</span>
+319: 
+320:       <span class="ruby-identifier">$log</span>.<span class="ruby-identifier">debug</span> <span class="ruby-value str">'ChanServ'</span>, <span class="ruby-node">&quot;Checking for table: #{ChannelUsers.table_name}: #{ChannelUsers.table_exists?}&quot;</span>
+321: 
+322:       <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">ChannelUsers</span>.<span class="ruby-identifier">table_exists?</span>
+323:         <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Schema</span>.<span class="ruby-identifier">define</span> <span class="ruby-keyword kw">do</span>
+324:           <span class="ruby-identifier">create_table</span> <span class="ruby-value">:channel_users</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span>
+325:             <span class="ruby-identifier">t</span>.<span class="ruby-identifier">column</span> <span class="ruby-value">:channel_id</span>, <span class="ruby-value">:integer</span>, <span class="ruby-value">:null</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">false</span>
+326:             <span class="ruby-identifier">t</span>.<span class="ruby-identifier">column</span> <span class="ruby-value">:account_id</span>, <span class="ruby-value">:integer</span>, <span class="ruby-value">:null</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">false</span>
+327:             <span class="ruby-identifier">t</span>.<span class="ruby-identifier">column</span> <span class="ruby-value">:access</span>, <span class="ruby-value">:text</span>
+328:           <span class="ruby-keyword kw">end</span>
+329:         <span class="ruby-keyword kw">end</span>
+330:       <span class="ruby-keyword kw">end</span>
+331:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="get-ccess-method" class="method-detail ">
+				<a name="method-i-getAccess"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">getAccess</span><span
+						class="method-args">(chan, user)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="get-ccess-source">
+<pre>
+     <span class="ruby-comment cmt"># File modules/ChanServ/main.rb, line 349</span>
+349:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">getAccess</span>(<span class="ruby-identifier">chan</span>, <span class="ruby-identifier">user</span>)
+350:       <span class="ruby-identifier">$log</span>.<span class="ruby-identifier">debug</span> <span class="ruby-value str">'ChanServ'</span>, <span class="ruby-node">&quot;Getting channel access for #{user} on #{chan}&quot;</span>
+351: 
+352:       <span class="ruby-identifier">c</span> = <span class="ruby-constant">Channel</span>.<span class="ruby-identifier">find_by_name</span>(<span class="ruby-identifier">chan</span>)
+353:       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">nil</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">c</span> <span class="ruby-operator">==</span> <span class="ruby-keyword kw">nil</span>
+354:       
+355:       <span class="ruby-identifier">a</span> = <span class="ruby-constant">Account</span>.<span class="ruby-identifier">find_by_username</span>(<span class="ruby-identifier">user</span>.<span class="ruby-identifier">svid</span>)
+356:       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">nil</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">a</span> <span class="ruby-operator">==</span> <span class="ruby-keyword kw">nil</span>
+357:       
+358:       <span class="ruby-identifier">ca</span> = <span class="ruby-constant">ChannelUsers</span>.<span class="ruby-identifier">find_by_channel_id_and_account_id</span>(<span class="ruby-identifier">c</span>.<span class="ruby-identifier">id</span>, <span class="ruby-identifier">a</span>.<span class="ruby-identifier">id</span>)
+359:       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">nil</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">ca</span> <span class="ruby-operator">==</span> <span class="ruby-keyword kw">nil</span>
+360: 
+361:       <span class="ruby-identifier">$log</span>.<span class="ruby-identifier">debug</span> <span class="ruby-value str">'ChanServ'</span>, <span class="ruby-node">&quot;Got channel access for #{chan} #{user}: #{ca.access}&quot;</span>
+362:       <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">ca</span>
+363:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="join-method" class="method-detail ">
+				<a name="method-i-join"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">join</span><span
+						class="method-args">(chan)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="join-source">
+<pre>
+     <span class="ruby-comment cmt"># File modules/ChanServ/main.rb, line 339</span>
+339:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">join</span>(<span class="ruby-identifier">chan</span>)
+340:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">clients</span>.<span class="ruby-identifier">clients</span>[<span class="ruby-value str">&quot;ChanServ&quot;</span>].<span class="ruby-identifier">addChannel</span>(<span class="ruby-identifier">chan</span>)
+341:        <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">link</span>.<span class="ruby-identifier">channelMode</span>(<span class="ruby-value str">&quot;ChanServ&quot;</span>, <span class="ruby-identifier">chan</span>, <span class="ruby-value str">&quot;+ntr&quot;</span>)
+342:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="join-egistered-method" class="method-detail ">
+				<a name="method-i-joinRegistered"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">joinRegistered</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="join-egistered-source">
+<pre>
+     <span class="ruby-comment cmt"># File modules/ChanServ/main.rb, line 333</span>
+333:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">joinRegistered</span>
+334:       <span class="ruby-constant">Channel</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>).<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span>
+335:         <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">join</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">name</span>
+336:       }
+337:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="leave-method" class="method-detail ">
+				<a name="method-i-leave"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">leave</span><span
+						class="method-args">(chan)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="leave-source">
+<pre>
+     <span class="ruby-comment cmt"># File modules/ChanServ/main.rb, line 344</span>
+344:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">leave</span>(<span class="ruby-identifier">chan</span>)
+345:        <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">link</span>.<span class="ruby-identifier">channelMode</span>(<span class="ruby-value str">&quot;ChanServ&quot;</span>, <span class="ruby-identifier">chan</span>.<span class="ruby-identifier">name</span>, <span class="ruby-value str">&quot;-r&quot;</span>)
+346:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">clients</span>.<span class="ruby-identifier">clients</span>[<span class="ruby-value str">&quot;ChanServ&quot;</span>].<span class="ruby-identifier">removeChannel</span>(<span class="ruby-identifier">chan</span>.<span class="ruby-identifier">name</span>)
+347:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="on-join-method" class="method-detail ">
+				<a name="method-i-on_join"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">on_join</span><span
+						class="method-args">(origin)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<pre>
+               
+</pre>
+<p>
+EVENTS       ##
+</p>
+<pre>
+               </pre>
+					
+
+					
+					<div class="method-source-code"
+						id="on-join-source">
+<pre>
+     <span class="ruby-comment cmt"># File modules/ChanServ/main.rb, line 279</span>
+279:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">on_join</span>(<span class="ruby-identifier">origin</span>)
+280:       <span class="ruby-identifier">origin</span> = <span class="ruby-identifier">origin</span>[<span class="ruby-value">0</span>]
+281:       <span class="ruby-identifier">$log</span>.<span class="ruby-identifier">debug</span> <span class="ruby-value str">&quot;ChanServ&quot;</span>, <span class="ruby-node">&quot;on_join Got: #{origin}&quot;</span>
+282:       <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">clients</span>.<span class="ruby-identifier">isMyClient?</span> <span class="ruby-identifier">origin</span>.<span class="ruby-identifier">source</span>
+283:         <span class="ruby-identifier">user</span> = <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">users</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">origin</span>.<span class="ruby-identifier">source</span>)
+284:         <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">user</span> <span class="ruby-operator">==</span> <span class="ruby-keyword kw">nil</span>
+285: 
+286:         <span class="ruby-identifier">chanAccess</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">getAccess</span>(<span class="ruby-identifier">origin</span>.<span class="ruby-identifier">message</span>, <span class="ruby-identifier">user</span>)
+287: 
+288:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">chanAccess</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword kw">nil</span>
+289:           <span class="ruby-identifier">arr</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">parseAccess</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-identifier">chanAccess</span>.<span class="ruby-identifier">access</span>)
+290:         <span class="ruby-keyword kw">else</span>
+291:       
+292:           <span class="ruby-identifier">chan</span> = <span class="ruby-constant">Channel</span>.<span class="ruby-identifier">find_by_name</span>(<span class="ruby-identifier">origin</span>.<span class="ruby-identifier">message</span>)
+293:           <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">chan</span> <span class="ruby-operator">==</span> <span class="ruby-keyword kw">nil</span>
+294: 
+295:           <span class="ruby-identifier">arr</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">parseAccess</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-identifier">chan</span>.<span class="ruby-identifier">defaultAccess</span>)
+296:         <span class="ruby-keyword kw">end</span>
+297: 
+298:         <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">link</span>.<span class="ruby-identifier">channelMode</span>(<span class="ruby-value str">&quot;ChanServ&quot;</span>, <span class="ruby-identifier">origin</span>.<span class="ruby-identifier">message</span>, <span class="ruby-identifier">arr</span>[<span class="ruby-value">0</span>], <span class="ruby-identifier">arr</span>[<span class="ruby-value">1</span>])
+299:       <span class="ruby-keyword kw">end</span>
+300:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="parse-ccess-method" class="method-detail ">
+				<a name="method-i-parseAccess"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">parseAccess</span><span
+						class="method-args">(origin, access)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="parse-ccess-source">
+<pre>
+     <span class="ruby-comment cmt"># File modules/ChanServ/main.rb, line 365</span>
+365:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">parseAccess</span>(<span class="ruby-identifier">origin</span>, <span class="ruby-identifier">access</span>)
+366:       <span class="ruby-identifier">modeChange</span> = <span class="ruby-value str">&quot;+&quot;</span>
+367:       <span class="ruby-identifier">modeArgs</span> = <span class="ruby-value str">&quot;&quot;</span>
+368:       <span class="ruby-identifier">access</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">&quot; &quot;</span>).<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">caItem</span><span class="ruby-operator">|</span>
+369:         <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">caItem</span>
+370:           <span class="ruby-keyword kw">when</span> <span class="ruby-value str">&quot;VOC&quot;</span>
+371:             <span class="ruby-identifier">modeChange</span> <span class="ruby-operator">+=</span> <span class="ruby-value str">&quot;v&quot;</span>
+372:             <span class="ruby-identifier">modeArgs</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">origin</span>.<span class="ruby-identifier">source</span> <span class="ruby-operator">+</span> <span class="ruby-value str">&quot; &quot;</span>
+373:           <span class="ruby-keyword kw">when</span> <span class="ruby-value str">&quot;HOP&quot;</span>
+374:             <span class="ruby-identifier">modeChange</span> <span class="ruby-operator">+=</span> <span class="ruby-value str">&quot;h&quot;</span>
+375:             <span class="ruby-identifier">modeArgs</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">origin</span>.<span class="ruby-identifier">source</span> <span class="ruby-operator">+</span> <span class="ruby-value str">&quot; &quot;</span>
+376:           <span class="ruby-keyword kw">when</span> <span class="ruby-value str">&quot;OPS&quot;</span>
+377:             <span class="ruby-identifier">modeChange</span> <span class="ruby-operator">+=</span> <span class="ruby-value str">&quot;o&quot;</span>
+378:             <span class="ruby-identifier">modeArgs</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">origin</span>.<span class="ruby-identifier">source</span> <span class="ruby-operator">+</span> <span class="ruby-value str">&quot; &quot;</span>
+379:           <span class="ruby-keyword kw">when</span> <span class="ruby-value str">&quot;PRT&quot;</span>
+380:             <span class="ruby-identifier">modeChange</span> <span class="ruby-operator">+=</span> <span class="ruby-value str">&quot;a&quot;</span>
+381:             <span class="ruby-identifier">modeArgs</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">origin</span>.<span class="ruby-identifier">source</span> <span class="ruby-operator">+</span> <span class="ruby-value str">&quot; &quot;</span>
+382:           <span class="ruby-keyword kw">when</span> <span class="ruby-value str">&quot;OWN&quot;</span>
+383:             <span class="ruby-identifier">modeChange</span> <span class="ruby-operator">+=</span> <span class="ruby-value str">&quot;q&quot;</span>
+384:             <span class="ruby-identifier">modeArgs</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">origin</span>.<span class="ruby-identifier">source</span> <span class="ruby-operator">+</span> <span class="ruby-value str">&quot; &quot;</span>
+385:           <span class="ruby-keyword kw">when</span> <span class="ruby-value str">&quot;BAN&quot;</span>
+386:             <span class="ruby-identifier">modeChange</span> <span class="ruby-operator">+=</span> <span class="ruby-value str">&quot;b&quot;</span>
+387:             <span class="ruby-identifier">modeArgs</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">origin</span>.<span class="ruby-identifier">source</span> <span class="ruby-operator">+</span> <span class="ruby-value str">&quot; &quot;</span>
+388:         <span class="ruby-keyword kw">end</span>
+389:       }
+390:       <span class="ruby-keyword kw">return</span> [<span class="ruby-identifier">modeChange</span>, <span class="ruby-identifier">modeArgs</span>]
+391:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

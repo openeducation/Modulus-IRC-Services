@@ -1,0 +1,1439 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: Modulus::ProtocolAbstraction</title>
+
+	<link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../protocols/unreal32_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="protocols/unreal32.rb">protocols/unreal32.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link"><a href="ProtocolAbstractionMixin.html">Modulus::ProtocolAbstractionMixin</a></p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-c-new">::new</a></li>
+					
+					<li><a href="#method-i-changeHostname">#changeHostname</a></li>
+					
+					<li><a href="#method-i-channelInvite">#channelInvite</a></li>
+					
+					<li><a href="#method-i-channelKick">#channelKick</a></li>
+					
+					<li><a href="#method-i-channelMode">#channelMode</a></li>
+					
+					<li><a href="#method-i-channelTopic">#channelTopic</a></li>
+					
+					<li><a href="#method-i-closeConnection">#closeConnection</a></li>
+					
+					<li><a href="#method-i-connect">#connect</a></li>
+					
+					<li><a href="#method-i-createClient">#createClient</a></li>
+					
+					<li><a href="#method-i-createUser">#createUser</a></li>
+					
+					<li><a href="#method-i-destroyClient">#destroyClient</a></li>
+					
+					<li><a href="#method-i-forceChannelJoin">#forceChannelJoin</a></li>
+					
+					<li><a href="#method-i-forceChannelMode">#forceChannelMode</a></li>
+					
+					<li><a href="#method-i-forceChannelPart">#forceChannelPart</a></li>
+					
+					<li><a href="#method-i-isChannel%3F">#isChannel?</a></li>
+					
+					<li><a href="#method-i-joinChannel">#joinChannel</a></li>
+					
+					<li><a href="#method-i-parse">#parse</a></li>
+					
+					<li><a href="#method-i-partChannel">#partChannel</a></li>
+					
+					<li><a href="#method-i-removeHostname">#removeHostname</a></li>
+					
+					<li><a href="#method-i-sendKill">#sendKill</a></li>
+					
+					<li><a href="#method-i-sendNotice">#sendNotice</a></li>
+					
+					<li><a href="#method-i-sendPong">#sendPong</a></li>
+					
+					<li><a href="#method-i-sendPrivmsg">#sendPrivmsg</a></li>
+					
+					<li><a href="#method-i-svs2mode">#svs2mode</a></li>
+					
+					<li><a href="#method-i-svsmode">#svsmode</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../LICENSE.html">LICENSE</a></li>
+				
+					<li class="file"><a href="../README.html">README</a></li>
+				
+					<li class="file"><a href="../Rakefile.html">Rakefile</a></li>
+				
+					<li class="file"><a href="../head.html">head</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../Modulus.html">Modulus</a></li>
+				
+					<li><a href="../Modulus/Account.html">Modulus::Account</a></li>
+				
+					<li><a href="../Modulus/BanServ.html">Modulus::BanServ</a></li>
+				
+					<li><a href="../Modulus/BanServ/Autokill.html">Modulus::BanServ::Autokill</a></li>
+				
+					<li><a href="../Modulus/BanServ/Regexkill.html">Modulus::BanServ::Regexkill</a></li>
+				
+					<li><a href="../Modulus/BotServ.html">Modulus::BotServ</a></li>
+				
+					<li><a href="../Modulus/BotServ/BotServBot.html">Modulus::BotServ::BotServBot</a></li>
+				
+					<li><a href="../Modulus/BotServ/BotServChannel.html">Modulus::BotServ::BotServChannel</a></li>
+				
+					<li><a href="../Modulus/ChanServ.html">Modulus::ChanServ</a></li>
+				
+					<li><a href="../Modulus/ChanServ/Channel.html">Modulus::ChanServ::Channel</a></li>
+				
+					<li><a href="../Modulus/ChanServ/ChannelUsers.html">Modulus::ChanServ::ChannelUsers</a></li>
+				
+					<li><a href="../Modulus/Channel.html">Modulus::Channel</a></li>
+				
+					<li><a href="../Modulus/ChannelUser.html">Modulus::ChannelUser</a></li>
+				
+					<li><a href="../Modulus/Channels.html">Modulus::Channels</a></li>
+				
+					<li><a href="../Modulus/Clients.html">Modulus::Clients</a></li>
+				
+					<li><a href="../Modulus/Command.html">Modulus::Command</a></li>
+				
+					<li><a href="../Modulus/Config.html">Modulus::Config</a></li>
+				
+					<li><a href="../Modulus/EventCallback.html">Modulus::EventCallback</a></li>
+				
+					<li><a href="../Modulus/Events.html">Modulus::Events</a></li>
+				
+					<li><a href="../Modulus/Hook.html">Modulus::Hook</a></li>
+				
+					<li><a href="../Modulus/HostServ.html">Modulus::HostServ</a></li>
+				
+					<li><a href="../Modulus/HostServ/Host.html">Modulus::HostServ::Host</a></li>
+				
+					<li><a href="../Modulus/Log.html">Modulus::Log</a></li>
+				
+					<li><a href="../Modulus/Module.html">Modulus::Module</a></li>
+				
+					<li><a href="../Modulus/ModuleManager.html">Modulus::ModuleManager</a></li>
+				
+					<li><a href="../Modulus/NickServ.html">Modulus::NickServ</a></li>
+				
+					<li><a href="../Modulus/NickServ/Account.html">Modulus::NickServ::Account</a></li>
+				
+					<li><a href="../Modulus/NickServ/Nick.html">Modulus::NickServ::Nick</a></li>
+				
+					<li><a href="../Modulus/OperServ.html">Modulus::OperServ</a></li>
+				
+					<li><a href="../Modulus/OriginInfo.html">Modulus::OriginInfo</a></li>
+				
+					<li><a href="../Modulus/Parser.html">Modulus::Parser</a></li>
+				
+					<li><a href="../Modulus/ProtocolAbstraction.html">Modulus::ProtocolAbstraction</a></li>
+				
+					<li><a href="../Modulus/ProtocolAbstractionMixin.html">Modulus::ProtocolAbstractionMixin</a></li>
+				
+					<li><a href="../Modulus/Pseudoclient.html">Modulus::Pseudoclient</a></li>
+				
+					<li><a href="../Modulus/QuoteServ.html">Modulus::QuoteServ</a></li>
+				
+					<li><a href="../Modulus/QuoteServ/Quote.html">Modulus::QuoteServ::Quote</a></li>
+				
+					<li><a href="../Modulus/QuoteServ/QuoteChannel.html">Modulus::QuoteServ::QuoteChannel</a></li>
+				
+					<li><a href="../Modulus/QuoteServ/QuoteRater.html">Modulus::QuoteServ::QuoteRater</a></li>
+				
+					<li><a href="../Modulus/ReservedNick.html">Modulus::ReservedNick</a></li>
+				
+					<li><a href="../Modulus/Service.html">Modulus::Service</a></li>
+				
+					<li><a href="../Modulus/ServiceModules.html">Modulus::ServiceModules</a></li>
+				
+					<li><a href="../Modulus/User.html">Modulus::User</a></li>
+				
+					<li><a href="../Modulus/Users.html">Modulus::Users</a></li>
+				
+					<li><a href="../Object.html">Object</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">Modulus::ProtocolAbstraction</h1>
+
+		<div id="description">
+			
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+
+		<!-- Methods -->
+		
+		<div id="public-class-method-details" class="method-section section">
+			<h3 class="section-header">Public Class Methods</h3>
+
+		
+			<div id="new-method" class="method-detail ">
+				<a name="method-c-new"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">new</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="new-source">
+<pre>
+     <span class="ruby-comment cmt"># File protocols/unreal32.rb, line 25</span>
+ 25:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>
+ 26:       <span class="ruby-ivar">@sendq</span> = <span class="ruby-constant">Queue</span>.<span class="ruby-identifier">new</span>
+ 27: 
+ 28:       <span class="ruby-ivar">@channelPrefixes</span> = [ <span class="ruby-node">&quot;#&quot;</span> ]
+ 29: 
+ 30:       <span class="ruby-ivar">@channelModePrefixes</span> = {
+ 31:         <span class="ruby-value str">&quot;~&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:owner</span>,
+ 32:         <span class="ruby-value str">&quot;&amp;&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:protected</span>,
+ 33:         <span class="ruby-value str">&quot;@&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:operator</span>,
+ 34:         <span class="ruby-value str">&quot;%&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:halfop</span>,
+ 35:         <span class="ruby-value str">&quot;+&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:voice</span>
+ 36:       }
+ 37: 
+ 38:       <span class="ruby-ivar">@channelModes</span> = {
+ 39:         <span class="ruby-value str">&quot;A&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">false</span>,
+ 40:         <span class="ruby-value str">&quot;c&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">false</span>,
+ 41:         <span class="ruby-value str">&quot;f&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">true</span>,
+ 42:         <span class="ruby-value str">&quot;G&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">false</span>,
+ 43:         <span class="ruby-value str">&quot;i&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">false</span>,
+ 44:         <span class="ruby-value str">&quot;j&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">true</span>,
+ 45:         <span class="ruby-value str">&quot;K&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">false</span>,
+ 46:         <span class="ruby-value str">&quot;k&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">true</span>,
+ 47:         <span class="ruby-value str">&quot;l&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">true</span>,
+ 48:         <span class="ruby-value str">&quot;L&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">true</span>,
+ 49:         <span class="ruby-value str">&quot;M&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">false</span>,
+ 50:         <span class="ruby-value str">&quot;m&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">false</span>,
+ 51:         <span class="ruby-value str">&quot;N&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">false</span>,
+ 52:         <span class="ruby-value str">&quot;n&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">false</span>,
+ 53:         <span class="ruby-value str">&quot;O&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">false</span>,
+ 54:         <span class="ruby-value str">&quot;p&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">false</span>,
+ 55:         <span class="ruby-value str">&quot;Q&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">false</span>,
+ 56:         <span class="ruby-value str">&quot;r&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">false</span>,
+ 57:         <span class="ruby-value str">&quot;R&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">false</span>,
+ 58:         <span class="ruby-value str">&quot;S&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">false</span>,
+ 59:         <span class="ruby-value str">&quot;s&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">false</span>,
+ 60:         <span class="ruby-value str">&quot;t&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">false</span>,
+ 61:         <span class="ruby-value str">&quot;T&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">false</span>,
+ 62:         <span class="ruby-value str">&quot;u&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">false</span>,
+ 63:         <span class="ruby-value str">&quot;V&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">false</span>,
+ 64:         <span class="ruby-value str">&quot;z&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">false</span>,
+ 65:         <span class="ruby-value str">&quot;Z&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">false</span>
+ 66:       }
+ 67: 
+ 68:       <span class="ruby-ivar">@channelUserModes</span> = {
+ 69:         <span class="ruby-value str">&quot;q&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:owner</span>,
+ 70:         <span class="ruby-value str">&quot;a&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:protected</span>,
+ 71:         <span class="ruby-value str">&quot;o&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:op</span>,
+ 72:         <span class="ruby-value str">&quot;h&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:halfop</span>,
+ 73:         <span class="ruby-value str">&quot;v&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:voice</span>
+ 74:       }
+ 75: 
+ 76:       <span class="ruby-ivar">@userModes</span> = {
+ 77:         <span class="ruby-value str">&quot;A&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:server_admin</span>,
+ 78:         <span class="ruby-value str">&quot;a&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:services_admin</span>,
+ 79:         <span class="ruby-value str">&quot;B&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:bot</span>,
+ 80:         <span class="ruby-value str">&quot;C&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:co_admin</span>,
+ 81:         <span class="ruby-value str">&quot;d&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:deaf</span>,
+ 82:         <span class="ruby-value str">&quot;G&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:censored</span>,
+ 83:         <span class="ruby-value str">&quot;g&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:read_globops</span>,
+ 84:         <span class="ruby-value str">&quot;H&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:hidden_op</span>,
+ 85:         <span class="ruby-value str">&quot;h&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:help_op</span>,
+ 86:         <span class="ruby-value str">&quot;i&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:invisible</span>,
+ 87:         <span class="ruby-value str">&quot;N&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:network_administrator</span>,
+ 88:         <span class="ruby-value str">&quot;O&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:local_operator</span>,
+ 89:         <span class="ruby-value str">&quot;o&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:global_operator</span>,
+ 90:         <span class="ruby-value str">&quot;p&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:whois_hide</span>,
+ 91:         <span class="ruby-value str">&quot;q&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:no_kicks</span>,
+ 92:         <span class="ruby-value str">&quot;R&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:registered_privmsgs_only</span>,
+ 93:         <span class="ruby-value str">&quot;r&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:registered</span>,
+ 94:         <span class="ruby-value str">&quot;S&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:services_daemon</span>,
+ 95:         <span class="ruby-value str">&quot;s&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:read_server_notices</span>,
+ 96:         <span class="ruby-value str">&quot;T&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:no_ctcps</span>,
+ 97:         <span class="ruby-value str">&quot;t&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:using_vhost</span>,
+ 98:         <span class="ruby-value str">&quot;V&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:webtv_user</span>,
+ 99:         <span class="ruby-value str">&quot;v&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:read_dcc_rejection</span>,
+100:         <span class="ruby-value str">&quot;W&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:read_whois</span>,
+101:         <span class="ruby-value str">&quot;w&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:read_wallops</span>,
+102:         <span class="ruby-value str">&quot;x&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:hidden_hostname</span>,
+103:         <span class="ruby-value str">&quot;z&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:using_ssl</span>
+104:       }
+105: 
+106:       <span class="ruby-ivar">@operModes</span> = [ <span class="ruby-value str">&quot;A&quot;</span>, <span class="ruby-value str">&quot;a&quot;</span>, <span class="ruby-value str">&quot;C&quot;</span>, <span class="ruby-value str">&quot;N&quot;</span>, <span class="ruby-value str">&quot;O&quot;</span>, <span class="ruby-value str">&quot;o&quot;</span> ]
+107: 
+108:       <span class="ruby-ivar">@cmdList</span> = {
+109: 
+110:         <span class="ruby-comment cmt"># Server Commands</span>
+111: 
+112:         <span class="ruby-value str">&quot;8&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:ping</span>,
+113:         <span class="ruby-value str">&quot;PING&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:ping</span>,
+114:         <span class="ruby-value str">&quot;9&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:pong</span>,
+115:         <span class="ruby-value str">&quot;PONG&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:ping</span>,
+116: 
+117:         <span class="ruby-value str">&quot;PASS&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:pass</span>,
+118:         <span class="ruby-value str">&quot;PROTOCTL&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:protoctl</span>,
+119:         <span class="ruby-value str">&quot;SERVER&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:server</span>,
+120:         <span class="ruby-value str">&quot;ES&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:endOfSync</span>,
+121:         <span class="ruby-value str">&quot;EOS&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:endOfSync</span>,
+122:         <span class="ruby-value str">&quot;NETINFO&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:netInfo</span>,
+123:         <span class="ruby-value str">&quot;AO&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:netInfo</span>,
+124:         <span class="ruby-value str">&quot;&amp;&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:nick</span>,
+125:         <span class="ruby-value str">&quot;NICK&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:nick</span>,
+126: 
+127:         <span class="ruby-value str">&quot;,&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:quit</span>,
+128:         <span class="ruby-value str">&quot;QUIT&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:quit</span>,
+129: 
+130:         <span class="ruby-value str">&quot;~&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:sjoin</span>,
+131:         <span class="ruby-value str">&quot;SJOIN&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:sjoin</span>,
+132:         <span class="ruby-value str">&quot;AP&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:sendumode</span>,
+133:         <span class="ruby-value str">&quot;SENDUMODE&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:sendumode</span>,
+134:         <span class="ruby-value str">&quot;AU&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:smo</span>,
+135:         <span class="ruby-value str">&quot;SMO&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:smo</span>,
+136:         <span class="ruby-value str">&quot;Ss&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:sendsno</span>,
+137:         <span class="ruby-value str">&quot;SENDSNO&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:sendsno</span>,
+138:         <span class="ruby-value str">&quot;TKL&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:tkl</span>,
+139:         <span class="ruby-value str">&quot;BD&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:tkl</span>,
+140:         <span class="ruby-value str">&quot;KILL&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:kill</span>,
+141:         <span class="ruby-value str">&quot;SETHOST&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:sethost</span>,
+142:         <span class="ruby-value str">&quot;SWHOIS&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:swhois</span>,
+143:         <span class="ruby-value str">&quot;BA&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:swhois</span>,
+144:         <span class="ruby-value str">&quot;AA&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:sethost</span>,
+145:         <span class="ruby-value str">&quot;AL&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:chghost</span>,
+146:         <span class="ruby-value str">&quot;CHGHOST&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:chghost</span>,
+147: 
+148:         <span class="ruby-value str">&quot;|&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:mode</span>,
+149: 
+150:         <span class="ruby-node">&quot;#&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:whois</span>,
+151:         <span class="ruby-value str">&quot;WHOIS&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:whois</span>,
+152: 
+153:         <span class="ruby-comment cmt"># Channel Commands</span>
+154: 
+155:         <span class="ruby-value str">&quot;C&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:join</span>,
+156:         <span class="ruby-value str">&quot;JOIN&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:join</span>,
+157:         <span class="ruby-value str">&quot;D&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:part</span>,
+158:         <span class="ruby-value str">&quot;PART&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:part</span>,
+159: 
+160:         <span class="ruby-value str">&quot;H&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:kick</span>,
+161:         <span class="ruby-value str">&quot;KICK&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:kick</span>,
+162:         <span class="ruby-value str">&quot;G&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:mode</span>,
+163:         <span class="ruby-value str">&quot;MODE&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:mode</span>,
+164:         <span class="ruby-value str">&quot;*&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:channelInvite</span>,
+165:         <span class="ruby-value str">&quot;INVITE&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:channelInvite</span>,
+166:         <span class="ruby-value str">&quot;AX&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:sajoin</span>,
+167:         <span class="ruby-value str">&quot;SAJOIN&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:sajoin</span>,
+168:         <span class="ruby-value str">&quot;AY&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:sapart</span>,
+169:         <span class="ruby-value str">&quot;SAPART&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:sapart</span>,
+170:         <span class="ruby-value str">&quot;o&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:samode</span>,
+171:         <span class="ruby-value str">&quot;SAMODE&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:samode</span>,
+172:         <span class="ruby-value str">&quot;)&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:topic</span>,
+173:         <span class="ruby-value str">&quot;TOPIC&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:topic</span>,
+174: 
+175:         <span class="ruby-comment cmt"># Services Commands</span>
+176: 
+177:         <span class="ruby-value str">&quot;h&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:svskill</span>,
+178:         <span class="ruby-value str">&quot;SVSKILL&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:svskill</span>,
+179:         <span class="ruby-value str">&quot;n&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:svsmode</span>,
+180:         <span class="ruby-value str">&quot;SVSMODE&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:svsmode</span>,
+181:         <span class="ruby-value str">&quot;v&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:svs2mode</span>,
+182:         <span class="ruby-value str">&quot;SVS2MODE&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:svs2mode</span>,
+183:         <span class="ruby-value str">&quot;BV&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:svssno</span>,
+184:         <span class="ruby-value str">&quot;SVSSNO&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:svssno</span>,
+185:         <span class="ruby-value str">&quot;BW&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:svs2sno</span>,
+186:         <span class="ruby-value str">&quot;SVS2SNO&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:svs2sno</span>,
+187:         <span class="ruby-value str">&quot;e&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:svsnick</span>,
+188:         <span class="ruby-value str">&quot;SVSNICK&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:svsnick</span>,
+189:         <span class="ruby-value str">&quot;BX&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:svsjoin</span>,
+190:         <span class="ruby-value str">&quot;SVSJOIN&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:svsjoin</span>,
+191:         <span class="ruby-value str">&quot;BT&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:svspart</span>,
+192:         <span class="ruby-value str">&quot;SVSPART&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:svspart</span>,
+193:         <span class="ruby-value str">&quot;BB&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:svso</span>,
+194:         <span class="ruby-value str">&quot;SVSO&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:svso</span>,
+195:         <span class="ruby-value str">&quot;f&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:svsnoop</span>,
+196:         <span class="ruby-value str">&quot;SVSNOOP&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:svsnoop</span>,
+197:         <span class="ruby-value str">&quot;BR&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:svsnline</span>,
+198:         <span class="ruby-value str">&quot;SVSNLINE&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:svsnline</span>,
+199:         <span class="ruby-value str">&quot;BC&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:svsfline</span>,
+200:         <span class="ruby-value str">&quot;SVSFLINE&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:svsfline</span>,
+201: 
+202:         <span class="ruby-comment cmt"># Chat Commands</span>
+203: 
+204:         <span class="ruby-value str">&quot;!&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:privmsg</span>,
+205:         <span class="ruby-value str">&quot;PRIVMSG&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:privmsg</span>,
+206:         <span class="ruby-value str">&quot;B&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:notice</span>,
+207:         <span class="ruby-value str">&quot;NOTICE&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:notice</span>,
+208:         <span class="ruby-value str">&quot;p&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:chatops</span>,
+209:         <span class="ruby-value str">&quot;CHATOPS&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:chatops</span>,
+210:         <span class="ruby-value str">&quot;=&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:wallops</span>,
+211:         <span class="ruby-value str">&quot;WALLOPS&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:wallops</span>,
+212:         <span class="ruby-value str">&quot;]&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:globops</span>,
+213:         <span class="ruby-value str">&quot;GLOBOPS&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:globops</span>,
+214:         <span class="ruby-value str">&quot;x&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:adchat</span>,
+215:         <span class="ruby-value str">&quot;ADCHAT&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:adchat</span>,
+216:         <span class="ruby-value str">&quot;AC&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:nachat</span>,
+217:         <span class="ruby-value str">&quot;NACHAT&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:nachat</span>,
+218: 
+219:         <span class="ruby-comment cmt"># TKL Commands</span>
+220: 
+221:         <span class="ruby-value str">&quot;c&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:sqline</span>,
+222:         <span class="ruby-value str">&quot;SQLINE&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:sqline</span>,
+223:         <span class="ruby-value str">&quot;d&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:unsqline</span>,
+224:         <span class="ruby-value str">&quot;UNSQLINE&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:unsqline</span>
+225:       }
+226:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="change-ostname-method" class="method-detail ">
+				<a name="method-i-changeHostname"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">changeHostname</span><span
+						class="method-args">(target, source, host)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="change-ostname-source">
+<pre>
+     <span class="ruby-comment cmt"># File protocols/unreal32.rb, line 352</span>
+352:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">changeHostname</span>(<span class="ruby-identifier">target</span>, <span class="ruby-identifier">source</span>, <span class="ruby-identifier">host</span>)
+353:       <span class="ruby-ivar">@sendq</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;:#{source} CHGHOST #{target} #{host}&quot;</span>
+354:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="channel-nvite-method" class="method-detail ">
+				<a name="method-i-channelInvite"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">channelInvite</span><span
+						class="method-args">(source, target, channel)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="channel-nvite-source">
+<pre>
+     <span class="ruby-comment cmt"># File protocols/unreal32.rb, line 389</span>
+389:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">channelInvite</span>(<span class="ruby-identifier">source</span>, <span class="ruby-identifier">target</span>, <span class="ruby-identifier">channel</span>)
+390:       <span class="ruby-ivar">@sendq</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;:#{source} * #{target} #{channel}&quot;</span>
+391:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="channel-ick-method" class="method-detail ">
+				<a name="method-i-channelKick"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">channelKick</span><span
+						class="method-args">(nick, channel, target, reason="")</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="channel-ick-source">
+<pre>
+     <span class="ruby-comment cmt"># File protocols/unreal32.rb, line 381</span>
+381:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">channelKick</span>(<span class="ruby-identifier">nick</span>, <span class="ruby-identifier">channel</span>, <span class="ruby-identifier">target</span>, <span class="ruby-identifier">reason</span>=<span class="ruby-value str">&quot;&quot;</span>)
+382:       <span class="ruby-ivar">@sendq</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;:#{nick} H #{channel} #{target} :#{reason}&quot;</span>
+383:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="channel-ode-method" class="method-detail ">
+				<a name="method-i-channelMode"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">channelMode</span><span
+						class="method-args">(source, target, modeChanges, modeParams="")</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="channel-ode-source">
+<pre>
+     <span class="ruby-comment cmt"># File protocols/unreal32.rb, line 385</span>
+385:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">channelMode</span>(<span class="ruby-identifier">source</span>, <span class="ruby-identifier">target</span>, <span class="ruby-identifier">modeChanges</span>, <span class="ruby-identifier">modeParams</span>=<span class="ruby-value str">&quot;&quot;</span>)
+386:       <span class="ruby-ivar">@sendq</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;:#{source} G #{target} #{modeChanges} #{modeParams}&quot;</span>
+387:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="channel-opic-method" class="method-detail ">
+				<a name="method-i-channelTopic"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">channelTopic</span><span
+						class="method-args">(source, target, topic)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="channel-opic-source">
+<pre>
+     <span class="ruby-comment cmt"># File protocols/unreal32.rb, line 393</span>
+393:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">channelTopic</span>(<span class="ruby-identifier">source</span>, <span class="ruby-identifier">target</span>, <span class="ruby-identifier">topic</span>)
+394:       <span class="ruby-ivar">@sendq</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;:#{source} ) #{target} #{source} #{Time.now.utc.to_i} :#{topic}&quot;</span>
+395:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="close-onnection-method" class="method-detail ">
+				<a name="method-i-closeConnection"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">closeConnection</span><span
+						class="method-args">(reason="Services is shutting down.")</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="close-onnection-source">
+<pre>
+     <span class="ruby-comment cmt"># File protocols/unreal32.rb, line 272</span>
+272:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">closeConnection</span>(<span class="ruby-identifier">reason</span>=<span class="ruby-value str">&quot;Services is shutting down.&quot;</span>)
+273:       <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@socket</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword kw">nil</span>
+274:         <span class="ruby-identifier">$log</span>.<span class="ruby-identifier">info</span> <span class="ruby-value str">&quot;protocol-unreal32&quot;</span>, <span class="ruby-node">&quot;Closing connection: #{reason}&quot;</span>
+275: 
+276:         <span class="ruby-identifier">name</span> = <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">getOption</span>(<span class="ruby-value str">'Network'</span>, <span class="ruby-value str">'services_hostname'</span>)
+277:         <span class="ruby-ivar">@socket</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;:#{name} SQUIT #{name} :Services is shutting down.&quot;</span>
+278:       <span class="ruby-keyword kw">end</span>
+279:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="connect-method" class="method-detail ">
+				<a name="method-i-connect"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">connect</span><span
+						class="method-args">(clients)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="connect-source">
+<pre>
+     <span class="ruby-comment cmt"># File protocols/unreal32.rb, line 228</span>
+228:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">connect</span>(<span class="ruby-identifier">clients</span>)
+229:       <span class="ruby-identifier">$log</span>.<span class="ruby-identifier">debug</span> <span class="ruby-value str">&quot;protocol-unreal32&quot;</span>, <span class="ruby-value str">&quot;Starting connection to IRC server.&quot;</span>
+230:       <span class="ruby-identifier">host</span> = <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">getOption</span>(<span class="ruby-value str">'Network'</span>, <span class="ruby-value str">'link_address'</span>)
+231:       <span class="ruby-identifier">port</span> = <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">getOption</span>(<span class="ruby-value str">'Network'</span>, <span class="ruby-value str">'link_port'</span>)
+232:       <span class="ruby-identifier">bindAddr</span> = <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">getOption</span>(<span class="ruby-value str">'Network'</span>, <span class="ruby-value str">'bind_address'</span>)
+233:       <span class="ruby-identifier">bindPort</span> = <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">getOption</span>(<span class="ruby-value str">'Network'</span>, <span class="ruby-value str">'bind_port'</span>)
+234: 
+235:       <span class="ruby-ivar">@socket</span> = <span class="ruby-constant">TCPSocket</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">host</span>, <span class="ruby-identifier">port</span>, <span class="ruby-identifier">bindAddr</span>, <span class="ruby-identifier">bindPort</span>)
+236: 
+237:       <span class="ruby-ivar">@socket</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;PASS :#{Modulus.config.getOption('Network', 'link_password')}&quot;</span>
+238: 
+239:       <span class="ruby-ivar">@socket</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;SERVER #{Modulus.config.getOption('Network', 'services_hostname')} 1 :#{Modulus.config.getOption('Network', 'services_name')}&quot;</span>
+240:       <span class="ruby-comment cmt">#@socket.puts &quot;SERVER #{Modulus.config.getOption('Network', 'services_hostname')} 1 :U2309-0 #{Modulus.config.getOption('Network', 'services_name')}&quot;</span>
+241:       
+242:       <span class="ruby-identifier">lastMsg</span> = <span class="ruby-ivar">@socket</span>.<span class="ruby-identifier">gets</span>.<span class="ruby-identifier">chomp</span>
+243:       <span class="ruby-identifier">puts</span> <span class="ruby-identifier">lastMsg</span>
+244:       <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">lastMsg</span>.<span class="ruby-identifier">include?</span> <span class="ruby-value str">&quot;ESVID&quot;</span>
+245:         <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;Connection failed: Server does not support ESVID.&quot;</span>
+246:         <span class="ruby-identifier">exit</span> <span class="ruby-value">1</span>
+247:       <span class="ruby-keyword kw">end</span>
+248: 
+249:       <span class="ruby-identifier">lastMsg</span> = <span class="ruby-ivar">@socket</span>.<span class="ruby-identifier">gets</span>.<span class="ruby-identifier">chomp</span>
+250:       <span class="ruby-identifier">puts</span> <span class="ruby-identifier">lastMsg</span>
+251:       <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">lastMsg</span> <span class="ruby-operator">==</span> <span class="ruby-node">&quot;PASS :#{Modulus.config.getOption('Network', 'link_password')}&quot;</span>
+252:         <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;Connection failed: Server replied with incorrect password.&quot;</span>
+253:         <span class="ruby-identifier">exit</span> <span class="ruby-value">1</span>
+254:       <span class="ruby-keyword kw">end</span>
+255: 
+256:       <span class="ruby-identifier">host</span> = <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">getOption</span>(<span class="ruby-value str">'Network'</span>, <span class="ruby-value str">'services_hostname'</span>)
+257:       <span class="ruby-identifier">user</span> = <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">getOption</span>(<span class="ruby-value str">'Network'</span>, <span class="ruby-value str">'services_user'</span>)
+258: 
+259:       <span class="ruby-identifier">clients</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">client</span><span class="ruby-operator">|</span>
+260:         <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;#{client.nick}&quot;</span>
+261:         <span class="ruby-ivar">@socket</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;NICK #{client.nick} 0 #{Time.now.utc.to_i} #{user} #{host} #{host} #{Time.now.utc.to_i} +oS #{host} :#{client.realName}&quot;</span>
+262:       }
+263: 
+264:       <span class="ruby-ivar">@socket</span>.<span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;PROTOCTL ESVID TOKEN SJ3 VHP UMODE2 CHANMODES NOQUIT&quot;</span>
+265:       <span class="ruby-ivar">@socket</span>.<span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;ES&quot;</span>
+266:       <span class="ruby-ivar">@socket</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;AO 0 #{Time.now.utc.to_i} 0 * 0 0 0 :#{Modulus.config.getOption('Network', 'network_name')}&quot;</span>
+267: 
+268:       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">startSendThread</span>
+269:       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">startRecvThread</span>
+270:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="create-lient-method" class="method-detail ">
+				<a name="method-i-createClient"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">createClient</span><span
+						class="method-args">(nick, realName)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="create-lient-source">
+<pre>
+     <span class="ruby-comment cmt"># File protocols/unreal32.rb, line 335</span>
+335:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">createClient</span>(<span class="ruby-identifier">nick</span>, <span class="ruby-identifier">realName</span>)
+336:       <span class="ruby-comment cmt">#@sendq &lt;&lt; &quot;:#{nick} SVSKILL #{nick} :Collision with services.&quot;</span>
+337: 
+338:       <span class="ruby-identifier">host</span> = <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">getOption</span>(<span class="ruby-value str">'Network'</span>, <span class="ruby-value str">'services_hostname'</span>)
+339:       <span class="ruby-identifier">user</span> = <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">getOption</span>(<span class="ruby-value str">'Network'</span>, <span class="ruby-value str">'services_user'</span>)
+340: 
+341:       <span class="ruby-ivar">@sendq</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;NICK #{nick} 1 #{Time.now.utc.to_i} #{user} #{host} #{host} * +oS * :#{realName}&quot;</span>
+342:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="create-ser-method" class="method-detail ">
+				<a name="method-i-createUser"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">createUser</span><span
+						class="method-args">(origin)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="create-ser-source">
+<pre>
+     <span class="ruby-comment cmt"># File protocols/unreal32.rb, line 301</span>
+301:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">createUser</span>(<span class="ruby-identifier">origin</span>)
+302:       <span class="ruby-comment cmt">#TODO: Are we using NICKv2?</span>
+303:       <span class="ruby-comment cmt"># (We never do, despite asking for it. Annoying!)</span>
+304:       <span class="ruby-comment cmt"># &amp;     nick   hopcount timestamp   username hostname   server                  servicestamp  :realname</span>
+305:       <span class="ruby-comment cmt"># NICK  Kabaka 1        1291720576  kabaka   localhost  draco.vacantminded.com  *             :kabaka</span>
+306:       <span class="ruby-comment cmt"># 0     1      2        3           4        5          6                       7             8</span>
+307:       <span class="ruby-constant">User</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">origin</span>.<span class="ruby-identifier">arr</span>[<span class="ruby-value">1</span>], <span class="ruby-identifier">origin</span>.<span class="ruby-identifier">arr</span>[<span class="ruby-value">7</span>], <span class="ruby-identifier">origin</span>.<span class="ruby-identifier">arr</span>[<span class="ruby-value">5</span>], <span class="ruby-identifier">origin</span>.<span class="ruby-identifier">arr</span>[<span class="ruby-value">5</span>], <span class="ruby-identifier">origin</span>.<span class="ruby-identifier">arr</span>[<span class="ruby-value">3</span>])
+308:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="destroy-lient-method" class="method-detail ">
+				<a name="method-i-destroyClient"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">destroyClient</span><span
+						class="method-args">(nick, reason="")</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="destroy-lient-source">
+<pre>
+     <span class="ruby-comment cmt"># File protocols/unreal32.rb, line 348</span>
+348:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">destroyClient</span>(<span class="ruby-identifier">nick</span>, <span class="ruby-identifier">reason</span>=<span class="ruby-value str">&quot;&quot;</span>)
+349:       <span class="ruby-ivar">@sendq</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;:#{nick} QUIT :#{reason}&quot;</span>
+350:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="force-hannel-oin-method" class="method-detail ">
+				<a name="method-i-forceChannelJoin"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">forceChannelJoin</span><span
+						class="method-args">(source, target, channel)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="force-hannel-oin-source">
+<pre>
+     <span class="ruby-comment cmt"># File protocols/unreal32.rb, line 397</span>
+397:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">forceChannelJoin</span>(<span class="ruby-identifier">source</span>, <span class="ruby-identifier">target</span>, <span class="ruby-identifier">channel</span>)
+398:       <span class="ruby-ivar">@sendq</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;:#{source} AX #{target} #{channel}&quot;</span>
+399:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="force-hannel-ode-method" class="method-detail ">
+				<a name="method-i-forceChannelMode"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">forceChannelMode</span><span
+						class="method-args">(source, target, modeChanges, modeParams)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="force-hannel-ode-source">
+<pre>
+     <span class="ruby-comment cmt"># File protocols/unreal32.rb, line 405</span>
+405:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">forceChannelMode</span>(<span class="ruby-identifier">source</span>, <span class="ruby-identifier">target</span>, <span class="ruby-identifier">modeChanges</span>, <span class="ruby-identifier">modeParams</span>)
+406:       <span class="ruby-ivar">@sendq</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;:#{source} o #{target} #{modeChanges} #{modeParams}&quot;</span>
+407:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="force-hannel-art-method" class="method-detail ">
+				<a name="method-i-forceChannelPart"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">forceChannelPart</span><span
+						class="method-args">(source, target, channel, reason=nil)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="force-hannel-art-source">
+<pre>
+     <span class="ruby-comment cmt"># File protocols/unreal32.rb, line 401</span>
+401:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">forceChannelPart</span>(<span class="ruby-identifier">source</span>, <span class="ruby-identifier">target</span>, <span class="ruby-identifier">channel</span>, <span class="ruby-identifier">reason</span>=<span class="ruby-keyword kw">nil</span>)
+402:       <span class="ruby-ivar">@sendq</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;:#{source} AY #{target} #{channel} #{&quot;:#{reason}&quot; unless reason == nil}&quot;</span>
+403:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="is-hannel--method" class="method-detail ">
+				<a name="method-i-isChannel%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">isChannel?</span><span
+						class="method-args">(str)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="is-hannel--source">
+<pre>
+     <span class="ruby-comment cmt"># File protocols/unreal32.rb, line 310</span>
+310:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">isChannel?</span>(<span class="ruby-identifier">str</span>)
+311:       <span class="ruby-ivar">@channelPrefixes</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">prefix</span><span class="ruby-operator">|</span>
+312:         <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">true</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">str</span>.<span class="ruby-identifier">start_with?</span> <span class="ruby-identifier">prefix</span>
+313:       }
+314:       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">false</span>
+315:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="join-hannel-method" class="method-detail ">
+				<a name="method-i-joinChannel"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">joinChannel</span><span
+						class="method-args">(nick, channel)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="join-hannel-source">
+<pre>
+     <span class="ruby-comment cmt"># File protocols/unreal32.rb, line 369</span>
+369:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">joinChannel</span>(<span class="ruby-identifier">nick</span>, <span class="ruby-identifier">channel</span>)
+370:       <span class="ruby-ivar">@sendq</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;:#{nick} C #{channel}&quot;</span>
+371:       <span class="ruby-comment cmt"># Yeah, we're assigning ourselves +a on join in every case right now.</span>
+372:       <span class="ruby-comment cmt"># Should this be done separately?</span>
+373:       <span class="ruby-ivar">@sendq</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;:#{nick} G #{channel} +a #{nick}&quot;</span>
+374:       <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">channels</span>.<span class="ruby-identifier">mod_join</span> <span class="ruby-identifier">nick</span>, <span class="ruby-identifier">channel</span>
+375:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="parse-method" class="method-detail ">
+				<a name="method-i-parse"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">parse</span><span
+						class="method-args">(origin)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="parse-source">
+<pre>
+     <span class="ruby-comment cmt"># File protocols/unreal32.rb, line 281</span>
+281:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">parse</span>(<span class="ruby-identifier">origin</span>)
+282:       <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">origin</span>.<span class="ruby-identifier">type</span>
+283:         <span class="ruby-keyword kw">when</span> <span class="ruby-value">:join</span>
+284:           <span class="ruby-identifier">arr</span> = <span class="ruby-identifier">origin</span>.<span class="ruby-identifier">message</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">&quot; &quot;</span>)
+285:           <span class="ruby-identifier">arr</span>[<span class="ruby-value">2</span>].<span class="ruby-identifier">split</span>(<span class="ruby-value str">&quot;,&quot;</span>).<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span>
+286:             <span class="ruby-ivar">@parser</span>.<span class="ruby-identifier">handleJoin</span>(<span class="ruby-constant">OriginInfo</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">origin</span>.<span class="ruby-identifier">raw</span>, <span class="ruby-identifier">origin</span>.<span class="ruby-identifier">source</span>, <span class="ruby-identifier">origin</span>.<span class="ruby-identifier">cmd</span>, <span class="ruby-identifier">c</span>, <span class="ruby-value">:join</span>))
+287:           }
+288:         <span class="ruby-keyword kw">when</span> <span class="ruby-value">:privmsg</span>
+289:           <span class="ruby-ivar">@parser</span>.<span class="ruby-identifier">handlePrivmsg</span>(<span class="ruby-identifier">origin</span>)
+290:         <span class="ruby-keyword kw">when</span> <span class="ruby-value">:notice</span>
+291:           <span class="ruby-ivar">@parser</span>.<span class="ruby-identifier">handlePrivmsg</span>(<span class="ruby-identifier">origin</span>)
+292:         <span class="ruby-keyword kw">when</span> <span class="ruby-value">:nick</span>
+293:           <span class="ruby-ivar">@parser</span>.<span class="ruby-identifier">handleNick</span>(<span class="ruby-identifier">origin</span>)
+294:         <span class="ruby-keyword kw">when</span> <span class="ruby-value">:sjoin</span>
+295:           <span class="ruby-ivar">@parser</span>.<span class="ruby-identifier">handleJoin</span>(<span class="ruby-constant">OriginInfo</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">origin</span>.<span class="ruby-identifier">raw</span>, <span class="ruby-identifier">origin</span>.<span class="ruby-identifier">message</span>, <span class="ruby-identifier">origin</span>.<span class="ruby-identifier">cmd</span>, <span class="ruby-identifier">origin</span>.<span class="ruby-identifier">arr</span>[<span class="ruby-value">3</span>], <span class="ruby-value">:join</span>))
+296:         <span class="ruby-keyword kw">else</span>
+297:           <span class="ruby-ivar">@parser</span>.<span class="ruby-identifier">handleOther</span>(<span class="ruby-identifier">origin</span>)
+298:       <span class="ruby-keyword kw">end</span>
+299:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="part-hannel-method" class="method-detail ">
+				<a name="method-i-partChannel"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">partChannel</span><span
+						class="method-args">(nick, channel)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="part-hannel-source">
+<pre>
+     <span class="ruby-comment cmt"># File protocols/unreal32.rb, line 377</span>
+377:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">partChannel</span>(<span class="ruby-identifier">nick</span>, <span class="ruby-identifier">channel</span>)
+378:       <span class="ruby-ivar">@sendq</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;:#{nick} D #{channel}&quot;</span>      
+379:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="remove-ostname-method" class="method-detail ">
+				<a name="method-i-removeHostname"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">removeHostname</span><span
+						class="method-args">(target, source)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="remove-ostname-source">
+<pre>
+     <span class="ruby-comment cmt"># File protocols/unreal32.rb, line 356</span>
+356:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">removeHostname</span>(<span class="ruby-identifier">target</span>, <span class="ruby-identifier">source</span>)
+357:       <span class="ruby-ivar">@sendq</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;:#{source} SVSMODE #{target} -xt&quot;</span>
+358:       <span class="ruby-ivar">@sendq</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;:#{source} SVSMODE #{target} +x&quot;</span>
+359:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="send-ill-method" class="method-detail ">
+				<a name="method-i-sendKill"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">sendKill</span><span
+						class="method-args">(source, target, reason)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="send-ill-source">
+<pre>
+     <span class="ruby-comment cmt"># File protocols/unreal32.rb, line 344</span>
+344:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">sendKill</span>(<span class="ruby-identifier">source</span>, <span class="ruby-identifier">target</span>, <span class="ruby-identifier">reason</span>)
+345:       <span class="ruby-ivar">@sendq</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;:#{source} KILL #{target} :#{reason}&quot;</span>
+346:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="send-otice-method" class="method-detail ">
+				<a name="method-i-sendNotice"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">sendNotice</span><span
+						class="method-args">(source, target, str)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="send-otice-source">
+<pre>
+     <span class="ruby-comment cmt"># File protocols/unreal32.rb, line 331</span>
+331:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">sendNotice</span>(<span class="ruby-identifier">source</span>, <span class="ruby-identifier">target</span>, <span class="ruby-identifier">str</span>)
+332:       <span class="ruby-ivar">@sendq</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;:#{source} NOTICE #{target} :#{str}&quot;</span>
+333:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="send-ong-method" class="method-detail ">
+				<a name="method-i-sendPong"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">sendPong</span><span
+						class="method-args">(origin)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="send-ong-source">
+<pre>
+     <span class="ruby-comment cmt"># File protocols/unreal32.rb, line 317</span>
+317:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">sendPong</span>(<span class="ruby-identifier">origin</span>)
+318:       <span class="ruby-identifier">origin</span>.<span class="ruby-identifier">arr</span>[<span class="ruby-value">1</span>][<span class="ruby-value">0</span>] = <span class="ruby-value str">&quot;&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">origin</span>.<span class="ruby-identifier">arr</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">start_with?</span> <span class="ruby-value str">&quot;:&quot;</span>
+319: 
+320:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">origin</span>.<span class="ruby-identifier">arr</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-value">2</span>
+321:         <span class="ruby-ivar">@sendq</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;PONG #{Modulus.config.getOption('Network', 'services_hostname')} #{origin.arr[1]}&quot;</span>
+322:       <span class="ruby-keyword kw">else</span>
+323:         <span class="ruby-ivar">@sendq</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;PONG #{origin.arr[2]} #{origin.arr[1]}&quot;</span>
+324:       <span class="ruby-keyword kw">end</span>
+325:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="send-rivmsg-method" class="method-detail ">
+				<a name="method-i-sendPrivmsg"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">sendPrivmsg</span><span
+						class="method-args">(source, target, str)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="send-rivmsg-source">
+<pre>
+     <span class="ruby-comment cmt"># File protocols/unreal32.rb, line 327</span>
+327:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">sendPrivmsg</span>(<span class="ruby-identifier">source</span>, <span class="ruby-identifier">target</span>, <span class="ruby-identifier">str</span>)
+328:       <span class="ruby-ivar">@sendq</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;:#{source} ! #{target} :#{str}&quot;</span>
+329:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="svs-mode-method" class="method-detail ">
+				<a name="method-i-svs2mode"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">svs2mode</span><span
+						class="method-args">(target, mode)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="svs-mode-source">
+<pre>
+     <span class="ruby-comment cmt"># File protocols/unreal32.rb, line 365</span>
+365:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">svs2mode</span>(<span class="ruby-identifier">target</span>, <span class="ruby-identifier">mode</span>)
+366:       <span class="ruby-ivar">@sendq</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;:#{Modulus.config.getOption('Network', 'services_hostname')} v #{target } #{mode}&quot;</span>
+367:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="svsmode-method" class="method-detail ">
+				<a name="method-i-svsmode"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">svsmode</span><span
+						class="method-args">(target, mode)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="svsmode-source">
+<pre>
+     <span class="ruby-comment cmt"># File protocols/unreal32.rb, line 361</span>
+361:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">svsmode</span>(<span class="ruby-identifier">target</span>, <span class="ruby-identifier">mode</span>)
+362:       <span class="ruby-ivar">@sendq</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;:#{Modulus.config.getOption('Network', 'services_hostname')} n #{target } #{mode}&quot;</span>
+363:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

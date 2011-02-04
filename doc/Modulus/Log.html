@@ -1,0 +1,767 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: Modulus::Log</title>
+
+	<link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../includes/logging_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="includes/logging.rb">includes/logging.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link"><a href="../Object.html">Object</a></p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-c-new">::new</a></li>
+					
+					<li><a href="#method-i-close">#close</a></li>
+					
+					<li><a href="#method-i-debug">#debug</a></li>
+					
+					<li><a href="#method-i-error">#error</a></li>
+					
+					<li><a href="#method-i-fatal">#fatal</a></li>
+					
+					<li><a href="#method-i-info">#info</a></li>
+					
+					<li><a href="#method-i-logToChannel">#logToChannel</a></li>
+					
+					<li><a href="#method-i-setFileVerbosity">#setFileVerbosity</a></li>
+					
+					<li><a href="#method-i-verbToNum">#verbToNum</a></li>
+					
+					<li><a href="#method-i-warning">#warning</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../LICENSE.html">LICENSE</a></li>
+				
+					<li class="file"><a href="../README.html">README</a></li>
+				
+					<li class="file"><a href="../Rakefile.html">Rakefile</a></li>
+				
+					<li class="file"><a href="../head.html">head</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../Modulus.html">Modulus</a></li>
+				
+					<li><a href="../Modulus/Account.html">Modulus::Account</a></li>
+				
+					<li><a href="../Modulus/BanServ.html">Modulus::BanServ</a></li>
+				
+					<li><a href="../Modulus/BanServ/Autokill.html">Modulus::BanServ::Autokill</a></li>
+				
+					<li><a href="../Modulus/BanServ/Regexkill.html">Modulus::BanServ::Regexkill</a></li>
+				
+					<li><a href="../Modulus/BotServ.html">Modulus::BotServ</a></li>
+				
+					<li><a href="../Modulus/BotServ/BotServBot.html">Modulus::BotServ::BotServBot</a></li>
+				
+					<li><a href="../Modulus/BotServ/BotServChannel.html">Modulus::BotServ::BotServChannel</a></li>
+				
+					<li><a href="../Modulus/ChanServ.html">Modulus::ChanServ</a></li>
+				
+					<li><a href="../Modulus/ChanServ/Channel.html">Modulus::ChanServ::Channel</a></li>
+				
+					<li><a href="../Modulus/ChanServ/ChannelUsers.html">Modulus::ChanServ::ChannelUsers</a></li>
+				
+					<li><a href="../Modulus/Channel.html">Modulus::Channel</a></li>
+				
+					<li><a href="../Modulus/ChannelUser.html">Modulus::ChannelUser</a></li>
+				
+					<li><a href="../Modulus/Channels.html">Modulus::Channels</a></li>
+				
+					<li><a href="../Modulus/Clients.html">Modulus::Clients</a></li>
+				
+					<li><a href="../Modulus/Command.html">Modulus::Command</a></li>
+				
+					<li><a href="../Modulus/Config.html">Modulus::Config</a></li>
+				
+					<li><a href="../Modulus/EventCallback.html">Modulus::EventCallback</a></li>
+				
+					<li><a href="../Modulus/Events.html">Modulus::Events</a></li>
+				
+					<li><a href="../Modulus/Hook.html">Modulus::Hook</a></li>
+				
+					<li><a href="../Modulus/HostServ.html">Modulus::HostServ</a></li>
+				
+					<li><a href="../Modulus/HostServ/Host.html">Modulus::HostServ::Host</a></li>
+				
+					<li><a href="../Modulus/Log.html">Modulus::Log</a></li>
+				
+					<li><a href="../Modulus/Module.html">Modulus::Module</a></li>
+				
+					<li><a href="../Modulus/ModuleManager.html">Modulus::ModuleManager</a></li>
+				
+					<li><a href="../Modulus/NickServ.html">Modulus::NickServ</a></li>
+				
+					<li><a href="../Modulus/NickServ/Account.html">Modulus::NickServ::Account</a></li>
+				
+					<li><a href="../Modulus/NickServ/Nick.html">Modulus::NickServ::Nick</a></li>
+				
+					<li><a href="../Modulus/OperServ.html">Modulus::OperServ</a></li>
+				
+					<li><a href="../Modulus/OriginInfo.html">Modulus::OriginInfo</a></li>
+				
+					<li><a href="../Modulus/Parser.html">Modulus::Parser</a></li>
+				
+					<li><a href="../Modulus/ProtocolAbstraction.html">Modulus::ProtocolAbstraction</a></li>
+				
+					<li><a href="../Modulus/ProtocolAbstractionMixin.html">Modulus::ProtocolAbstractionMixin</a></li>
+				
+					<li><a href="../Modulus/Pseudoclient.html">Modulus::Pseudoclient</a></li>
+				
+					<li><a href="../Modulus/QuoteServ.html">Modulus::QuoteServ</a></li>
+				
+					<li><a href="../Modulus/QuoteServ/Quote.html">Modulus::QuoteServ::Quote</a></li>
+				
+					<li><a href="../Modulus/QuoteServ/QuoteChannel.html">Modulus::QuoteServ::QuoteChannel</a></li>
+				
+					<li><a href="../Modulus/QuoteServ/QuoteRater.html">Modulus::QuoteServ::QuoteRater</a></li>
+				
+					<li><a href="../Modulus/ReservedNick.html">Modulus::ReservedNick</a></li>
+				
+					<li><a href="../Modulus/Service.html">Modulus::Service</a></li>
+				
+					<li><a href="../Modulus/ServiceModules.html">Modulus::ServiceModules</a></li>
+				
+					<li><a href="../Modulus/User.html">Modulus::User</a></li>
+				
+					<li><a href="../Modulus/Users.html">Modulus::Users</a></li>
+				
+					<li><a href="../Object.html">Object</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">Modulus::Log</h1>
+
+		<div id="description">
+			
+		</div>
+
+		<!-- Constants -->
+		
+		<div id="constants-list" class="section">
+			<h3 class="section-header">Constants</h3>
+			<dl>
+			
+				<dt><a name="DISABLED">DISABLED</a></dt>
+				
+				<dd class="description"></dd>
+				
+			
+				<dt><a name="DEBUG">DEBUG</a></dt>
+				
+				<dd class="description"></dd>
+				
+			
+				<dt><a name="INFO">INFO</a></dt>
+				
+				<dd class="description"></dd>
+				
+			
+				<dt><a name="WARN">WARN</a></dt>
+				
+				<dd class="description"></dd>
+				
+			
+				<dt><a name="ERROR">ERROR</a></dt>
+				
+				<dd class="description"></dd>
+				
+			
+				<dt><a name="FATAL">FATAL</a></dt>
+				
+				<dd class="description"></dd>
+				
+			
+			</dl>
+		</div>
+		
+
+		<!-- Attributes -->
+		
+		<div id="attribute-method-details" class="method-section section">
+			<h3 class="section-header">Attributes</h3>
+
+			
+			<div id="logger-attribute-method" class="method-detail">
+				<a name="logger"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">logger</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+		</div>
+		
+
+		<!-- Methods -->
+		
+		<div id="public-class-method-details" class="method-section section">
+			<h3 class="section-header">Public Class Methods</h3>
+
+		
+			<div id="new-method" class="method-detail ">
+				<a name="method-c-new"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">new</span><span
+						class="method-args">(config)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Create a new logger object. The configuration object is the only parameter
+and is used during initializiation.
+</p>
+<p>
+If the configured log directory does not exist, attempt to create it, or
+die trying (fatal error).
+</p>
+<p>
+If a log channel is configured, we&#8217;ll use that for on-protocol
+logging.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="new-source">
+<pre>
+    <span class="ruby-comment cmt"># File includes/logging.rb, line 43</span>
+43:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">config</span>)
+44:       <span class="ruby-identifier">logdir</span> = <span class="ruby-identifier">config</span>.<span class="ruby-identifier">getOption</span>(<span class="ruby-value str">'Core'</span>, <span class="ruby-value str">'log_location'</span>)
+45:       <span class="ruby-ivar">@logChannel</span> = <span class="ruby-identifier">config</span>.<span class="ruby-identifier">getOption</span>(<span class="ruby-value str">'Core'</span>, <span class="ruby-value str">'log_channel'</span>)
+46: 
+47:       <span class="ruby-ivar">@chatVerbosity</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">verbToNum</span>(<span class="ruby-identifier">config</span>.<span class="ruby-identifier">getOption</span>(<span class="ruby-value str">'Core'</span>, <span class="ruby-value str">'log_channel_verbosity'</span>)) <span class="ruby-comment cmt"># Logging to log chan</span>
+48: 
+49:       <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">exists?</span> <span class="ruby-identifier">logdir</span>
+50:         <span class="ruby-keyword kw">begin</span>    
+51:           <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">mkdir</span> <span class="ruby-identifier">logdir</span>
+52:         <span class="ruby-keyword kw">rescue</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+53:           <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Fatal error: Cannot create log directory #{logdir}:&quot;</span>
+54:           <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;#{e}&quot;</span>
+55:           <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;#{e.backtrace}&quot;</span>
+56:         <span class="ruby-keyword kw">end</span>
+57:       <span class="ruby-keyword kw">end</span>
+58:       <span class="ruby-ivar">@logger</span> = <span class="ruby-constant">Logger</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value str">&quot;./logs/services.log&quot;</span>, <span class="ruby-identifier">config</span>.<span class="ruby-identifier">getOption</span>(<span class="ruby-value str">'Core'</span>, <span class="ruby-value str">'log_rotation_period'</span>))
+59:       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">setFileVerbosity</span>(<span class="ruby-identifier">config</span>.<span class="ruby-identifier">getOption</span>(<span class="ruby-value str">'Core'</span>, <span class="ruby-value str">'log_verbosity'</span>)) <span class="ruby-comment cmt"># Logging to services.log</span>
+60: 
+61:       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">info</span> <span class="ruby-value str">&quot;logger&quot;</span>, <span class="ruby-value str">&quot;Logging started.&quot;</span>
+62:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="close-method" class="method-detail ">
+				<a name="method-i-close"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">close</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Close the Logger log file.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="close-source">
+<pre>
+     <span class="ruby-comment cmt"># File includes/logging.rb, line 168</span>
+168:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">close</span>
+169:       <span class="ruby-ivar">@logger</span>.<span class="ruby-identifier">close</span>
+170:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="debug-method" class="method-detail ">
+				<a name="method-i-debug"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">debug</span><span
+						class="method-args">(section, str)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+<a href="Log.html">Log</a> a message as <a href="Log.html#DEBUG">DEBUG</a>.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="debug-source">
+<pre>
+     <span class="ruby-comment cmt"># File includes/logging.rb, line 127</span>
+127:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">debug</span>(<span class="ruby-identifier">section</span>, <span class="ruby-identifier">str</span>)
+128:       <span class="ruby-ivar">@logger</span>.<span class="ruby-identifier">debug</span>(<span class="ruby-identifier">section</span>) { <span class="ruby-identifier">str</span> }
+129:       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">logToChannel</span>(<span class="ruby-constant">DEBUG</span>, <span class="ruby-node">&quot;DEBUG [#{section}] #{str}&quot;</span>)
+130:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="error-method" class="method-detail ">
+				<a name="method-i-error"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">error</span><span
+						class="method-args">(section, str)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+<a href="Log.html">Log</a> a message as <a href="Log.html#ERROR">ERROR</a>.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="error-source">
+<pre>
+     <span class="ruby-comment cmt"># File includes/logging.rb, line 151</span>
+151:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">error</span>(<span class="ruby-identifier">section</span>, <span class="ruby-identifier">str</span>)
+152:       <span class="ruby-ivar">@logger</span>.<span class="ruby-identifier">error</span>(<span class="ruby-identifier">section</span>) { <span class="ruby-identifier">str</span> }
+153:       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">logToChannel</span>(<span class="ruby-constant">ERROR</span>, <span class="ruby-node">&quot;ERROR [#{section}] #{str}&quot;</span>)
+154:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="fatal-method" class="method-detail ">
+				<a name="method-i-fatal"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">fatal</span><span
+						class="method-args">(section, str)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+<a href="Log.html">Log</a> a message as <a href="Log.html#FATAL">FATAL</a>.
+This should only be called just before <a
+href="../Modulus.html">Modulus</a> exits.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="fatal-source">
+<pre>
+     <span class="ruby-comment cmt"># File includes/logging.rb, line 160</span>
+160:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">fatal</span>(<span class="ruby-identifier">section</span>, <span class="ruby-identifier">str</span>)
+161:       <span class="ruby-ivar">@logger</span>.<span class="ruby-identifier">fatal</span>(<span class="ruby-identifier">section</span>) { <span class="ruby-identifier">str</span> }
+162:       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">logToChannel</span>(<span class="ruby-constant">FATAL</span>, <span class="ruby-node">&quot;FATAL [#{section}] #{str}&quot;</span>)
+163:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="info-method" class="method-detail ">
+				<a name="method-i-info"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">info</span><span
+						class="method-args">(section, str)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+<a href="Log.html">Log</a> a message as <a href="Log.html#INFO">INFO</a>.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="info-source">
+<pre>
+     <span class="ruby-comment cmt"># File includes/logging.rb, line 135</span>
+135:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">info</span>(<span class="ruby-identifier">section</span>, <span class="ruby-identifier">str</span>)
+136:       <span class="ruby-ivar">@logger</span>.<span class="ruby-identifier">info</span>(<span class="ruby-identifier">section</span>) { <span class="ruby-identifier">str</span> }
+137:       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">logToChannel</span>(<span class="ruby-constant">INFO</span>, <span class="ruby-node">&quot;INFO [#{section}] #{str}&quot;</span>)
+138:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="log-o-hannel-method" class="method-detail ">
+				<a name="method-i-logToChannel"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">logToChannel</span><span
+						class="method-args">(severity, msg)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Send the log message to IRC on the log channel, if configured.
+</p>
+<p>
+The parameters are the serverity (one of our constants) and the log
+message.
+</p>
+<p>
+If no log channel is configured or the link is not active, abort.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="log-o-hannel-source">
+<pre>
+     <span class="ruby-comment cmt"># File includes/logging.rb, line 112</span>
+112:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">logToChannel</span>(<span class="ruby-identifier">severity</span>, <span class="ruby-identifier">msg</span>)
+113:       <span class="ruby-keyword kw">begin</span>
+114:         <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@logChannel</span> <span class="ruby-operator">==</span> <span class="ruby-keyword kw">nil</span> <span class="ruby-keyword kw">or</span> <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">link</span> <span class="ruby-operator">==</span> <span class="ruby-keyword kw">nil</span>
+115: 
+116:         <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@chatVerbosity</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-identifier">severity</span>
+117:           <span class="ruby-constant">Modulus</span>.<span class="ruby-identifier">link</span>.<span class="ruby-identifier">sendPrivmsg</span>(<span class="ruby-value str">&quot;Global&quot;</span>, <span class="ruby-ivar">@logChannel</span>, <span class="ruby-identifier">msg</span>)
+118:         <span class="ruby-keyword kw">end</span>
+119:       <span class="ruby-keyword kw">rescue</span>
+120:         <span class="ruby-comment cmt"># Must not be working right now...</span>
+121:       <span class="ruby-keyword kw">end</span>
+122:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="set-ile-erbosity-method" class="method-detail ">
+				<a name="method-i-setFileVerbosity"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">setFileVerbosity</span><span
+						class="method-args">(verbosity)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Set the severity for the Logger log file using the given verbosity. This
+function expects a string, not one of our constants.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="set-ile-erbosity-source">
+<pre>
+     <span class="ruby-comment cmt"># File includes/logging.rb, line 88</span>
+ 88:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">setFileVerbosity</span>(<span class="ruby-identifier">verbosity</span>)
+ 89:       <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">verbosity</span>.<span class="ruby-identifier">downcase</span>
+ 90:         <span class="ruby-keyword kw">when</span> <span class="ruby-value str">&quot;debug&quot;</span>
+ 91:           <span class="ruby-ivar">@logger</span>.<span class="ruby-identifier">sev_threshold</span> = <span class="ruby-constant">Logger</span><span class="ruby-operator">::</span><span class="ruby-constant">DEBUG</span>
+ 92:         <span class="ruby-keyword kw">when</span> <span class="ruby-value str">&quot;info&quot;</span>
+ 93:           <span class="ruby-ivar">@logger</span>.<span class="ruby-identifier">sev_threshold</span> = <span class="ruby-constant">Logger</span><span class="ruby-operator">::</span><span class="ruby-constant">INFO</span>
+ 94:         <span class="ruby-keyword kw">when</span> <span class="ruby-value str">&quot;warning&quot;</span>
+ 95:           <span class="ruby-ivar">@logger</span>.<span class="ruby-identifier">sev_threshold</span> = <span class="ruby-constant">Logger</span><span class="ruby-operator">::</span><span class="ruby-constant">WARN</span>
+ 96:         <span class="ruby-keyword kw">when</span> <span class="ruby-value str">&quot;error&quot;</span>
+ 97:           <span class="ruby-ivar">@logger</span>.<span class="ruby-identifier">sev_threshold</span> = <span class="ruby-constant">Logger</span><span class="ruby-operator">::</span><span class="ruby-constant">ERROR</span>
+ 98:         <span class="ruby-keyword kw">when</span> <span class="ruby-value str">&quot;fatal&quot;</span>
+ 99:           <span class="ruby-ivar">@logger</span>.<span class="ruby-identifier">sev_threshold</span> = <span class="ruby-constant">Logger</span><span class="ruby-operator">::</span><span class="ruby-constant">FATAL</span>
+100:       <span class="ruby-keyword kw">end</span>
+101:       <span class="ruby-ivar">@logger</span>.<span class="ruby-identifier">sev_threshold</span> = <span class="ruby-constant">Logger</span><span class="ruby-operator">::</span><span class="ruby-constant">DEBUG</span>
+102:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="verb-o-um-method" class="method-detail ">
+				<a name="method-i-verbToNum"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">verbToNum</span><span
+						class="method-args">(verbosity)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Convert the verbosity setting in config to one of our constants for easier
+coding.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="verb-o-um-source">
+<pre>
+    <span class="ruby-comment cmt"># File includes/logging.rb, line 68</span>
+68:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">verbToNum</span>(<span class="ruby-identifier">verbosity</span>)
+69:       <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">verbosity</span>.<span class="ruby-identifier">downcase</span>
+70:         <span class="ruby-keyword kw">when</span> <span class="ruby-value str">&quot;debug&quot;</span>
+71:           <span class="ruby-keyword kw">return</span> <span class="ruby-constant">DEBUG</span>
+72:         <span class="ruby-keyword kw">when</span> <span class="ruby-value str">&quot;info&quot;</span>
+73:           <span class="ruby-keyword kw">return</span> <span class="ruby-constant">INFO</span>
+74:         <span class="ruby-keyword kw">when</span> <span class="ruby-value str">&quot;warning&quot;</span>
+75:           <span class="ruby-keyword kw">return</span> <span class="ruby-constant">WARN</span>
+76:         <span class="ruby-keyword kw">when</span> <span class="ruby-value str">&quot;error&quot;</span>
+77:           <span class="ruby-keyword kw">return</span> <span class="ruby-constant">ERROR</span>
+78:         <span class="ruby-keyword kw">when</span> <span class="ruby-value str">&quot;fatal&quot;</span>
+79:           <span class="ruby-keyword kw">return</span> <span class="ruby-constant">FATAL</span>
+80:       <span class="ruby-keyword kw">end</span>
+81:       <span class="ruby-keyword kw">return</span> <span class="ruby-constant">DISABLED</span>
+82:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="warning-method" class="method-detail ">
+				<a name="method-i-warning"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">warning</span><span
+						class="method-args">(section, str)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+<a href="Log.html">Log</a> a message as WARNING.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="warning-source">
+<pre>
+     <span class="ruby-comment cmt"># File includes/logging.rb, line 143</span>
+143:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">warning</span>(<span class="ruby-identifier">section</span>, <span class="ruby-identifier">str</span>)
+144:       <span class="ruby-ivar">@logger</span>.<span class="ruby-identifier">warn</span>(<span class="ruby-identifier">section</span>) { <span class="ruby-identifier">str</span> }
+145:       <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">logToChannel</span>(<span class="ruby-constant">WARN</span>, <span class="ruby-node">&quot;WARNING [#{section}] #{str}&quot;</span>)
+146:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

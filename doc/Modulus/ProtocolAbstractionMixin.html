@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: Modulus::ProtocolAbstractionMixin</title>
+
+	<link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../includes/protocol_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="includes/protocol.rb">includes/protocol.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link"><a href="../Object.html">Object</a></p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-i-send_raw">#send_raw</a></li>
+					
+					<li><a href="#method-i-startRecvThread">#startRecvThread</a></li>
+					
+					<li><a href="#method-i-startSendThread">#startSendThread</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../LICENSE.html">LICENSE</a></li>
+				
+					<li class="file"><a href="../README.html">README</a></li>
+				
+					<li class="file"><a href="../Rakefile.html">Rakefile</a></li>
+				
+					<li class="file"><a href="../head.html">head</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../Modulus.html">Modulus</a></li>
+				
+					<li><a href="../Modulus/Account.html">Modulus::Account</a></li>
+				
+					<li><a href="../Modulus/BanServ.html">Modulus::BanServ</a></li>
+				
+					<li><a href="../Modulus/BanServ/Autokill.html">Modulus::BanServ::Autokill</a></li>
+				
+					<li><a href="../Modulus/BanServ/Regexkill.html">Modulus::BanServ::Regexkill</a></li>
+				
+					<li><a href="../Modulus/BotServ.html">Modulus::BotServ</a></li>
+				
+					<li><a href="../Modulus/BotServ/BotServBot.html">Modulus::BotServ::BotServBot</a></li>
+				
+					<li><a href="../Modulus/BotServ/BotServChannel.html">Modulus::BotServ::BotServChannel</a></li>
+				
+					<li><a href="../Modulus/ChanServ.html">Modulus::ChanServ</a></li>
+				
+					<li><a href="../Modulus/ChanServ/Channel.html">Modulus::ChanServ::Channel</a></li>
+				
+					<li><a href="../Modulus/ChanServ/ChannelUsers.html">Modulus::ChanServ::ChannelUsers</a></li>
+				
+					<li><a href="../Modulus/Channel.html">Modulus::Channel</a></li>
+				
+					<li><a href="../Modulus/ChannelUser.html">Modulus::ChannelUser</a></li>
+				
+					<li><a href="../Modulus/Channels.html">Modulus::Channels</a></li>
+				
+					<li><a href="../Modulus/Clients.html">Modulus::Clients</a></li>
+				
+					<li><a href="../Modulus/Command.html">Modulus::Command</a></li>
+				
+					<li><a href="../Modulus/Config.html">Modulus::Config</a></li>
+				
+					<li><a href="../Modulus/EventCallback.html">Modulus::EventCallback</a></li>
+				
+					<li><a href="../Modulus/Events.html">Modulus::Events</a></li>
+				
+					<li><a href="../Modulus/Hook.html">Modulus::Hook</a></li>
+				
+					<li><a href="../Modulus/HostServ.html">Modulus::HostServ</a></li>
+				
+					<li><a href="../Modulus/HostServ/Host.html">Modulus::HostServ::Host</a></li>
+				
+					<li><a href="../Modulus/Log.html">Modulus::Log</a></li>
+				
+					<li><a href="../Modulus/Module.html">Modulus::Module</a></li>
+				
+					<li><a href="../Modulus/ModuleManager.html">Modulus::ModuleManager</a></li>
+				
+					<li><a href="../Modulus/NickServ.html">Modulus::NickServ</a></li>
+				
+					<li><a href="../Modulus/NickServ/Account.html">Modulus::NickServ::Account</a></li>
+				
+					<li><a href="../Modulus/NickServ/Nick.html">Modulus::NickServ::Nick</a></li>
+				
+					<li><a href="../Modulus/OperServ.html">Modulus::OperServ</a></li>
+				
+					<li><a href="../Modulus/OriginInfo.html">Modulus::OriginInfo</a></li>
+				
+					<li><a href="../Modulus/Parser.html">Modulus::Parser</a></li>
+				
+					<li><a href="../Modulus/ProtocolAbstraction.html">Modulus::ProtocolAbstraction</a></li>
+				
+					<li><a href="../Modulus/ProtocolAbstractionMixin.html">Modulus::ProtocolAbstractionMixin</a></li>
+				
+					<li><a href="../Modulus/Pseudoclient.html">Modulus::Pseudoclient</a></li>
+				
+					<li><a href="../Modulus/QuoteServ.html">Modulus::QuoteServ</a></li>
+				
+					<li><a href="../Modulus/QuoteServ/Quote.html">Modulus::QuoteServ::Quote</a></li>
+				
+					<li><a href="../Modulus/QuoteServ/QuoteChannel.html">Modulus::QuoteServ::QuoteChannel</a></li>
+				
+					<li><a href="../Modulus/QuoteServ/QuoteRater.html">Modulus::QuoteServ::QuoteRater</a></li>
+				
+					<li><a href="../Modulus/ReservedNick.html">Modulus::ReservedNick</a></li>
+				
+					<li><a href="../Modulus/Service.html">Modulus::Service</a></li>
+				
+					<li><a href="../Modulus/ServiceModules.html">Modulus::ServiceModules</a></li>
+				
+					<li><a href="../Modulus/User.html">Modulus::User</a></li>
+				
+					<li><a href="../Modulus/Users.html">Modulus::Users</a></li>
+				
+					<li><a href="../Object.html">Object</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">Modulus::ProtocolAbstractionMixin</h1>
+
+		<div id="description">
+			
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+		<div id="attribute-method-details" class="method-section section">
+			<h3 class="section-header">Attributes</h3>
+
+			
+			<div id="channel-odes-attribute-method" class="method-detail">
+				<a name="channelModes"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">channelModes</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+			<div id="channel-ode-refixes-attribute-method" class="method-detail">
+				<a name="channelModePrefixes"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">channelModePrefixes</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+			<div id="channel-refixes-attribute-method" class="method-detail">
+				<a name="channelPrefixes"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">channelPrefixes</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+			<div id="user-odes-attribute-method" class="method-detail">
+				<a name="userModes"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">userModes</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+			<div id="oper-odes-attribute-method" class="method-detail">
+				<a name="operModes"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">operModes</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+			<div id="channel-ser-odes-attribute-method" class="method-detail">
+				<a name="channelUserModes"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">channelUserModes</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+		</div>
+		
+
+		<!-- Methods -->
+		
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="send-raw-method" class="method-detail ">
+				<a name="method-i-send_raw"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">send_raw</span><span
+						class="method-args">(str)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Put a raw string in the send queue.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="send-raw-source">
+<pre>
+    <span class="ruby-comment cmt"># File includes/protocol.rb, line 28</span>
+28:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">send_raw</span>(<span class="ruby-identifier">str</span>)
+29:       <span class="ruby-ivar">@sendq</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">str</span>
+30:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="start-ecv-hread-method" class="method-detail ">
+				<a name="method-i-startRecvThread"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">startRecvThread</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Start a thread to read from the IRC link socket. Received messages are
+passed to the parser which is created here.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="start-ecv-hread-source">
+<pre>
+    <span class="ruby-comment cmt"># File includes/protocol.rb, line 36</span>
+36:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">startRecvThread</span>
+37:       <span class="ruby-ivar">@readThread</span> = <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">new</span> {
+38: 
+39:         <span class="ruby-comment cmt">#while not Modulus.quitting</span>
+40:         <span class="ruby-comment cmt"># TODO: Reconnections!</span>
+41: 
+42:           <span class="ruby-identifier">$log</span>.<span class="ruby-identifier">debug</span> <span class="ruby-value str">&quot;protocol&quot;</span>, <span class="ruby-value str">&quot;Socket reader thread started.&quot;</span>
+43:           <span class="ruby-ivar">@parser</span> = <span class="ruby-constant">Modulus</span><span class="ruby-operator">::</span><span class="ruby-constant">Parser</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@cmdList</span>)
+44: 
+45:           <span class="ruby-keyword kw">while</span> <span class="ruby-identifier">line</span> = <span class="ruby-ivar">@socket</span>.<span class="ruby-identifier">gets</span>.<span class="ruby-identifier">chomp</span>
+46:             <span class="ruby-comment cmt">#TODO: Parse this, hand it off to something else.</span>
+47:             <span class="ruby-comment cmt">#puts &quot;&lt;-- #{line}&quot;</span>
+48:             <span class="ruby-keyword kw">begin</span>
+49:               <span class="ruby-ivar">@parser</span>.<span class="ruby-identifier">parse</span> <span class="ruby-identifier">line</span>
+50:             <span class="ruby-keyword kw">rescue</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+51:               <span class="ruby-identifier">$log</span>.<span class="ruby-identifier">error</span> <span class="ruby-value str">'protocol'</span>, <span class="ruby-node">&quot;There was an error parsing an incoming message [#{line}]: #{e}&quot;</span>
+52:             <span class="ruby-keyword kw">end</span> 
+53:           <span class="ruby-keyword kw">end</span>
+54: 
+55:           <span class="ruby-identifier">$log</span>.<span class="ruby-identifier">info</span> <span class="ruby-value str">&quot;protocol&quot;</span>, <span class="ruby-value str">&quot;Connection to the server has been lost.&quot;</span>
+56: 
+57:         <span class="ruby-comment cmt">#end</span>
+58: 
+59:         <span class="ruby-identifier">$log</span>.<span class="ruby-identifier">debug</span> <span class="ruby-value str">&quot;protocol&quot;</span>, <span class="ruby-value str">&quot;Socket reader thread ending.&quot;</span>
+60: 
+61:       }
+62:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="start-end-hread-method" class="method-detail ">
+				<a name="method-i-startSendThread"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">startSendThread</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Start the thread that will take messages from the send queue and feed them
+to the socket.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="start-end-hread-source">
+<pre>
+    <span class="ruby-comment cmt"># File includes/protocol.rb, line 68</span>
+68:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">startSendThread</span>
+69:       <span class="ruby-ivar">@sendThread</span> = <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">new</span> {
+70: 
+71:         <span class="ruby-identifier">$log</span>.<span class="ruby-identifier">debug</span> <span class="ruby-value str">&quot;protocol&quot;</span>, <span class="ruby-value str">&quot;Socket send thread started.&quot;</span>
+72: 
+73:         <span class="ruby-keyword kw">while</span> <span class="ruby-identifier">str</span> = <span class="ruby-ivar">@sendq</span>.<span class="ruby-identifier">pop</span>
+74:           <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;SENT --&gt; #{str}&quot;</span>
+75:           <span class="ruby-ivar">@socket</span>.<span class="ruby-identifier">puts</span> <span class="ruby-identifier">str</span>
+76: 
+77:           <span class="ruby-comment cmt"># TODO: Make this less retarded. We sleep here so that other threads</span>
+78:           <span class="ruby-comment cmt"># can still work while we process a large send queue. That way, if,</span>
+79:           <span class="ruby-comment cmt"># for instance, a member of staff requests a very long list, we can</span>
+80:           <span class="ruby-comment cmt"># continue to handle user requests while the data is fed to the</span>
+81:           <span class="ruby-comment cmt"># socket.</span>
+82:           <span class="ruby-identifier">sleep</span> <span class="ruby-value">0.001</span>
+83:         <span class="ruby-keyword kw">end</span>
+84: 
+85:         <span class="ruby-identifier">$log</span>.<span class="ruby-identifier">debug</span> <span class="ruby-value str">&quot;protocol&quot;</span>, <span class="ruby-value str">&quot;Socket send thread stopping.&quot;</span>
+86:       }
+87: 
+88:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+
