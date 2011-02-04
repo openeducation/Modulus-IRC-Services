@@ -13,6 +13,7 @@
 * Account creation and deletion events
 * Make everything case-insensitive where it needs to be (almost every module)
 * Make user storage more intelligent. Duplicate log-ins are currently impossible.
+* Fix module info stoage. There are about six places module names and descriptions are kept. Bad!
 
 ### Protocol Support
 
