@@ -33,6 +33,8 @@ module Modulus
         $log.warning 'users', "Duplicate nick being added to internal list: #{user.nick}. Overwriting."
       end
 
+      # TODO: This is sort of bad. What if the same user logs in from two
+      # locations?
       if @users.has_key? user.svid
         $log.warning 'users', "Duplicate SVID being added to internal list: #{user.svid}. Overwriting."
       end
