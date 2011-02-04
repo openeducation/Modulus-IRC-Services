@@ -2,6 +2,8 @@ Modulus IRC Services
 
 Modular IRC services written in Ruby.
 
+Modulus is still in pre-alpha stages! It is nowhere near ready for testing, and nothing you see if you run it will likely remain remotely the same by the time it is done.
+
 Core Developers:
 
 Kabaka        kabaka@sinsira.net
