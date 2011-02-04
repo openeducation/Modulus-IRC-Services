@@ -20,9 +20,16 @@ module Modulus
 
   class ModuleManager
 
+    ##
+    # Create a new module manager object. The modules hash table is initialized
+    # here.
+
     def initialize
       @modules = Hash.new
     end
+
+    ##
+    # Add a module to the modulue manager hash table.
 
     def addModule(mod)
       # TODO: make an object for this so we have a place for the description.
@@ -32,8 +39,6 @@ module Modulus
         @modules[mod.name] = mod
       end
     end
-
-
 
   end #class 
 

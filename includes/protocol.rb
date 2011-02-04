@@ -22,9 +22,16 @@ module Modulus
 
     attr_reader :channelModes, :channelModePrefixes, :channelPrefixes, :userModes, :operModes, :channelUserModes
 
+    ##
+    # Put a raw string in the send queue.
+
     def send_raw(str)
       @sendq << str
     end
+
+    ##
+    # Start a thread to read from the IRC link socket. Received messages are
+    # passed to the parser which is created here.
 
     def startRecvThread
       @readThread = Thread.new {
@@ -54,6 +61,10 @@ module Modulus
       }
     end
 
+    ##
+    # Start the thread that will take messages from the send queue and feed them
+    # to the socket.
+
     def startSendThread
       @sendThread = Thread.new {
 
@@ -62,7 +73,13 @@ module Modulus
         while str = @sendq.pop
           puts "SENT --> #{str}"
           @socket.puts str
-          sleep 0.001 # Let other threads work. This is horrible, I know. It's temporary!
+
+          # TODO: Make this less retarded. We sleep here so that other threads
+          # can still work while we process a large send queue. That way, if,
+          # for instance, a member of staff requests a very long list, we can
+          # continue to handle user requests while the data is fed to the
+          # socket.
+          sleep 0.001
         end
 
         $log.debug "protocol", "Socket send thread stopping."

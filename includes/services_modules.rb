@@ -22,14 +22,23 @@ module Modulus
 
     attr_reader :modules
 
+    ##
+    # Create a new service modules object.
+
     def initialize
       @modules = Hash.new
     end
+
+    ## 
+    # Add a new service with the given name, class, and description.
 
     def addService(name, modClass, description)
       #TODO: do something with description... module class?
       @modules[name] = Service.new(modClass, description)
     end
+
+    ##
+    # Get the names of all recorded service modules.
 
     def getServiceModulesNames
       @modules.keys

@@ -20,15 +20,26 @@ module Modulus
 
   class Users
 
+    ##
+    # Create our users object. Initialize the data structures we'll use, here.
+    # We also register for relevant events: sethost and mode.
+
     def initialize
       @nicks = Hash.new # Nick => ESVID
       @users = Hash.new # ESVID => User Object
+
+      # TODO: We also need to register for and handle other events, such as
+      # swhois.
 
       Modulus.events.register(:sethost, self, "on_set_host")
       Modulus.events.register(:mode, self, "on_mode")
     end
 
+    ##
+    # Add a new user to the tables. Duplicates will result in overwrites.
+
     def addUser(user)
+      # TODO: Fix possible race condition?
       if @nicks.has_key? user.nick
         $log.warning 'users', "Duplicate nick being added to internal list: #{user.nick}. Overwriting."
       end
@@ -43,11 +54,21 @@ module Modulus
       @users[user.svid] = user
     end
 
+    ##
+    # Called by sethost event. Used to update the user's vhost, but does not
+    # update the actual host name since we might need that for bans or
+    # something.
+
     def on_set_host(origin)
       origin = origin[0]
       user = self.find(origin.source)
       user.vhost = origin.target
     end
+
+    ##
+    # Called by the mode event. If this turns out to be for a channel abort.
+    # Otherwise, go ahead and find the user and then call the modes function for
+    # it.
 
     def on_mode(origin)
       origin = origin[0]
@@ -61,6 +82,10 @@ module Modulus
       user.modes(origin.message)
     end
 
+    ##
+    # Log in the give user/nick with the given user name. No data is sent to
+    # the IRC server.
+
     def logIn(ind, svid)
       #TODO: Make sure the network supports ESVID
       user = self.find(ind)
@@ -68,12 +93,19 @@ module Modulus
       user.loggedIn = true
     end
 
+    ##
+    # Log out the given nick/user. No data is sent to the IRC server.
+
     def logOut(ind)
       #TODO: Make sure the network supports ESVID
       user = self.find(ind)
       user.svid = '*'
       user.loggedIn = false
     end
+
+    ##
+    # Change the nick for the given user. This is probably called by the nick
+    # event when a nick change is taking place.
 
     def changeNick(ind, newNick, newTimestamp)
       user = self.find(ind)
@@ -87,25 +119,43 @@ module Modulus
       user.timestamp = newTimestamp
     end
 
+    ##
+    # Change the user name for the given user.
+    # (nick!USER@host)
+
     def changeUsername(ind, newUser)
       user = self.find(ind)
       user.username = newUser
     end
+
+    ##
+    # Change the host name for the given user. This is different from changing
+    # the vhost.
 
     def changeHostname(ind, newHost)
       user = self.find(ind)
       user.hostname = newHost
     end
 
+    ##
+    # Change the modes for the given user. This is an explicit change, not a
+    # parser for mode strings.
+
     def changeModes(ind, newModes)
       user = self.find(ind)
       user.modes = newModes
     end
 
+    ##
+    # Set a new SVID (logged in user name) for the given user.
+
     def changeSVID(ind, newSVID)
       user = self.find(ind)
       user.svid = newSVID
     end
+
+    ##
+    # Find the user object for the given nick or user name.
 
     def find(ind)
       if @nicks.has_key? ind
@@ -122,6 +172,9 @@ module Modulus
     def findBySVID(svid)
       @users[svid]
     end
+
+    ##
+    # Delete the user object for the given nick or user name.
 
     def delete(ind)
       if @nicks.has_key? ind

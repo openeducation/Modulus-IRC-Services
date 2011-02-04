@@ -22,7 +22,14 @@ module Modulus
 
     attr_accessor :nick, :svid, :username, :hostname, :channels, :timestamp, :modes, :loggedIn, :vhost, :modes
 
+    ##
+    # Create a new user object.
+    #
+    # Parameters are the nick, svid (logged in user name), user name, host name,
+    # and timestamp for the user.
+
     def initialize(nick, svid, username, hostname, timestamp)
+      #TODO: SVID is not the right thing to use here.
       @nick = nick
       @svid = svid
       @username = username
@@ -37,9 +44,18 @@ module Modulus
       end
     end
 
+    ##
+    # Check whether or not the user is logged in.
+
     def logged_in?
       @loggedIn
     end
+
+    ##
+    # Called when a MODE message is received for this user. Updates the array
+    # of modes by parsing the mode update string to find +/- changes.
+    #
+    # Parameter is the mode change string (*not* an origin info object).
 
     def modes(modes)
       plus = true
@@ -60,12 +76,23 @@ module Modulus
       $log.debug 'user', "Updated modes for #{nick}: #{@modes.join(", ")}"
     end
 
+    ##
+    # Log this user in with the given user name. Marks the user as logged in
+    # but does not send anything to the IRC server.
+
     def logIn(username)
+      #TODO: Make this send stuff to the server. We shouldn't be handling that
+      # in the modules. In fact, it should be done in the protocol handler,
+      # since it won't be the same for each!
       $log.debug 'user', "User at nick #{@nick} has logged in as #{username}"
       @svid = username
       @loggedIn = true
       Modulus.events.event(:logged_in, self)
     end
+
+    ##
+    # Check if this user's modes include any that are listed in the protocol
+    # class's list of operator modes.
 
     def is_oper?
       @modes.each { |mode|
@@ -76,7 +103,13 @@ module Modulus
       return false
     end
 
+    ##
+    # Check if any of the user modes indicate the user is a services admin
+    # or higher, according to the modes listed in the protocol class's list.
+
     def is_services_admin?
+      # TODO: This probably won't work for all protocols. Will it? Maybe we need
+      # to do like Anope and just keep our own list of services admins. Dunno!
       @modes.each { |mode|
 
         mode = Modulus.link.userModes[mode]

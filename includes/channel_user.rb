@@ -22,10 +22,18 @@ module Modulus
 
     attr_reader :nick, :modes
 
+    ##
+    # Create a new channel user object. The only parameter is the user's nick.
+    # An empty modes array is initialized.
+
     def initialize(nick)
       @nick = nick
       @modes = Array.new
     end
+
+    ##
+    # Apply updates to single modes. The parameters are plus (if true, add the
+    # mode to the list; if false, remove it) and the mode being modified.
 
     def modeChange(plus, mode)
       $log.debug 'channeluser', "Updating modes for #{nick}: #{plus ? "+" : "-"}#{mode}"

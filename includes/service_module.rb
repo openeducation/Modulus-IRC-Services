@@ -21,6 +21,9 @@ module Modulus
   class Service
      attr_reader :modClass, :description
 
+     ##
+     # Create a service object with the module class and a description thereof.
+
      def initialize(modClass, desc)
        @modClass = modClass
        @description = desc

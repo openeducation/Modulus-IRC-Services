@@ -22,11 +22,19 @@ module Modulus
 
     attr_reader :nick, :realName, :services
 
+    ##
+    # Create a new pseudoclient object. The paramters are the nick and the
+    # gecos to use for the client. No data is sent over the link — this just
+    # adds the client to our lists and creates the appropriate structures.
+    
     def initialize(nick, realName)
       @nick = nick
       @realName = realName
       @channels = Array.new
     end
+
+    ##
+    # Send the pseudoclient to the configured log chan, if there is one.
 
     def joinLogChan
       logChan = Modulus.config.getOption("Core", "log_channel")
@@ -36,15 +44,24 @@ module Modulus
       end
     end
 
+    ##
+    # Add a channel to this client's list, and join it to the channel.
+
     def addChannel(channel)
       @channels << channel
       Modulus.link.joinChannel(@nick, channel)
     end
 
+    ##
+    # Remove a channel from this client's list, and part it from the channel.
+
     def removeChannel(channel)
       @channels.delete channel
       Modulus.link.partChannel(@nick, channel)
     end
+
+    ##
+    # Join all channels in this client's list.
 
     def joinAllChannels
       @channels.each { |c|
@@ -52,9 +69,16 @@ module Modulus
       }
     end
 
+    ##
+    # Send the command to the IRC server to create the client (usually NICK).
+
     def connect
       Modulus.link.createClient(@nick, @realName)
     end
+
+    ##
+    # Send the command to the IRC server to destroy the client. Optionally, a
+    # quit message may be included. The default is to leave the reason empty.
 
     def disconnect(reason="")
       Modulus.link.destroyClient(@nick, reason)

@@ -20,6 +20,16 @@ module Modulus
 
   class Config
 
+    ##
+    # Create a new config object. Optionally, the path to and filename of the
+    # configuration file may be specified, but is services.conf by default.
+    #
+    # This will read the configuration file and populate memory with config
+    # values.
+    #
+    # Errors reading configuration are considered fatal. Such errors will be
+    # logged as fatal before Modulus exits.
+
     def initialize(fileName = "services.conf")
       unless File.exists? fileName
         $stderr.puts "Fatal error: Configuration file does not exist at #{fileName}"
@@ -79,10 +89,18 @@ module Modulus
       return true
     end
 
+    ##
+    # Fetch the value of a configuration option which is expected to be
+    # boolean. If the value is "yes" "on" or "true" it will return true.
+    # Other values will return false.
+
     def getBool(section, key)
       opt = self.getOption(section,key)
       return (opt == "yes" or opt == "on" or opt == "true")
     end
+
+    ##
+    # Get the value of an option. If the option does not exist, return nil.
 
     def getOption(section, key)
       if @configuration.has_key? section
@@ -90,6 +108,8 @@ module Modulus
       end
       return nil
     end
+
+    #TODO: Rehash?
 
   end # class Config
 

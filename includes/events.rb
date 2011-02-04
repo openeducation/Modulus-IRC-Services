@@ -19,10 +19,18 @@
 module Modulus
 
   class Events
+ 
+    ##
+    # Create the events data structure.
     
     def initialize
       @events = Hash.new
     end
+
+    # Register a new event with callback. The parameters are the event for which
+    # we are registering (such as :join), the sender of the function call (used
+    # as the callback function name owner) and the name of the function to use
+    # as callback.
 
     def register(event, sender, func)
       $log.debug 'events', "#{sender.class}.#{func} registered for event: #{event}"
@@ -30,6 +38,12 @@ module Modulus
 
       @events[event] << EventCallback.new(sender, func)
     end
+
+    ##
+    # Fire the callback for the given event. Optionally, one or more additional
+    # parameters may be included to be passed to the callback function. If the
+    # function doesn't accept the given number of parameters, an exception may
+    # be thrown.
 
     def event(event, *args)
       if @events.has_key? event
@@ -45,6 +59,10 @@ module Modulus
   class EventCallback
     attr_reader :obj, :func
     
+    ##
+    # Create a new event callback object. The parameters include the object
+    # that owns the function we will call, and the name of the function (string)
+
     def initialize(obj, func)
       @obj = obj
       @func = func

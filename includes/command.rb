@@ -22,6 +22,10 @@ module Modulus
 
     attr_reader :commandText, :shortDesc, :longDesc, :allowFantasy
 
+    ##
+    # Create a new command object. This is called when the hook is being
+    # created and will use all of the same parameters.
+
     def initialize(sender, funcName, commandText, shortDesc, longDesc, allowFantasy)
       @owner = sender
       @commandText = commandText
@@ -30,6 +34,10 @@ module Modulus
       @funcName = funcName
       @allowFantasy = allowFantasy
     end
+
+    ##
+    # Run the command. The only parameter is the origin info that triggered the
+    # command.
 
     def run(origin)
       $log.debug 'command', "Running command #{@commandText} for #{origin.source}"

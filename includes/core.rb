@@ -293,9 +293,20 @@ module Modulus
     }
   end
 
+  ##
+  # When a services module is loaded, if it creates a new "service" (NickServ,
+  # ChanServ, etc.) it should register through this function. This will add the
+  # service by name fo the service modules data structure.
+  
   def Modulus.addService(name, modClass, description)
     @@serviceModules.addService(name, modClass, description)
   end
+
+  ##
+  # New service commands, such as a NickServ REGISTER, should be fed here. This
+  # function will create the appropriate hooks and add info for help. The last
+  # parameter, if true, enables the use of the command as a "fantasy" command
+  # in channels.
 
   def Modulus.addCmd(modClass, receiver, cmdStr, funcName, shortHelp, longHelp="", allowFantasy=false)
     cmdStr.upcase!
@@ -310,6 +321,10 @@ module Modulus
     @@cmdHooks[receiver][cmdStr] = hook
   end
 
+  ##
+  # DEPRECATED
+  # This was used to hook IRC messages, but events should be used now.
+
   def Modulus.addMessageHook(modClass, funcName, hookType, receiver)
     @@messageHooks[receiver] = Hash.new unless @@messageHooks.has_key? receiver
     @@messageHooks[receiver][hookType] = Array.new unless @@messageHooks[receiver].has_key? hookType
@@ -321,6 +336,9 @@ module Modulus
     @@messageHooks[receiver][hookType] << hook
   end
 
+  ##
+  # Create a generic hook. Events should be used instead.
+
   def Modulus.addHook(modClass, funcName, hookType)
     @@hooks[hookType] = Array.new unless @@hooks.has_key? hookType
     $log.debug "core", "Adding hook: type #{hookType} for #{modClass.class}"
@@ -330,11 +348,24 @@ module Modulus
     @@hooks[hookType] << hook
   end
 
+  ##
+  # Initiate a new connection to the IRC server. The current list of services
+  # clients will be used during sync.
+
   def Modulus.startConnectionThread
     @@link.connect(@@clients.clients.values)
   end
 
+  ##
+  # Prepare the database for use. This should be called during start-up by an
+  # event. Any table creation or upgrades should be done here.
+
   def Modulus.prepDatabase
+
+    # TODO: There needs to be some way for this to check for out-of-date
+    # schemas and update them as appropriate. Ruby and ActiveRecord facilitate
+    # this, but I'm not totally sure how that works yet.
+
     unless ReservedNick.table_exists?
       ActiveRecord::Schema.define do
         create_table :reserved_nicks do |t|

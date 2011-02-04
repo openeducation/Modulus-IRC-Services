@@ -18,6 +18,10 @@
 
 module Modulus
 
+  ##
+  # Here, we'll declare all of our table objects (not schemas) and override
+  # functions as needed.
+
   class ReservedNick < ActiveRecord::Base
   end
 

@@ -18,6 +18,10 @@
 
 module Modulus
 
+  ##
+  # Send the full long help for the given command using te Modulus
+  # reply function.
+
   def Modulus.sendHelp(origin, command)
     return unless @@cmdHooks.has_key? origin.target
     return unless @@cmdHooks[origin.target].has_key? command
@@ -29,6 +33,10 @@ module Modulus
     self.reply(origin, " ")
     self.reply(origin, longHelp)
   end
+
+  ##
+  # Send the list of commands for the module specified in the origin info with
+  # short help in a formatted list.
 
   def Modulus.sendHelpList(origin)
     return unless @@cmdHooks.has_key? origin.target
@@ -43,6 +51,12 @@ module Modulus
     self.reply(origin, " ")
     self.reply(origin, "Use HELP COMMAND for more information on a specific command, if available.")
   end
+
+  ##
+  # This is called by a privmsg event.
+  #
+  # Check if the message starts with HELP. If so, figure out what the user is
+  # asking about, then pass it along to the appropriate function.
 
   def Modulus.doHelp(origin)
     origin = origin[0]

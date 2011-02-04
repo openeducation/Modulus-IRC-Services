@@ -20,11 +20,21 @@ module Modulus
 
   class Hook
 
+    ##
+    # Create a new hook object. Parameters are this object's parent, the class
+    # that owns the book, and the name of the function that should be called
+    # when the hook is run.
+
     def initialize(parent, modClass, func)
       @parent = parent
       @modClass = modClass
       @func = func
     end
+
+    ##
+    # Run the hook by calling the owning class with the function name given
+    # when the hook was created. The origin that triggered the hook is the only
+    # parameter.
 
     def run(origin)
       $log.debug 'hook', "Running hooks for #{origin}"

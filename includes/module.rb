@@ -22,6 +22,15 @@ module Modulus
 
     attr_reader :name, :description, :author, :version
 
+    ## 
+    # Initialize a new module object. Not to be confugused with Ruby modules,
+    # this refers to Modulus modules, such as NickServ.
+    #
+    # Parameters include the name of the module, a brief description of the
+    # module, the author of the module, adn the version of the module.
+    #
+    # A hash table of module commands is initialized here.
+
     def initialize(name, description, author, version)
       @name = name
       @description = description
@@ -29,6 +38,11 @@ module Modulus
       @version = version
       @commands = Hash.new
     end
+
+    ##
+    # Add a command to the module.
+    #
+    # Parameters include a command object and an array of triggers.
 
     def addCommand(command, triggers)
       @commands[trigger] = Hash.new unless @commands.has_key? trigger
@@ -43,12 +57,19 @@ module Modulus
       }
     end
 
+    ##
+    # Check if this module has a command for the given trigger and then of the
+    # given name.
+
     def hasCommand?(command, trigger)
       if @commands.has_key? trigger
         return @commands[trigger].has_key? command
       end
       return false
     end
+
+    ##
+    # If this module has the given command, return it.
 
     def getCommand(command, trigger)
       if self.hasCommand? command, trigger

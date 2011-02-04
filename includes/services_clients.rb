@@ -22,17 +22,32 @@ module Modulus
 
     attr_reader :clients
 
+    ##
+    # Create a new services clients object.
+
     def initialize
       @clients = Hash.new
     end
+
+    ##
+    # Create a new pseudoclient and add it to our list. No data is sent to the
+    # IRC server here.
+    #
+    # Parameters are the nick of the client and the gecos.
 
     def addClient(nick, realName)
       @clients[nick] = Pseudoclient.new(nick, realName)
     end
 
+    ##
+    # Return the hash table of clients.
+
     def getAll
       return @clients
     end
+
+    ##
+    # Disconnect each client one at a time.
 
     def disconnectClients
       @clients.each { |client|
@@ -40,18 +55,34 @@ module Modulus
       }
     end
 
+    ##
+    # Check if the given nick is one of the pseudoclients that belongs to
+    # Modulus.
+
     def isMyClient?(nick)
       @clients.has_key? nick
     end
+
+    ##
+    # If configured, all pseudoclients are sent to the log channel.
 
     def joinLogChan
       $log.debug "clients", "Sending all connected pseudoclients to the log channel, if it is configured."
       @clients.values.each { |client| client.joinLogChan }
     end
 
+    ##
+    # All pesudoclients are "connected" to IRC. This should probably never be
+    # called: Clients are created before connect and sent during sync, then
+    # usually connected as they are created after that. Calling this may result
+    # in some duplicates.
+
     def connectAll
       @clients.keys.each { |nick| self.connect(nick) }
     end
+
+    ##
+    # "Connect" the given pseudoclient to IRC, if it is in our clients table.
 
     def connect(nick)
       return false unless self.isMyClient? nick

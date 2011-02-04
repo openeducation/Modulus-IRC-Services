@@ -20,9 +20,26 @@ module Modulus
 
   class Parser
 
+    ##
+    # Create a new parser object.
+    #
+    # The only parmeter is a list of valid commands (message types) that may be
+    # parsed by this class.
+
     def initialize(cmdList)
       @cmdList = cmdList
     end
+
+    ##
+    # Parse a raw line that has arrived from the IRC server.
+    #
+    # During parsing, we will determine what type of message this is, who caused
+    # it to be sent, where it is going, and whatever else is relevant.
+    #
+    # Once this information has been determined, we feed it to the protocol's
+    # parser. If the message is a server PING meant to check for us being alive,
+    # we'll answer it here (we wouldn't want to keep the server waiting too
+    # long, would we?) before passing the data to the protocol parser.
 
     def parse(line)
 
@@ -76,10 +93,27 @@ module Modulus
       Modulus.link.parse(origin)
     end
 
+    ##
+    # This function originally took care of the entire parsing and protocol
+    # parsing deal, but now just hands the message off to the core's function
+    # to run hooks.
+    # 
+    # The only parameter is an origin info object.
+
     def work(origin)
       $log.debug 'parser', "Doing work on #{origin}"
       Modulus.runHooks(origin)
     end
+
+    ##
+    # If we got a NICK message, we'll figure out what to do with it in this
+    # function.
+    #
+    # The only parameter is the ogiin info object for the message that 
+    # triggered the call.
+    #
+    # In here, we'll figure out if this is a new user connecting to IRC or if
+    # it is someone changing nicks.
 
     def handleNick(origin)
       # Have the protocol handler figure out how to make it a user object since
@@ -99,6 +133,16 @@ module Modulus
       self.work(origin)
     end
 
+    ##
+    # This is triggered by the protocol parser when we receive a KILL command.
+    # 
+    # The only parameter is the origin info object for the message that
+    # triggered the call.
+    #
+    # If the KILL is meant for one of our services, we'll go ahead and tell the
+    # IRC server that the client just connected again. If it is not, then we'll
+    # just delete our record for the killed user.
+
     def handleKill(origin)
       if Modulus.clients.isMyClient? origin.target
         Modulus.clients.connect origin.target
@@ -112,16 +156,25 @@ module Modulus
     def handleKick(origin)
       self.handleOther origin
     end
-    
+
+    ##
+    # This function also calls core's run commands function.
+
     def handlePrivmsg(origin)
       Modulus.runCmds(origin)
       self.handleOther origin
     end
 
+    ##
+    # This function also calls core's run commands function.
+
     def handleNotice(origin)
       Modulus.runCmds(origin)
       self.handleOther origin
     end
+
+    ##
+    # Delete the associated user from our user list.
 
     def handleQuit(origin)
       Modulus.users.delete origin.target
@@ -152,6 +205,9 @@ module Modulus
       self.handleOther origin
 
     end
+
+    ##
+    # Pass this to the parser work function.
 
     def handleOther(origin)
       self.work(origin)

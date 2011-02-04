@@ -18,6 +18,11 @@
 
 module Modulus
 
+  ##
+  # Connect the database or open the database file, depending on configuration.
+  # This should be called during Modulus start-up only once. If successful, the
+  # database_connected event will fire.
+
   def Modulus.startDB
     $log.info 'database', 'Starting database connection for the first time this session.'
 

@@ -31,6 +31,15 @@ module Modulus
     ERROR = 3
     FATAL = 4
 
+    ##
+    # Create a new logger object. The configuration object is the only
+    # parameter and is used during initializiation.
+    #
+    # If the configured log directory does not exist, attempt to create it, or
+    # die trying (fatal error).
+    #
+    # If a log channel is configured, we'll use that for on-protocol logging.
+
     def initialize(config)
       logdir = config.getOption('Core', 'log_location')
       @logChannel = config.getOption('Core', 'log_channel')
@@ -52,6 +61,10 @@ module Modulus
       self.info "logger", "Logging started."
     end
 
+    ##
+    # Convert the verbosity setting in config to one of our constants for easier
+    # coding.
+
     def verbToNum(verbosity)
       case verbosity.downcase
         when "debug"
@@ -67,6 +80,10 @@ module Modulus
       end
       return DISABLED
     end
+
+    ##
+    # Set the severity for the Logger log file using the given verbosity.
+    # This function expects a string, not one of our constants.
 
     def setFileVerbosity(verbosity)
       case verbosity.downcase
@@ -84,6 +101,14 @@ module Modulus
       @logger.sev_threshold = Logger::DEBUG
     end
 
+    ##
+    # Send the log message to IRC on the log channel, if configured.
+    #
+    # The parameters are the serverity (one of our constants) and the log
+    # message.
+    #
+    # If no log channel is configured or the link is not active, abort.
+
     def logToChannel(severity, msg)
       begin
         return if @logChannel == nil or Modulus.link == nil
@@ -96,30 +121,49 @@ module Modulus
       end
     end
 
+    ##
+    # Log a message as DEBUG.
+
     def debug(section, str)
       @logger.debug(section) { str }
       self.logToChannel(DEBUG, "DEBUG [#{section}] #{str}")
     end
+
+    ##
+    # Log a message as INFO.
 
     def info(section, str)
       @logger.info(section) { str }
       self.logToChannel(INFO, "INFO [#{section}] #{str}")
     end
 
+    ##
+    # Log a message as WARNING.
+
     def warning(section, str)
       @logger.warn(section) { str }
       self.logToChannel(WARN, "WARNING [#{section}] #{str}")
     end
+
+    ##
+    # Log a message as ERROR.
 
     def error(section, str)
       @logger.error(section) { str }
       self.logToChannel(ERROR, "ERROR [#{section}] #{str}")
     end
 
+    ##
+    # Log a message as FATAL. This should only be called just before Modulus
+    # exits.
+
     def fatal(section, str)
       @logger.fatal(section) { str }
       self.logToChannel(FATAL, "FATAL [#{section}] #{str}")
     end
+
+    ##
+    # Close the Logger log file.
 
     def close
       @logger.close

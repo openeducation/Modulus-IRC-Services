@@ -18,9 +18,20 @@
 
 module Modulus
 
+  ##
+  # Origin Info objects are designed to be general data structures for IRC 
+  # messages, including joins, parts, PRIVMSG, modes, et al.
+
   class OriginInfo
 
     attr_reader :raw, :source, :target, :message, :cmd, :type, :arr, :args, :argsArr
+
+    ##
+    # Create a new origin info object.
+    #
+    # Parameters include the raw string from the IRC link, the source of the
+    # message, the target of the message, the message itself (usually the
+    # portion that follows the colon), and the type of the message,
 
     def initialize(raw, source, target, message, type)
       @raw = raw
@@ -34,6 +45,10 @@ module Modulus
       @argsArr = @messageArr[1..@messageArr.length-1]
       @args = @argsArr.join(" ")
     end
+
+    ##
+    # Return a strong representation of the origin info. This is generally for
+    # logging purposes and is not suited for viewing by end users.
 
     def to_s
       "[#{@type}] #{@source} -> #{@target} [#{@raw}] :#{@message}"
